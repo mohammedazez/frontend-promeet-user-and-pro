@@ -1,0 +1,39 @@
+.jumbotron {
+  background-image: url("https://res.cloudinary.com/def4tydoe/image/upload/v1603897150/christiann-koepke-WiE01mC9AtY-unsplash_gekbku.jpg");
+  background-size: cover;
+  height: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.card {
+  width: 28rem;
+  height: 18rem;
+}
+
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  .jumbotron {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .card {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}
