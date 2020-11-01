@@ -8,17 +8,17 @@ function Header() {
   return (
     <div>
       <Router>
-        <Navbar bg="light" expand="lg">
+        <Navbar className="Navbar" fixed="top" expand="lg">
           <Navbar.Brand href="/">
             <img
-              style={{ maxWidth: "100%", width: "120px", height: "auto" }}
-              src="https://res.cloudinary.com/def4tydoe/image/upload/v1603899574/logo_dcfrla.png"
+              style={{ maxWidth: "100%", width: "150px", height: "auto" }}
+              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604242067/logo_small_c4igh9.png"
               alt="img"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="m-auto">
               <NavItem>
                 <Link className="nav-link" to="/">
                   Home
@@ -41,11 +41,11 @@ function Header() {
               </NavItem>
             </Nav>
             <Nav>
-              <Button variant="warning">
+              <Button style={{ backgroundColor: "#B8E5E1" }}>
                 <FiShoppingCart />
               </Button>
-              <Button>Login</Button>
-              <Button>Register</Button>
+              <Button className="button">Login</Button>
+              <Button className="button">Register</Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
