@@ -1,0 +1,71 @@
+.container-sliderproduk {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+.card {
+  text-align: center;
+  padding-top: 10px;
+  width: 200px;
+  background: rgba(255, 0, 0, 0.04);
+  mix-blend-mode: normal;
+  opacity: 1;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.card-title {
+  color: #262626;
+  display: block;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0 !important;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
+.follow {
+  background-color: #a00000 !important;
+  border: 1px solid #a00000 !important;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 20px !important;
+}
+
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  .container-sliderproduk {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .card {
+    max-width: 100%;
+    width: 300px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}

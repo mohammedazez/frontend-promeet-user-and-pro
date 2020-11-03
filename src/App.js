@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -7,15 +8,15 @@ import Footer from "./components/footer/Footer";
 
 // Page
 import Home from "./pages/home/js/Main";
-import Produk from "./pages/produk/Produk";
+import Professional from "./pages/professional/Professional";
 import Detail from "./pages/detail/Detail";
-import Maps from "./pages/mapslocation/Mapslocation";
-import Keranjang from "./pages/keranjang/Keranjang";
-import Signup from "./pages/signup/Signup";
-import Login from "./pages/login/Login";
 import Booking from "./pages/booking/Booking";
-import Success from "./pages/success/Success";
-import Profil from "./pages/profil/Profil";
+import Login from "./pages/login/Login";
+import SignupUser from "./pages/signup/SignupUser";
+import SignupPro from "./pages/signup/SignupProfessional";
+import Confirmation from "./pages/confirmation/Confirmation";
+import ProfilUser from "./pages/profil/ProfilUser";
+import ProfilPro from "./pages/profil/ProfilProfessional";
 
 function App() {
   return (
@@ -26,32 +27,32 @@ function App() {
           <Route path="/">
             <Home />
           </Route>
-          <Route path="/produk">
-            <Produk />
+          <Route path="/professional">
+            <Professional />
           </Route>
           <Route path="/detail">
             <Detail />
           </Route>
-          <Route path="/maps">
-            <Maps />
+          <Route path="/booking">
+            <Booking />
           </Route>
-          <Route path="/keranjang">
-            <Keranjang />
+          <Route path="/signupuser">
+            <SignupUser />
           </Route>
-          <Route path="/signup">
-            <Signup />
+          <Route path="/signuppro">
+            <SignupPro />
+          </Route>
+          <Route path="/confirmation">
+            <Confirmation />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/booking">
-            <Booking />
+          <Route path="/profiluser">
+            <ProfilUser />
           </Route>
-          <Route path="/success">
-            <Success />
-          </Route>
-          <Route path="/profil">
-            <Profil />
+          <Route path="/profilpro">
+            <ProfilPro />
           </Route>
         </Switch>
         <Footer />

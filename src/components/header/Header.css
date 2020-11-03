@@ -1,0 +1,47 @@
+.container-navbar {
+  padding-left: 128px;
+  padding-right: 128px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #dd0000;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+.button-navbar {
+  background-color: #a00000;
+  margin-left: 10px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  .container-navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .button-navbar {
+    margin-left: 0px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}
