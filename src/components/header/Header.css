@@ -1,4 +1,4 @@
-.Navbar {
+.container-navbar {
   padding-left: 128px;
   padding-right: 128px;
   padding-top: 10px;
@@ -9,7 +9,7 @@
   box-shadow: 0 8px 6px -6px #999;
 }
 
-.button {
+.button-navbar {
   background-color: #a00000;
   margin-left: 10px;
 }
@@ -19,6 +19,7 @@
   font-size: 16px;
   color: #ffffff;
 }
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -27,12 +28,12 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  .Navbar {
+  .container-navbar {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .button {
+  .button-navbar {
     margin-left: 0px;
   }
 }

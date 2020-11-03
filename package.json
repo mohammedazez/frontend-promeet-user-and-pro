@@ -1,5 +1,5 @@
 {
-  "name": "orderine",
+  "name": "promeet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "react-slick": "^0.27.12",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "sweetalert2": "^10.9.0",
     "web-vitals": "^0.2.4"
   },

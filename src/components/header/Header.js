@@ -7,11 +7,11 @@ function Header() {
   return (
     <div>
       <Router>
-        <Navbar className="Navbar" fixed="top" expand="lg">
+        <Navbar className="container-navbar" fixed="top" expand="lg">
           <Navbar.Brand href="/">
             <img
-              style={{ maxWidth: "100%", width: "150px", height: "auto" }}
-              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604377939/Logo_transparan_nkjtcc.png"
+              style={{ maxWidth: "100%", width: "130px", height: "auto" }}
+              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604382830/promeet_transparan_rvyoda.png"
               alt="img"
             />
           </Navbar.Brand>
@@ -31,9 +31,9 @@ function Header() {
               </NavItem>
             </Nav>
             <Nav>
-              <Button className="button">Jadi Konsultan</Button>
-              <Button className="button">Login</Button>
-              <Button className="button">Sign Up</Button>
+              <Button className="button-navbar">Jadi Konsultan</Button>
+              <Button className="button-navbar">Login</Button>
+              <Button className="button-navbar">Sign Up</Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
