@@ -1,6 +1,6 @@
 .jumbotron {
   background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45)),
-    url(https://res.cloudinary.com/def4tydoe/image/upload/v1604244455/jumbotron_2_h7gei1.jpg);
+    url(https://res.cloudinary.com/def4tydoe/image/upload/v1604378233/jumbotron_jiqcl4.jpg);
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   color: white !important;
@@ -16,6 +16,10 @@
 .card {
   width: 28rem;
   height: 18rem;
+}
+
+.button {
+  background-color: #a00000;
 }
 
 /* untuk responsive */

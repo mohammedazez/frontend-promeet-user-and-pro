@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Header.css";
 import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
-import { FiShoppingCart } from "react-icons/fi";
 
 function Header() {
   return (
@@ -12,7 +11,7 @@ function Header() {
           <Navbar.Brand href="/">
             <img
               style={{ maxWidth: "100%", width: "150px", height: "auto" }}
-              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604242067/logo_small_c4igh9.png"
+              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604377939/Logo_transparan_nkjtcc.png"
               alt="img"
             />
           </Navbar.Brand>
@@ -25,27 +24,16 @@ function Header() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/product">
-                  Product
-                </Link>
+                <Link className="nav-link">About</Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
+                <Link className="nav-link">Chat</Link>
               </NavItem>
             </Nav>
             <Nav>
-              <Button style={{ backgroundColor: "#B8E5E1" }}>
-                <FiShoppingCart />
-              </Button>
+              <Button className="button">Jadi Konsultan</Button>
               <Button className="button">Login</Button>
-              <Button className="button">Register</Button>
+              <Button className="button">Sign Up</Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -3,21 +3,21 @@
   padding-right: 128px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #ebfeff;
+  background-color: #dd0000;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
 }
 
 .button {
-  background-color: #78aff4;
+  background-color: #a00000;
   margin-left: 10px;
 }
 
 .nav-link {
   font-weight: 500;
   font-size: 16px;
-  color: #4d4d4d;
+  color: #ffffff;
 }
 /* untuk responsive */
 

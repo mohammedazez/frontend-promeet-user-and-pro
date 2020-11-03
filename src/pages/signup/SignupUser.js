@@ -1,12 +1,12 @@
 import React from "react";
 import "./Signup.css";
 
-function signup() {
+function SignupUser() {
   return (
     <div>
-      <h1>Sign up</h1>
+      <h1>Sign up for user</h1>
     </div>
   );
 }
 
-export default signup;
+export default SignupUser;
