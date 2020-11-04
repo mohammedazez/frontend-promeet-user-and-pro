@@ -1,5 +1,184 @@
 /* untuk responsive */
+.btn:hover {
+  background-color: #bedbff;
+}
 
+/* Font */
+.btnubah {
+  padding: 2vh;
+}
+
+.btnubah p {
+  font-size: 15px;
+}
+
+.biedit {
+  height: 5vh;
+  width: 5vh;
+}
+
+/* List */
+
+.detailtransaksi {
+  margin-top: 20vh !important;
+}
+
+.container {
+  background-color: #9ff9ff;
+  margin-top: 5vh;
+  color: #4d4d4d;
+}
+
+.judul {
+  text-align: start;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 3vh;
+}
+
+.judul div,
+p {
+  display: inline;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.detail,
+.detailalamat,
+.gambar,
+.pilihwaktu {
+  margin-left: 15vh;
+}
+
+.harga {
+  margin-left: 100vh;
+}
+
+.gambar,
+.dettelp {
+  text-align: start;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+}
+
+.gambar p {
+  display: inline;
+  margin-left: 50vh;
+}
+
+/* Alamat */
+
+.alamat {
+  margin-top: 5vh;
+}
+
+.ubahalamat {
+  margin-left: 100vh;
+}
+
+.keteranganalamat {
+  text-align: start;
+  margin-left: 15vh;
+}
+
+.detnama,
+.dettelp {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detalamat,
+.dettelp {
+  margin-top: 10px;
+}
+
+.detalamat p {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+/* Waktu Pengiriman */
+
+.waktupengiriman {
+  text-align: start;
+}
+
+.judulpilihwaktu {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.keteranganpengiriman,
+.keteranganpembayaran {
+  display: inline;
+  margin-left: 15vh;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5vh;
+}
+
+hr.rounded {
+  border-top: 5px solid #fff;
+  border-radius: 5px;
+}
+
+.hargapengiriman,
+.btnpengiriman {
+  margin-left: 50vh;
+}
+
+.slotpagi {
+  margin-left: 49vh;
+}
+
+/* Pembayaran */
+
+.rekeningbca,
+.btnpembayaran {
+  margin-left: 35vh;
+}
+
+.rekeningbri {
+  margin-left: 36vh;
+}
+
+.rekeningmandiri {
+  margin-left: 29vh;
+}
+
+/* All Total */
+
+.alltotal {
+  text-align: start;
+}
+
+.totalharga,
+.ongkoskirim,
+.totalpayment {
+  margin-left: 15vh;
+  margin-top: 5vh;
+}
+
+.ongkoskirim,
+.totalpayment {
+  margin-bottom: 5vh;
+}
+
+.totalprice,
+.ongkosprice {
+  margin-left: 50vh;
+}
+
+.paymentprice {
+  margin-left: 46vh;
+}
+
+.btnbayarsekarang {
+  font-size: 30px;
+  font-weight: 500;
+  padding-left: 70vh;
+  padding-right: 70vh;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }
