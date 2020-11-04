@@ -17,7 +17,8 @@ function Header() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="m-auto">
+            <Nav className="m-auto"></Nav>
+            <Nav>
               <NavItem>
                 <Link className="nav-link" to="/">
                   Home
@@ -29,8 +30,6 @@ function Header() {
               <NavItem>
                 <Link className="nav-link">Chat</Link>
               </NavItem>
-            </Nav>
-            <Nav>
               <Button className="button-navbar">Jadi Konsultan</Button>
               <Button className="button-navbar">Login</Button>
               <Button className="button-navbar">Sign Up</Button>

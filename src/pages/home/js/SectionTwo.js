@@ -3,8 +3,18 @@ import "../css/SectionTwo.css";
 
 function SectionTwo() {
   return (
-    <div>
-      <h1>Section two</h1>
+    <div className="container-sectiontwo">
+      <h1 className="judul-sectiontwo">
+        Cari Professional di kota terdekat anda
+      </h1>
+      <p className="kalimat-sectiontwo">
+        Yuk dicek apakah professional anda sudah ada di kotamu?{" "}
+      </p>
+      <img
+        src="https://res.cloudinary.com/def4tydoe/image/upload/v1604504276/jadwalkan_sekarang_qfwiv1.png"
+        alt="terdekat"
+        className="img-sectiontwo"
+      />
     </div>
   );
 }
