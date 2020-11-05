@@ -43,10 +43,10 @@ function SliderProduk() {
 
   return (
     <div className="container-sliderproduk">
-      <h1>Spesial hari ini</h1>
+      <h1 className="judul-sliderproduk">Professional terbaik kami</h1>
       <Row>
-        <Col>Orang yang menarik buat kamu</Col>
-        <Col>Lihat semua</Col>
+        <Col className="kalimat-sliderproduk">Orang yang menarik buat kamu</Col>
+        <Col className="lihatsemua">Lihat semua</Col>
       </Row>
       {suggestions.length === 0 ? (
         <div className="spinner-border" role="status">

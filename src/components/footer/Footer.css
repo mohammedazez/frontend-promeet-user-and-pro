@@ -1,0 +1,95 @@
+.container-footer {
+  padding-top: 22px;
+  padding-left: 128px;
+  padding-right: 128px;
+  background: #30f5ff;
+}
+
+.judul-footer-kiri {
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  color: #4d4d4d;
+  mix-blend-mode: normal;
+}
+
+.judul-footer-kanan {
+  text-align: right;
+  font-weight: 500;
+  font-size: 16px;
+  color: #4d4d4d;
+  mix-blend-mode: normal;
+}
+
+.kalimat-footer-kiri {
+  text-align: left;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4d4d4d;
+  mix-blend-mode: normal;
+}
+
+.img-footer {
+  float: right;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.social-footer {
+  text-align: left;
+  max-width: 100%;
+  height: 30px;
+  width: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.copyright {
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4d4d4d;
+}
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  .container-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .column-footer {
+    flex-direction: column;
+  }
+
+  .judul-footer-kiri {
+    text-align: center;
+  }
+
+  .judul-footer-kanan {
+    text-align: center;
+  }
+
+  .kalimat-footer-kiri {
+    text-align: center;
+  }
+
+  .tst {
+    text-align: center;
+  }
+
+  .social-footer {
+    text-align: center;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}
