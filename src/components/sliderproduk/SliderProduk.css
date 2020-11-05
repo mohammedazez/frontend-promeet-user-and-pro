@@ -81,6 +81,18 @@ img {
     max-width: 100%;
     width: 300px;
   }
+
+  .judul-sliderproduk {
+    font-size: 16px;
+  }
+
+  .kalimat-sliderproduk {
+    font-size: 14px;
+  }
+
+  .lihatsemua {
+    font-size: 14px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */
