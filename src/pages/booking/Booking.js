@@ -22,30 +22,34 @@ function Booking() {
   }
 
   return (
-    <div>
+    <div classname="booking">
       <Container className="detailtransaksi">
         <Row>
           <Col>
             <div className="judul">
               <div className="detail">
-                <p>Detail Pesanan</p>
-              </div>
-              <div className="harga">
-                <p>Harga</p>
+                <p>Detail Booking</p>
               </div>
             </div>
             <div className="gambar">
               <Image src={Foto} alt="Sendok" rounded />
-              <p>Sendok</p>
-              <p>Rp12.000</p>
-              <Button variant="outline">x</Button>
+              <p>Nama</p>
+              <p>Jam</p>
+              <p>Tanggal</p>
+              <p>Jenis</p>
+              <p>Tempat</p>
+              <p>Diskusi</p>
             </div>
-            <div className="gambar">
-              <Image src={Foto} alt="Sendok" rounded />
-              <p>Sendok</p>
-              <p>Rp12.000</p>
-              <Button variant="outline">x</Button>
+            <div className="isi">
+              <p>Meet with Angelia</p>
+              <p>08:00 WIB</p>
+              <p>02-11-2020</p>
+              <p>Konsultasi</p>
+              <p>Coworking Space</p>
+              <p>2 Jam</p>
+              {/* <Button>X</Button> */}
             </div>
+            <hr className="rounded" />
           </Col>
         </Row>
       </Container>
@@ -148,12 +152,8 @@ function Booking() {
         <Row>
           <Col className="alltotal">
             <div className="totalharga">
-              <p>Total Harga</p>
+              <p>Total Booking Fee</p>
               <p className="totalprice">Rp 3.250.000</p>
-            </div>
-            <div className="ongkoskirim">
-              <p>Ongkos Kirim</p>
-              <p className="ongkosprice">Rp 20.000</p>
             </div>
             <hr className="rounded" />
             <div className="totalpayment">

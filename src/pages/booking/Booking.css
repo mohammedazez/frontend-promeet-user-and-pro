@@ -1,4 +1,14 @@
 /* untuk responsive */
+.booking {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #4d4d4d;
+}
+
+.btn {
+  background-color: #78aff4;
+}
+
 .btn:hover {
   background-color: #bedbff;
 }
@@ -20,7 +30,7 @@
 /* List */
 
 .detailtransaksi {
-  margin-top: 20vh !important;
+  margin-top: 30vh !important;
 }
 
 .container {
@@ -45,25 +55,44 @@ p {
 
 .detail,
 .detailalamat,
-.gambar,
 .pilihwaktu {
   margin-left: 15vh;
+}
+
+.detail p {
+  font-size: 30px;
+  font-weight: 900;
 }
 
 .harga {
   margin-left: 100vh;
 }
 
-.gambar,
+img,
 .dettelp {
-  text-align: start;
+  float: left;
+  margin-left: 10vh;
   margin-bottom: 5vh;
   margin-top: 3vh;
 }
 
+.gambar {
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+}
+
 .gambar p {
   display: inline;
-  margin-left: 50vh;
+  margin-left: 15vh;
+}
+
+.isi {
+  margin-bottom: 40vh;
+}
+
+.isi p {
+  font-weight: 700 !important;
+  margin-left: 5vh;
 }
 
 /* Alamat */
@@ -118,7 +147,7 @@ p {
 }
 
 hr.rounded {
-  border-top: 5px solid #fff;
+  border-top: 5px solid #78aff4;
   border-radius: 5px;
 }
 
@@ -152,25 +181,26 @@ hr.rounded {
   text-align: start;
 }
 
+.alltotal p {
+  font-weight: 700;
+}
+
 .totalharga,
-.ongkoskirim,
 .totalpayment {
   margin-left: 15vh;
   margin-top: 5vh;
 }
 
-.ongkoskirim,
 .totalpayment {
   margin-bottom: 5vh;
 }
 
-.totalprice,
-.ongkosprice {
+.totalprice {
   margin-left: 50vh;
 }
 
 .paymentprice {
-  margin-left: 46vh;
+  margin-left: 55vh;
 }
 
 .btnbayarsekarang {
