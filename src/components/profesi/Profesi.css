@@ -9,15 +9,19 @@
 }
 
 .p-profesi {
-  font-weight: 400;
-  font-size: 17px;
-  color: #a00000;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #4d4d4d;
 }
 
 .judul-profesi {
+  text-align: left;
+  font-style: normal;
   font-weight: 500;
   font-size: 36px;
-  text-align: left;
   line-height: 60px;
   color: #4d4d4d;
   mix-blend-mode: normal;
@@ -40,7 +44,7 @@
     max-width: 100%;
   }
   .judul-profesi {
-    font-size: 26px;
+    font-size: 16px;
     text-align: center;
   }
 
