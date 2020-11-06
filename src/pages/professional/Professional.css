@@ -96,7 +96,7 @@
   padding-bottom: 50px;
 }
 
-.card {
+.cardprofessional {
   background: #9ff9ff;
   text-align: center;
   padding-top: 10px;
@@ -125,6 +125,12 @@
   color: #fff;
 }
 
+.moveprofessional {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -133,7 +139,7 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  .container-filter {
+  .containerfilter {
     flex-direction: column;
   }
 
@@ -145,17 +151,17 @@
     width: 200px;
   }
 
-  .container-professional {
+  .containerprofessional {
     padding-top: 0px;
     padding-left: 0px;
     padding-right: 0px;
   }
 
-  .container-professional-list {
+  .containerprofessionallist {
     padding-left: 100px;
   }
 
-  .row-responsive {
+  .rowresponsive {
     max-width: 100%;
   }
 }

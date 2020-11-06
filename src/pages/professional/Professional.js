@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Row, Button } from "react-bootstrap";
-import { IoIosArrowForward } from "react-icons/io";
 import { FcSearch } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import styles from "./Professional.module.css";
+import Movepage from "../../components/pagination/Movepage";
+import "./Professional.css";
 
 function Professional() {
   const [input, setInput] = useState("");
@@ -87,18 +87,18 @@ function Professional() {
   }
 
   return (
-    <div className={styles.containerprofessional}>
+    <div className="containerprofessional">
       {/* Search Bar */}
       <div>
-        <div className={styles.search}>
+        <div className="search">
           <Button>
-            <i className={styles.icon}>
+            <i className="icon">
               <FcSearch />
             </i>
           </Button>
           <input
             type="text"
-            className={styles.searchTerm}
+            className="searchTerm"
             placeholder="Cari berdasarkan pekerjaan"
             onChange={handlechange}
             value={input}
@@ -106,9 +106,9 @@ function Professional() {
         </div>
       </div>
 
-      <div className={styles.containerfilter}>
+      <div className="containerfilter">
         {/* Filter Lokasi */}
-        <div className={styles.box}>
+        <div className="box">
           <select>
             <option>Jakarta</option>
             <option>Depok</option>
@@ -118,14 +118,14 @@ function Professional() {
           </select>
         </div>
         {/* Filter harga */}
-        <div className={styles.box}>
+        <div className="box">
           <select>
             <option>Termurah</option>
             <option>Termahal</option>
           </select>
         </div>
         {/* Filter kategori */}
-        <div className={styles.box}>
+        <div className="box">
           <select>
             <option>Frontend Developer</option>
             <option>Backend Developer</option>
@@ -133,16 +133,16 @@ function Professional() {
           </select>
         </div>
       </div>
-      <div className={styles.tulisanpenandaprofessional}>
+      <div className="tulisanpenandaprofessional">
         <p>Home</p>
-        <IoIosArrowForward />
+        <p>{" > "}</p>
         <p>Software Engineer</p>
       </div>
-      <h1 className={styles.judulprofessional}>Software Engineer</h1>
-      <Row className={styles.rowresponsive}>
+      <h1 className="judulprofessional">Software Engineer</h1>
+      <Row className="rowresponsive">
         {professional.map((people, index) => (
-          <div className={styles.containerprofessionallist} key={index}>
-            <div className={styles.card}>
+          <div className="containerprofessionallist" key={index}>
+            <div className="cardprofessional">
               <img
                 alt={"users here"}
                 src={people.img}
@@ -150,7 +150,7 @@ function Professional() {
                 width={179}
               />
               <div className="card-body">
-                <h5 className={styles.cardtitle}>{people.nama}</h5>
+                <h5 className="cardtitle">{people.nama}</h5>
                 <p>
                   {people.pekerjaan} di {people.lokasi}
                 </p>
@@ -166,6 +166,9 @@ function Professional() {
           </div>
         ))}
       </Row>
+      <div className="moveprofessional">
+        <Movepage />
+      </div>
     </div>
   );
 }
