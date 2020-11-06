@@ -56,7 +56,7 @@ function SliderProduk() {
         <Slider {...settings}>
           {suggestions.map((current) => (
             <div className="out" key={current.id}>
-              <div className="card">
+              <div className="cardsliderproduk">
                 <img
                   alt={"users here"}
                   src={`https://source.unsplash.com/random/${current.id}`}

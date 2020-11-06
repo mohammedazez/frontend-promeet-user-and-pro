@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
-import { Row, Col, Card, Button } from "react-bootstrap";
-import { FcOvertime } from "react-icons/fc";
+import Detailaccordion from "../../components/accordion/Detailaccordion";
+import { Row, Col, Button } from "react-bootstrap";
 
 function DetailProduk() {
   return (
@@ -76,6 +76,9 @@ function DetailProduk() {
             </Row>
           </Col>
         </Row>
+      </div>
+      <div>
+        <Detailaccordion />
       </div>
       <div>
         <SliderProduk />
