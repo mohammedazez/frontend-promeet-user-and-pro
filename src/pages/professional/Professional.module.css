@@ -1,4 +1,4 @@
-.container-professional {
+.containerprofessional {
   padding-top: 100px;
   padding-left: 128px;
   padding-right: 128px;
@@ -36,7 +36,7 @@
 }
 
 /* Filter Styling */
-.container-filter {
+.containerfilter {
   display: flex;
   flex-direction: row;
 }
@@ -78,20 +78,20 @@
 
 /* Styling card professional */
 
-.tulisan-penanda-professional {
+.tulisanpenandaprofessional {
   text-align: left;
   display: flex;
   flex-direction: row;
 }
 
-.judul-professional {
+.judulprofessional {
   text-align: left;
   font-weight: bold;
   font-size: 24px;
   color: #4d4d4d;
 }
 
-.container-professional-list {
+.containerprofessionallist {
   padding-left: 25px;
   padding-bottom: 50px;
 }
@@ -107,7 +107,7 @@
   border-radius: 10px;
 }
 
-.card-title {
+.cardtitle {
   color: #262626;
   display: block;
   overflow: hidden;

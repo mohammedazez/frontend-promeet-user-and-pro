@@ -1,8 +1,7 @@
 import React from "react";
 import { BiEdit } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
-
-import "./Booking.css";
+// import "./Booking.css";
 
 // Boostrap
 import { Row, Col, Button, Container, Image } from "react-bootstrap";
@@ -10,7 +9,7 @@ import { Row, Col, Button, Container, Image } from "react-bootstrap";
 // Foto
 import Foto from "../../assets/booking/womentech 5.png";
 
-function Booking() {
+const Booking = () => {
   let history = useHistory();
 
   function handleClick() {
@@ -168,6 +167,6 @@ function Booking() {
       </Container>
     </div>
   );
-}
+};
 
 export default Booking;
