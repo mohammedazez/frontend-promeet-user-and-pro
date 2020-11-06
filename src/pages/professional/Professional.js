@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./Professional.css";
 import { Row, Button } from "react-bootstrap";
 import { IoIosArrowForward } from "react-icons/io";
 import { FcSearch } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import styles from "./Professional.module.css";
 
 function Professional() {
   const [input, setInput] = useState("");
@@ -81,33 +82,33 @@ function Professional() {
 
   if (input.length > 0) {
     professional = professional.filter((i) => {
-      return i.nama.toLowerCase().match(input);
+      return i.pekerjaan.toLowerCase().match(input);
     });
   }
 
   return (
-    <div className="container-professional">
+    <div className={styles.containerprofessional}>
       {/* Search Bar */}
       <div>
-        <div className="search">
+        <div className={styles.search}>
           <Button>
-            <i className="icon">
+            <i className={styles.icon}>
               <FcSearch />
             </i>
           </Button>
           <input
             type="text"
-            className="searchTerm"
-            placeholder="Cari berdasarkan nama"
+            className={styles.searchTerm}
+            placeholder="Cari berdasarkan pekerjaan"
             onChange={handlechange}
             value={input}
           />
         </div>
       </div>
 
-      <div className="container-filter">
+      <div className={styles.containerfilter}>
         {/* Filter Lokasi */}
-        <div className="box">
+        <div className={styles.box}>
           <select>
             <option>Jakarta</option>
             <option>Depok</option>
@@ -117,14 +118,14 @@ function Professional() {
           </select>
         </div>
         {/* Filter harga */}
-        <div className="box">
+        <div className={styles.box}>
           <select>
             <option>Termurah</option>
             <option>Termahal</option>
           </select>
         </div>
         {/* Filter kategori */}
-        <div className="box">
+        <div className={styles.box}>
           <select>
             <option>Frontend Developer</option>
             <option>Backend Developer</option>
@@ -132,16 +133,16 @@ function Professional() {
           </select>
         </div>
       </div>
-      <div className="tulisan-penanda-professional">
+      <div className={styles.tulisanpenandaprofessional}>
         <p>Home</p>
         <IoIosArrowForward />
         <p>Software Engineer</p>
       </div>
-      <h1 className="judul-professional">Software Engineer</h1>
-      <Row className="row-responsive">
+      <h1 className={styles.judulprofessional}>Software Engineer</h1>
+      <Row className={styles.rowresponsive}>
         {professional.map((people, index) => (
-          <div className="container-professional-list" key={index}>
-            <div className="card">
+          <div className={styles.containerprofessionallist} key={index}>
+            <div className={styles.card}>
               <img
                 alt={"users here"}
                 src={people.img}
@@ -149,13 +150,17 @@ function Professional() {
                 width={179}
               />
               <div className="card-body">
-                <h5 className="card-title">{people.nama}</h5>
+                <h5 className={styles.cardtitle}>{people.nama}</h5>
                 <p>
                   {people.pekerjaan} di {people.lokasi}
                 </p>
                 <br />
                 <p>Rp {people.tarif} Per/1 Jam</p>
-                <button className="btn btn-sm follow ">Kirim Pertemuan</button>
+                <button className="btn btn-sm follow ">
+                  <Link to="/detail" style={{ textDecoration: "none" }}>
+                    Kirim Pertemuan
+                  </Link>
+                </button>
               </div>
             </div>
           </div>

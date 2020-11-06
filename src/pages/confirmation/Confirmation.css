@@ -1,4 +1,52 @@
 /* untuk responsive */
+.success {
+  font-family: "Roboto";
+  background-color: #ebfeff;
+  color: #555555;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* success */
+.successbtn {
+  margin-top: 5vh;
+}
+
+.totaltagihan {
+  margin-top: 22vh;
+  color: #555555;
+}
+
+.totaltagihan p {
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.metodepembayaran {
+  margin-top: 5vh;
+}
+
+.marbot {
+  margin-bottom: 5vh;
+}
+
+.totag {
+  margin-top: 5vh;
+}
+
+/* button */
+.btnconfirmation {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 2vh;
+  padding-left: 10vh;
+  padding-right: 10vh;
+  background-color: #78aff4;
+}
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
