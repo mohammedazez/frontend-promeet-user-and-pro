@@ -15,15 +15,13 @@ function DetailProduk() {
           <p>{">"}</p>
           <p>Angelia Jolie</p>
         </div>
-        <Row>
+        <Row className="responsive-detail">
           <Col>
-            <Card className="card-professional">
-              <img
-                className="img-professional"
-                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
-                alt="imgprodetail"
-              />
-            </Card>
+            <img
+              className="img-professional"
+              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
+              alt="imgprodetail"
+            />
           </Col>
           <Col>
             <h1 className="nama-detail">Angelia Jolie</h1>

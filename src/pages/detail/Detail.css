@@ -4,12 +4,6 @@
   padding-right: 128px;
 }
 
-.card-professional {
-  width: 650px;
-  height: 514px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .img-professional {
   height: 514px;
   width: 100%;
@@ -20,30 +14,29 @@
 }
 
 .tulisan-penanda-detail {
-  text-align: left;
   display: flex;
   flex-direction: row;
 }
 
 .nama-detail {
   font-weight: 500;
-  font-size: 36px;
-  display: flex;
+  font-size: 28px;
+  text-align: left;
   color: #4d4d4d;
 }
 
 .pekerjaan-detail {
   font-weight: bold;
-  font-size: 36px;
-  display: flex;
+  font-size: 20px;
+  text-align: left;
   color: #4d4d4d;
 }
 
 .harga-detail {
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 26px;
   color: #4d4d4d;
-  display: flex;
+  text-align: left;
 }
 
 .button-detail {
@@ -57,7 +50,7 @@
 }
 
 .judul-filter-detail {
-  display: flex;
+  text-align: left;
 }
 
 /* styling Filter */
@@ -107,6 +100,44 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .container-detail {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .responsive-detail {
+    flex-direction: column;
+  }
+
+  .img-professional {
+    height: 314px;
+    width: 80%;
+  }
+
+  .nama-detail {
+    text-align: center;
+  }
+
+  .pekerjaan-detail {
+    text-align: center;
+  }
+
+  .harga-detail {
+    text-align: center;
+  }
+
+  .button-detail {
+    margin: auto;
+  }
+
+  .box-detail {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .judul-filter-detail {
+    text-align: center;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */
