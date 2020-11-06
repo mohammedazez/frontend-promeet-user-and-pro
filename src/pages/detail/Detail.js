@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Detailaccordion from "../../components/accordion/Detailaccordion";
+import { Link } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
 
 function DetailProduk() {
@@ -27,7 +28,11 @@ function DetailProduk() {
             <h1 className="nama-detail">Angelia Jolie</h1>
             <h2 className="pekerjaan-detail">Software Engineer dari Jakarta</h2>
             <p className="harga-detail">Rp 1.000.000 /Jam</p>
-            <Button className="button-detail">Kirim Pertemuan</Button>
+            <Button className="button-detail">
+              <Link to="/booking" style={{ textDecoration: "none" }}>
+                Kirim Pertemuan
+              </Link>
+            </Button>
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
