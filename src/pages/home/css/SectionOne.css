@@ -59,6 +59,7 @@ h3 {
   .jumbotron {
     padding-top: 10rem;
     padding-bottom: 10rem;
+    background-size: cover;
   }
 
   .judul-sectionone {
