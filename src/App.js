@@ -31,16 +31,16 @@ function App() {
           <Route path="/professional">
             <Professional />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/booking">
             <Booking />
           </Route>
-          <Route path="/signupuser">
+          <Route path="/signup/:user">
             <SignupUser />
           </Route>
-          <Route path="/signuppro">
+          <Route path="/signup/:professional">
             <SignupPro />
           </Route>
           <Route path="/confirmation">
@@ -49,10 +49,10 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/profiluser">
+          <Route path="/profil/:user">
             <ProfilUser />
           </Route>
-          <Route path="/profilpro">
+          <Route path="/profil/:professional">
             <ProfilPro />
           </Route>
           <Route path="/forminput">
