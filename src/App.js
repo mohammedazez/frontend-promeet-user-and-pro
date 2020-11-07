@@ -31,7 +31,7 @@ function App() {
           <Route path="/professional">
             <Professional />
           </Route>
-          <Route path="/detail/:id">
+          <Route path="/detail">
             <Detail />
           </Route>
           <Route path="/booking">
