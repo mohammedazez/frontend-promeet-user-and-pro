@@ -45,6 +45,11 @@ function Header() {
                 Sign Up
               </Link>
             </Button>
+            <Button className="button-navbar">
+              <Link to="/signuppro" style={{ textDecoration: "none" }}>
+                My Profile
+              </Link>
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
