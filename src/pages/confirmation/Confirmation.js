@@ -44,15 +44,17 @@ function Confirmation() {
       <Container className="successbtn">
         <Row>
           <Col>
-            <div>
+            <div style={{ textAlign: "center" }}>
               <Image src={Foto} />
-            </div>
-            <div>
               <h3>Terima kasih sudah pesan di Promeet.com</h3>
+              <Button
+                style={{ border: "none" }}
+                className="btnconfirmation"
+                onClick={handleClick}
+              >
+                <span>To Profile</span>
+              </Button>
             </div>
-            <Button className="btnconfirmation" onClick={handleClick}>
-              <span>To Profile</span>
-            </Button>
           </Col>
         </Row>
       </Container>
