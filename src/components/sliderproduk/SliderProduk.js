@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./SliderProduk.css";
 import Slider from "react-slick";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function SliderProduk() {
   const [suggestions, setSuggestions] = useState([]);
@@ -69,7 +70,9 @@ function SliderProduk() {
                   <br />
                   <p>Rp 1.000.000 /1 Jam</p>
                   <button className="btn btn-sm follow ">
-                    Kirim Pertemuan
+                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                      Kirim Pertemuan
+                    </Link>
                   </button>
                 </div>
               </div>
