@@ -53,7 +53,7 @@ function Forminput() {
           controlId="exampleForm.SelectCustomSizeLg"
           className="grupform"
         >
-          <p className="judulform">Lokasi</p>
+          <p className="judulform">Lokasi :</p>
           <Form.Control as="select" size="lg" custom>
             <option>Jakarta</option>
             <option>Depok</option>
@@ -66,7 +66,7 @@ function Forminput() {
           controlId="exampleForm.SelectCustomSizeLg"
           className="grupform"
         >
-          <p className="judulform">Jadwal Tersedia</p>
+          <p className="judulform">Jadwal Tersedia :</p>
           <Form.Control as="select" size="lg" custom>
             <option>08:00 WIB</option>
             <option>10:00 WIB</option>
@@ -79,7 +79,7 @@ function Forminput() {
           controlId="exampleForm.SelectCustomSizeLg"
           className="grupform"
         >
-          <p className="judulform">Tanggal Tersedia</p>
+          <p className="judulform">Tanggal Tersedia :</p>
           <Form.Control as="select" size="lg" custom>
             <option>08-11-2020</option>
             <option>09-11-2020</option>
@@ -87,6 +87,22 @@ function Forminput() {
             <option>11-11-2020</option>
             <option>12-11-2020</option>
           </Form.Control>
+        </Form.Group>
+        <Form.Group controlId="exampleForm.ControlInput1" className="grupform">
+          <p className="judulform">Tempat :</p>
+          <Form.Control
+            type="tarif"
+            placeholder="Tempat untuk meeting"
+            size="lg"
+          />
+        </Form.Group>
+        <Form.Group controlId="exampleForm.ControlInput1" className="grupform">
+          <p className="judulform">Pengalaman :</p>
+          <Form.Control
+            type="tarif"
+            placeholder="Pengalaman anda selama bekerja"
+            size="lg"
+          />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <p className="judulform">Tentang Anda</p>

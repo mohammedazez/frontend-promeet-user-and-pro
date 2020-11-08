@@ -16,7 +16,7 @@ h3 {
 }
 
 .totaltagihan {
-  margin-top: 22vh;
+  margin-top: 10vh;
   color: #555555;
 }
 
@@ -48,6 +48,9 @@ h3 {
   background-color: #78aff4;
 }
 
+.img-success {
+  max-width: 100%;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }

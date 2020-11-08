@@ -47,7 +47,11 @@ function SliderProduk() {
       <h1 className="judul-sliderproduk">Professional terbaik kami</h1>
       <Row>
         <Col className="kalimat-sliderproduk">Orang yang menarik buat kamu</Col>
-        <Col className="lihatsemua">Lihat semua</Col>
+        <Col className="lihatsemua">
+          <Link to="/professional" style={{ textDecoration: "none" }}>
+            Lihat semua
+          </Link>
+        </Col>
       </Row>
       {suggestions.length === 0 ? (
         <div className="spinner-border" role="status">
