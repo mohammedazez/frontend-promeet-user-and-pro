@@ -96,34 +96,18 @@ img,
 }
 
 /* Alamat */
+.judul p {
+  font-size: 30px;
+  font-weight: 900;
+}
 
 .alamat {
   margin-top: 5vh;
 }
 
-.ubahalamat {
-  margin-left: 100vh;
-}
-
 .keteranganalamat {
   text-align: start;
   margin-left: 15vh;
-}
-
-.detnama,
-.dettelp {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.detalamat,
-.dettelp {
-  margin-top: 10px;
-}
-
-.detalamat p {
-  font-size: 18px;
-  font-weight: 100;
 }
 
 /* Waktu Pengiriman */

@@ -1,11 +1,10 @@
 import React from "react";
-import { BiEdit } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 
 import "./Booking.css";
 
 // Boostrap
-import { Row, Col, Button, Container, Image } from "react-bootstrap";
+import { Row, Col, Button, Container, Image, Form } from "react-bootstrap";
 
 // Foto
 import Foto from "../../assets/booking/womentech 5.png";
@@ -58,31 +57,19 @@ function Booking() {
           <Col>
             <div className="judul">
               <div className="detailalamat">
-                <p>Detail Alamat</p>
-              </div>
-              <div className="ubahalamat">
-                <Button variant="outline" className="btnubah">
-                  <BiEdit className="biedit" />
-                  <p>Ubah Alamat</p>
-                </Button>
+                <p>Info Anda</p>
               </div>
             </div>
-            <div className="keteranganalamat">
-              <div className="detnama">
-                <p>Muhammad Aziz</p>
-              </div>
-              <div className="detalamat">
-                <p>
-                  Jalan Cilandak Town Square, 2, Jl. Cilandak Town Square No.2,
-                  RT.2/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan,
-                  Daerah Khusus Ibukota Jakarta 12430, Indonesia, Kecamatan
-                  Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-                </p>
-              </div>
-              <div className="dettelp">
-                <p>+6284348787834</p>
-              </div>
-            </div>
+            <Form className="keteranganalamat">
+              <Form.Group controlId="formBasicName">
+                <Form.Label>Name :</Form.Label>
+                <Form.Control type="email" placeholder="Enter Name" />
+              </Form.Group>
+              <Form.Group controlId="formBasicTelp">
+                <Form.Label>No Telp :</Form.Label>
+                <Form.Control type="Number" placeholder="Enter No Telp" />
+              </Form.Group>
+            </Form>
           </Col>
         </Row>
       </Container>
