@@ -9,7 +9,7 @@ const Booking = () => {
 
   function handleClick() {
     try {
-      history.push("/success");
+      history.push("/confirmation");
     } catch (error) {
       alert(error);
     }
@@ -165,7 +165,7 @@ const Booking = () => {
               <h4>Rp 2.000.000</h4>
             </Col>
           </Row>
-          <Button>Booking Sekarang</Button>
+          <Button onClick={handleClick}>Booking Sekarang</Button>
         </Card>
       </div>
       {/* Perbaikan */}

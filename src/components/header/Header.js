@@ -27,7 +27,9 @@ function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link">About</Link>
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
             </NavItem>
             <NavItem>
               <Link className="nav-link">Chat</Link>
@@ -49,7 +51,7 @@ function Header() {
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/signuppro" style={{ textDecoration: "none" }}>
+              <Link to="/profil" style={{ textDecoration: "none" }}>
                 My Profile
               </Link>
             </Button>
