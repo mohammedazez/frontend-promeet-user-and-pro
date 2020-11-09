@@ -13,10 +13,7 @@ import SignupUser from "./pages/signup/SignupUser";
 import SignupPro from "./pages/signup/SignupProfessional";
 import Confirmation from "./pages/confirmation/Confirmation";
 import Forminput from "./pages/forminput/Forminput";
-
-// Pages khusus profil
 import Sidebar from "./pages/profil/Sidebar";
-import ProfilSaya from "./pages/profil/js/Profilsaya";
 
 function App() {
   return (
@@ -53,15 +50,9 @@ function App() {
           <Route path="/forminput">
             <Forminput />
           </Route>
-
-          {/* Khusus profil */}
           <Route path="/sidebar">
             <Sidebar />
           </Route>
-          <Route path="/profilsaya">
-            <ProfilSaya />
-          </Route>
-          {/* Khusus profil */}
         </Switch>
       </Router>
     </div>
