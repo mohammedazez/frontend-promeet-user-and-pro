@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
-// import "./Booking.css";
 import "./Perbaikan.css";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import { Row, Col, Table, Card, Form, Button } from "react-bootstrap";
 
 const Booking = () => {
@@ -17,6 +18,7 @@ const Booking = () => {
 
   return (
     <Fragment>
+      <Header />
       {/* Perbaikan */}
       <div className="container-booking">
         {/* Detail Pesanan */}
@@ -178,82 +180,56 @@ const Booking = () => {
                   <p>Detail Booking</p>
                 </div>
               </div>
-              <div className="gambar">
-                <Image src={Foto} alt="Sendok" rounded />
-                <p>Nama</p>
-                <p>Jam</p>
-                <p>Tanggal</p>
-                <p>Jenis</p>
-                <p>Tempat</p>
-                <p>Diskusi</p>
-              </div>
-              <div className="isi">
-                <p>Meet with Angelia</p>
-                <p>08:00 WIB</p>
-                <p>02-11-2020</p>
-                <p>Konsultasi</p>
-                <p>Coworking Space</p>
-                <p>2 Jam</p> */}
-      {/* <Button>X</Button> */}
+            </div>
+            <div className="gambar">
+              <Image src={Foto} alt="Sendok" rounded />
+              <p>Nama</p>
+              <p>Jam</p>
+              <p>Tanggal</p>
+              <p>Jenis</p>
+              <p>Tempat</p>
+              <p>Diskusi</p>
+            </div>
+            <div className="isi">
+              <p>Meet with Angelia</p>
+              <p>08:00 WIB</p>
+              <p>02-11-2020</p>
+              <p>Konsultasi</p>
+              <p>Coworking Space</p>
+              <p>2 Jam</p>
+              {/* <Button>X</Button> */}
       {/* </div>
-              <hr className="rounded" />
-            </Col>
-          </Row>
-        </Container>
-        <Container className="alamat">
-          <Row>
-            <Col>
-              <div className="judul">
-                <div className="detailalamat">
-                  <p>Detail Alamat</p>
-                </div>
-                <div className="ubahalamat">
-                  <Button variant="outline" className="btnubah">
-                    <BiEdit className="biedit" />
-                    <p>Ubah Alamat</p>
-                  </Button>
-                </div>
+            <hr className="rounded" />
+          </Col>
+        </Row>
+      </Container>
+      <Container className="alamat">
+        <Row>
+          <Col>
+            <div className="judul">
+              <div className="detailalamat">
+                <p>Info Anda</p>
               </div>
-              <div className="keteranganalamat">
-                <div className="detnama">
-                  <p>Muhammad Aziz</p>
-                </div>
-                <div className="detalamat">
-                  <p>
-                    Jalan Cilandak Town Square, 2, Jl. Cilandak Town Square
-                    No.2, RT.2/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta
-                    Selatan, Daerah Khusus Ibukota Jakarta 12430, Indonesia,
-                    Kecamatan Cilandak, Kota Jakarta Selatan, Daerah Khusus
-                    Ibukota Jakarta
-                  </p>
-                </div>
-                <div className="dettelp">
-                  <p>+6284348787834</p>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <Container className="waktupengiriman">
-          <Row>
-            <Col>
-              <div className="judul">
-                <div className="pilihwaktu">
-                  <p>Pilih Waktu Pengiriman</p>
-                </div>
-              </div>
-              <hr className="rounded" />
-              <div className="keteranganpengiriman">
-                <p>Slot Pagi</p>
-                <p className="hargapengiriman">Rp 20.000</p>
-                <Button className="btnpengiriman">Pilih</Button>
-                <hr className="rounded" />
-              </div>
-              <div className="keteranganpengiriman">
-                <p>Slot Siang</p>
-                <p className="slotpagi">Rp 20.000</p>
-                <Button className="slotpagi">Pilih</Button>
-                <hr className="rounded" />
+            </div>
+            <Form className="keteranganalamat">
+              <Form.Group controlId="formBasicName">
+                <Form.Label>Name :</Form.Label>
+                <Form.Control type="email" placeholder="Enter Name" />
+              </Form.Group>
+              <Form.Group controlId="formBasicTelp">
+                <Form.Label>No Telp :</Form.Label>
+                <Form.Control type="Number" placeholder="Enter No Telp" />
+              </Form.Group>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+      <Container className="waktupengiriman">
+        <Row>
+          <Col>
+            <div className="judul">
+              <div className="pilihwaktu">
+                <p>Pilih Waktu Pengiriman</p>
               </div>
               <div className="keteranganpengiriman">
                 <p>Slot Sore</p>
@@ -319,6 +295,8 @@ const Booking = () => {
           </Button>
         </Container>
       </div> */}
+
+      <Footer />
     </Fragment>
   );
 };
