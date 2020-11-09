@@ -1,5 +1,214 @@
 /* untuk responsive */
+.booking {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #4d4d4d;
+}
 
+.btn {
+  background-color: #78aff4;
+}
+
+.btn:hover {
+  background-color: #bedbff;
+}
+
+/* Font */
+.btnubah {
+  padding: 2vh;
+}
+
+.btnubah p {
+  font-size: 15px;
+}
+
+.biedit {
+  height: 5vh;
+  width: 5vh;
+}
+
+/* List */
+
+.detailtransaksi {
+  margin-top: 30vh !important;
+}
+
+.container {
+  background-color: #9ff9ff;
+  margin-top: 5vh;
+  color: #4d4d4d;
+}
+
+.judul {
+  text-align: start;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 3vh;
+}
+
+.judul div,
+p {
+  display: inline;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.detail,
+.detailalamat,
+.pilihwaktu {
+  margin-left: 15vh;
+}
+
+.detail p {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.harga {
+  margin-left: 100vh;
+}
+
+img,
+.dettelp {
+  float: left;
+  margin-left: 10vh;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+}
+
+.gambar {
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+}
+
+.gambar p {
+  display: inline;
+  margin-left: 15vh;
+}
+
+.isi {
+  margin-bottom: 40vh;
+}
+
+.isi p {
+  font-weight: 700 !important;
+  margin-left: 5vh;
+}
+
+/* Alamat */
+
+.alamat {
+  margin-top: 5vh;
+}
+
+.ubahalamat {
+  margin-left: 100vh;
+}
+
+.keteranganalamat {
+  text-align: start;
+  margin-left: 15vh;
+}
+
+.detnama,
+.dettelp {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detalamat,
+.dettelp {
+  margin-top: 10px;
+}
+
+.detalamat p {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+/* Waktu Pengiriman */
+
+.waktupengiriman {
+  text-align: start;
+}
+
+.judulpilihwaktu {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.keteranganpengiriman,
+.keteranganpembayaran {
+  display: inline;
+  margin-left: 15vh;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5vh;
+}
+
+hr.rounded {
+  border-top: 5px solid #78aff4;
+  border-radius: 5px;
+}
+
+.hargapengiriman,
+.btnpengiriman {
+  margin-left: 50vh;
+}
+
+.slotpagi {
+  margin-left: 49vh;
+}
+
+/* Pembayaran */
+
+.rekeningbca,
+.btnpembayaran {
+  margin-left: 35vh;
+}
+
+.rekeningbri {
+  margin-left: 36vh;
+}
+
+.rekeningmandiri {
+  margin-left: 29vh;
+}
+
+/* All Total */
+
+.alltotal {
+  text-align: start;
+}
+
+.alltotal p {
+  font-weight: 700;
+}
+
+.totalharga,
+.totalpayment {
+  margin-left: 15vh;
+  margin-top: 5vh;
+}
+
+.totalpayment {
+  margin-bottom: 5vh;
+}
+
+.totalprice {
+  margin-left: 50vh;
+}
+
+.paymentprice {
+  margin-left: 55vh;
+}
+
+.btnbayarsekarang {
+  font-size: 30px;
+  font-weight: 500;
+  padding-left: 70vh;
+  padding-right: 70vh;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }

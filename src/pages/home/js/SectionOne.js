@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Jumbotron, Container, Button, Row, Col } from "react-bootstrap";
 import "../css/SectionOne.css";
 
@@ -14,7 +15,11 @@ function SectionOne() {
             </h1>
           </div>
           <div className="container-sectionone">
-            <Button className="button-sectionone">Jadwalkan Pertemuan</Button>
+            <Button className="button-sectionone">
+              <Link to="/professional" style={{ textDecoration: "none" }}>
+                Jadwalkan Pertemuan
+              </Link>
+            </Button>
           </div>
           <Row>
             <Col>
