@@ -11,6 +11,7 @@ import Home from "./pages/home/js/Main";
 import Professional from "./pages/professional/Professional";
 import Detail from "./pages/detail/Detail";
 import Booking from "./pages/booking/Booking";
+import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import SignupUser from "./pages/signup/SignupUser";
 import SignupPro from "./pages/signup/SignupProfessional";
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/booking">
             <Booking />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/signup/:user">
             <SignupUser />

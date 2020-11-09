@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css";
 import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
+import Dropdown from "../dropdown/dropdwon";
+import "./Header.css";
 
 function Header() {
   return (
@@ -16,7 +17,9 @@ function Header() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto"></Nav>
+          <Nav className="mr-auto">
+            <Dropdown />
+          </Nav>
           <Nav>
             <NavItem>
               <Link className="nav-link" to="/">
@@ -24,7 +27,9 @@ function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link">About</Link>
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
             </NavItem>
             <NavItem>
               <Link className="nav-link">Chat</Link>
@@ -46,7 +51,7 @@ function Header() {
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/signuppro" style={{ textDecoration: "none" }}>
+              <Link to="/profil" style={{ textDecoration: "none" }}>
                 My Profile
               </Link>
             </Button>
