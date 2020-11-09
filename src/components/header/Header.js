@@ -22,7 +22,7 @@ function Header() {
           </Nav>
           <Nav>
             <NavItem>
-              <Link className="nav-link" to="/">
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </NavItem>

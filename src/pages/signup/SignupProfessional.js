@@ -68,6 +68,7 @@ function SignupProfessional() {
                 name="fullName"
                 value={proRegister.fullName}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -80,6 +81,7 @@ function SignupProfessional() {
                 name="email"
                 value={proRegister.email}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -92,6 +94,7 @@ function SignupProfessional() {
                 name="password"
                 value={proRegister.password}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -105,6 +108,7 @@ function SignupProfessional() {
                 name="pekerjaan"
                 value={proRegister.pekerjaan}
                 onChange={(event) => handleChange(event)}
+                required
               >
                 <option>---</option>
                 <option>Actress</option>
@@ -136,6 +140,7 @@ function SignupProfessional() {
                 name="lokasi"
                 value={proRegister.lokasi}
                 onChange={(event) => handleChange(event)}
+                required
               >
                 <option>---</option>
                 <option>Jakarta</option>

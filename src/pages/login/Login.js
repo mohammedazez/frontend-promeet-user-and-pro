@@ -56,6 +56,7 @@ function Login() {
                 name="email"
                 value={login.email}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -68,6 +69,7 @@ function Login() {
                 name="password"
                 value={login.password}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Button type="submit" className="buttona">
