@@ -67,6 +67,7 @@ function SignupUser() {
                 name="fullName"
                 value={register.fullName}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -79,6 +80,7 @@ function SignupUser() {
                 name="email"
                 value={register.email}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -91,6 +93,7 @@ function SignupUser() {
                 name="password"
                 value={register.password}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
             <Form.Group>
@@ -103,6 +106,7 @@ function SignupUser() {
                 name="numberPhone"
                 value={register.numberPhone}
                 onChange={(event) => handleChange(event)}
+                required
               />
             </Form.Group>
 
