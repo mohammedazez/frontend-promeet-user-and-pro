@@ -6,15 +6,12 @@ import "./Confirmation.css";
 // boostrap
 import { Image, Button, Container, Row, Col } from "react-bootstrap";
 
-// Foto
-import Foto from "../../assets/success/success.png";
-
 function Confirmation() {
   let history = useHistory();
 
   function handleClick() {
     try {
-      history.push("/");
+      history.push("/profil");
     } catch (error) {
       alert(error);
     }
@@ -44,8 +41,14 @@ function Confirmation() {
       <Container className="successbtn">
         <Row>
           <Col>
-            <div style={{ textAlign: "center" }}>
-              <Image src={Foto} />
+            <div>
+              <Image
+                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604844769/success_fcpipg.png"
+                alt="thankyou"
+                className="img-success"
+              />
+            </div>
+            <div>
               <h3>Terima kasih sudah pesan di Promeet.com</h3>
               <Button
                 style={{ border: "none" }}
