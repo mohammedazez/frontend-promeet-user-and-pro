@@ -1,3 +1,59 @@
+.section-signupb{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+
+}
+
+.gambar-sectionb{
+    width: 400px;
+    height: 650px;
+    display: flex;
+}
+
+.form-sectionb{
+    width: 400px;
+    height: 650px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #b8e5e1, #78aff4);
+    border-radius: 5%;
+      
+    
+}
+.formb{
+    font-family: 'Roboto', sans-serif;
+}
+
+.buttonb{
+    width: 250px;
+    background-image: linear-gradient(90deg, #3f74b5, #1e4370);
+}
+
+.option-signupb{
+    display: flex;
+    flex-direction: row;
+    font-size: smaller;
+}
+
+.label-formb{
+    margin-bottom: 0px;
+}
+
+.kolom-formb{
+    width: 250px;
+}
+
+.option-textb{
+    font-size: small;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
