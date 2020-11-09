@@ -1,204 +1,68 @@
+.container-booking {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+.card-booking {
+  background: #9ff9ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card-booking-pembayaran {
+  background: #9ff9ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding-top: 50px;
+}
+
+.judul-booking {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  color: #4d4d4d;
+}
+
+.img-booking {
+  max-width: 100%;
+  width: 193px;
+  height: 209px;
+}
+
+.container-card-booking {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.img-pembayaran-booking {
+  max-width: 100%;
+  width: auto;
+  height: 50px;
+}
+
 /* untuk responsive */
-.booking {
-  font-family: "Roboto";
-  font-weight: 700;
-  color: #4d4d4d;
-}
 
-.btn {
-  background-color: #78aff4;
-}
-
-.btn:hover {
-  background-color: #bedbff;
-}
-
-/* Font */
-.btnubah {
-  padding: 2vh;
-}
-
-.btnubah p {
-  font-size: 15px;
-}
-
-.biedit {
-  height: 5vh;
-  width: 5vh;
-}
-
-/* List */
-
-.detailtransaksi {
-  margin-top: 30vh !important;
-}
-
-.container {
-  background-color: #9ff9ff;
-  margin-top: 5vh;
-  color: #4d4d4d;
-}
-
-.judul {
-  text-align: start;
-  font-size: 25px;
-  font-weight: 700;
-  margin-top: 3vh;
-}
-
-.judul div,
-p {
-  display: inline;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.detail,
-.detailalamat,
-.pilihwaktu {
-  margin-left: 15vh;
-}
-
-.detail p {
-  font-size: 30px;
-  font-weight: 900;
-}
-
-.harga {
-  margin-left: 100vh;
-}
-
-.gambar img,
-.dettelp {
-  float: left;
-  margin-left: 10vh;
-  margin-bottom: 5vh;
-  margin-top: 3vh;
-}
-
-.gambar {
-  margin-top: 3vh;
-  margin-bottom: 5vh;
-}
-
-.gambar p {
-  display: inline;
-  margin-left: 15vh;
-}
-
-.isi {
-  margin-bottom: 40vh;
-}
-
-.isi p {
-  font-weight: 700 !important;
-  margin-left: 5vh;
-}
-
-/* Alamat */
-.judul p {
-  font-size: 30px;
-  font-weight: 900;
-}
-
-.alamat {
-  margin-top: 5vh;
-}
-
-.keteranganalamat {
-  text-align: start;
-  margin-left: 15vh;
-}
-
-/* Waktu Pengiriman */
-
-.waktupengiriman {
-  text-align: start;
-}
-
-.judulpilihwaktu {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.keteranganpengiriman,
-.keteranganpembayaran {
-  display: inline;
-  margin-left: 15vh;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 5vh;
-}
-
-hr.rounded {
-  border-top: 5px solid #78aff4;
-  border-radius: 5px;
-}
-
-.hargapengiriman,
-.btnpengiriman {
-  margin-left: 50vh;
-}
-
-.slotpagi {
-  margin-left: 49vh;
-}
-
-/* Pembayaran */
-
-.rekeningbca,
-.btnpembayaran {
-  margin-left: 35vh;
-}
-
-.rekeningbri {
-  margin-left: 36vh;
-}
-
-.rekeningmandiri {
-  margin-left: 29vh;
-}
-
-/* All Total */
-
-.alltotal {
-  text-align: start;
-}
-
-.alltotal p {
-  font-weight: 700;
-}
-
-.totalharga,
-.totalpayment {
-  margin-left: 15vh;
-  margin-top: 5vh;
-}
-
-.totalpayment {
-  margin-bottom: 5vh;
-}
-
-.totalprice {
-  margin-left: 50vh;
-}
-
-.paymentprice {
-  margin-left: 55vh;
-}
-
-.btnbayarsekarang {
-  font-size: 30px;
-  font-weight: 500;
-  padding-left: 70vh;
-  padding-right: 70vh;
-}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .container-booking {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+
+  .container-card-booking {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

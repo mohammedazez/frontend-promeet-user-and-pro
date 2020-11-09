@@ -1,29 +1,4 @@
 /* untuk responsive */
-.sidebar {
-  height: 300vh;
-  max-height: 300vh;
-  background-color: #9ff9ff;
-  width: 500px;
-}
-
-.sidebaritem {
-  max-height: 300vh;
-  height: 300vh;
-  background-color: #9ff9ff;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-
-.fotoprofil {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.sidebarketerangan {
-  margin-top: 10vh;
-}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }

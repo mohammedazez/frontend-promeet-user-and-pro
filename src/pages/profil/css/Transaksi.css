@@ -1,28 +1,4 @@
 /* untuk responsive */
-.profiluser {
-  margin-top: 14vh;
-  display: flex;
-}
-
-.profilusercard {
-  flex: 1 1 0%;
-}
-
-.card {
-  width: 200vh;
-  height: 100vh;
-  text-align: start;
-}
-
-.card img,
-.card h3,
-.card div {
-  display: inline;
-}
-
-.carddetailsinfo {
-  margin-top: 5vh;
-}
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
 }
