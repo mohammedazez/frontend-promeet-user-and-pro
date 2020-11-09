@@ -38,14 +38,14 @@ function App() {
           <Route path="/booking">
             <Booking />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/signup/:user">
+          <Route path="/signup/user">
             <SignupUser />
           </Route>
-          <Route path="/signup/:professional">
+          <Route path="/signup/pro">
             <SignupPro />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/confirmation">
             <Confirmation />
