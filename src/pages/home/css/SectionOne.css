@@ -1,9 +1,9 @@
 .jumbotron {
-  background: linear-gradient(180deg, #656565 0%, rgba(255, 255, 255, 0) 100%),
+  background: linear-gradient(180deg, #ededff 0%, rgba(255, 255, 255, 0) 100%),
     url(https://res.cloudinary.com/def4tydoe/image/upload/v1604378233/jumbotron_jiqcl4.jpg);
   color: white !important;
   /* background-attachment: fixed; */
-  padding-top: 15rem;
+  padding-top: 10rem;
   padding-bottom: 15rem;
   max-width: 100%;
   -webkit-background-size: 100% 100%;
@@ -17,12 +17,22 @@
 }
 
 .judul-sectionone {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 60px;
+  color: #4d4d4d;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 h3 {
+  font-style: normal;
+  font-weight: bold;
   font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -34,7 +44,8 @@ h3 {
 }
 
 .button-sectionone {
-  background-color: #a00000;
+  background: #78aff4;
+  border-radius: 8px;
 }
 
 /* untuk responsive */
@@ -48,6 +59,7 @@ h3 {
   .jumbotron {
     padding-top: 10rem;
     padding-bottom: 10rem;
+    background-size: cover;
   }
 
   .judul-sectionone {

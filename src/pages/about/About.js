@@ -1,18 +1,16 @@
 import React from "react";
-import "./Profil.css";
+import "./About.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
-function ProfilProfessional() {
+function about() {
   return (
     <div>
       <Header />
-      <div>
-        <h1>Profil for professional</h1>
-      </div>
+      <h1>About us</h1>
       <Footer />
     </div>
   );
 }
 
-export default ProfilProfessional;
+export default about;

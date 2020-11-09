@@ -3,6 +3,8 @@ import { Card, Button, Col, Row, Image } from "react-bootstrap";
 
 // css
 import "./Profil.css";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 // foto
 import Foto from "../../assets/profiluser/Foto Profil.png";
