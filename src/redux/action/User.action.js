@@ -46,7 +46,8 @@ export const userRegisterAction = (values, event, history) => (dispatch) => {
         history.push("/login");
       } else {
         Swal.fire({
-          title: `${response.data}`,
+          title: "Gagal Mendaftar",
+          text: `${response.data}`,
           icon: "warning",
           timer: 3000,
         });
@@ -65,7 +66,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
     .then((response) => {
       console.log("res", response);
       dispatch(setProRegister(response.data.user));
-      if (response.data !== "email sudah tersedia") {
+      if (response.data !== "Email Sudah Tersedia") {
         Swal.fire({
           title: "Berhasil mendaftar",
           icon: "success",
@@ -74,7 +75,8 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
         history.push("/login");
       } else {
         Swal.fire({
-            title: `${response.data}`,
+            title: "Gagal Mendaftar",
+            text: `${response.data}`,
             icon: "warning",
             timer: 3000,
           });
