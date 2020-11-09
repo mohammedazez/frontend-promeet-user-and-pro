@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import professional from "./Professional.reducers";
-// import booking from "./Booking.reducers";
+import user from "./User.reducers";
 
 const rootReducers = combineReducers({
   professional,
-  // booking,
+  user,
 });
 
 export default rootReducers;

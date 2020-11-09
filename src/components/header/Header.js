@@ -35,7 +35,7 @@ function Header() {
               <Link className="nav-link">Chat</Link>
             </NavItem>
             <Button className="button-navbar">
-              <Link to="/signuppro" style={{ textDecoration: "none" }}>
+              <Link to="/signup/pro" style={{ textDecoration: "none" }}>
                 Jadi Konsultan
               </Link>
             </Button>
@@ -46,7 +46,7 @@ function Header() {
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/signupuser" style={{ textDecoration: "none" }}>
+              <Link to="/signup/user" style={{ textDecoration: "none" }}>
                 Sign Up
               </Link>
             </Button>
