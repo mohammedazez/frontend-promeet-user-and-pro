@@ -1,27 +1,28 @@
 /* untuk responsive */
-.profiluser {
-  margin-top: 14vh;
+.sidebar {
+  height: 300vh;
+  max-height: 300vh;
+  background-color: #9ff9ff;
+  width: 500px;
+}
+
+.sidebaritem {
+  max-height: 300vh;
+  height: 300vh;
+  background-color: #9ff9ff;
   display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
-.profilusercard {
-  flex: 1 1 0%;
+.fotoprofil {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.card {
-  width: 200vh;
-  height: 100vh;
-  text-align: start;
-}
-
-.card img,
-.card h3,
-.card div {
-  display: inline;
-}
-
-.carddetailsinfo {
-  margin-top: 5vh;
+.sidebarketerangan {
+  margin-top: 10vh;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
