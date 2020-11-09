@@ -3,8 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Components
-// import Header from "./components/header/Header";
-// import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 // Pages
 import Home from "./pages/home/js/Main";
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        
+        <Header />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -44,7 +44,7 @@ function App() {
           <Route path="/signup/pro">
             <SignupPro />
           </Route>
-    <Route path="/about">
+          <Route path="/about">
             <About />
           </Route>
           <Route path="/confirmation">
@@ -63,7 +63,7 @@ function App() {
             <Forminput />
           </Route>
         </Switch>
-      
+        <Footer />
       </Router>
     </div>
   );
