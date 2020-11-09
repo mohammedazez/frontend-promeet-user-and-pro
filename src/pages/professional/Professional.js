@@ -3,6 +3,8 @@ import { Row, Button } from "react-bootstrap";
 import { FcSearch } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import Movepage from "../../components/pagination/Movepage";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import "./Professional.css";
 
 function Professional() {
@@ -87,88 +89,92 @@ function Professional() {
   }
 
   return (
-    <div className="containerprofessional">
-      {/* Search Bar */}
-      <div>
-        <div className="search">
-          <Button>
-            <i className="icon">
-              <FcSearch />
-            </i>
-          </Button>
-          <input
-            type="text"
-            className="searchTerm"
-            placeholder="Cari berdasarkan pekerjaan"
-            onChange={handlechange}
-            value={input}
-          />
+    <div>
+      <Header />
+      <div className="containerprofessional">
+        {/* Search Bar */}
+        <div>
+          <div className="search">
+            <Button>
+              <i className="icon">
+                <FcSearch />
+              </i>
+            </Button>
+            <input
+              type="text"
+              className="searchTerm"
+              placeholder="Cari berdasarkan pekerjaan"
+              onChange={handlechange}
+              value={input}
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="containerfilter">
-        {/* Filter Lokasi */}
-        <div className="box">
-          <select>
-            <option>Jakarta</option>
-            <option>Depok</option>
-            <option>Bekasi</option>
-            <option>Bogor</option>
-            <option>Tangerang</option>
-          </select>
+        <div className="containerfilter">
+          {/* Filter Lokasi */}
+          <div className="box">
+            <select>
+              <option>Jakarta</option>
+              <option>Depok</option>
+              <option>Bekasi</option>
+              <option>Bogor</option>
+              <option>Tangerang</option>
+            </select>
+          </div>
+          {/* Filter harga */}
+          <div className="box">
+            <select>
+              <option>Termurah</option>
+              <option>Termahal</option>
+            </select>
+          </div>
+          {/* Filter kategori */}
+          <div className="box">
+            <select>
+              <option>Frontend Developer</option>
+              <option>Backend Developer</option>
+              <option>Fullstack Developer</option>
+            </select>
+          </div>
         </div>
-        {/* Filter harga */}
-        <div className="box">
-          <select>
-            <option>Termurah</option>
-            <option>Termahal</option>
-          </select>
+        <div className="tulisanpenandaprofessional">
+          <p>Home</p>
+          <p>{" > "}</p>
+          <p>Software Engineer</p>
         </div>
-        {/* Filter kategori */}
-        <div className="box">
-          <select>
-            <option>Frontend Developer</option>
-            <option>Backend Developer</option>
-            <option>Fullstack Developer</option>
-          </select>
-        </div>
-      </div>
-      <div className="tulisanpenandaprofessional">
-        <p>Home</p>
-        <p>{" > "}</p>
-        <p>Software Engineer</p>
-      </div>
-      <h1 className="judulprofessional">Software Engineer</h1>
-      <Row className="rowresponsive">
-        {professional.map((people, index) => (
-          <div className="containerprofessionallist" key={index}>
-            <div className="cardprofessional">
-              <img
-                alt={"users here"}
-                src={people.img}
-                height={144}
-                width={179}
-              />
-              <div className="card-body">
-                <h5 className="cardtitle">{people.nama}</h5>
-                <p>
-                  {people.pekerjaan} di {people.lokasi}
-                </p>
-                <br />
-                <p>Rp {people.tarif} Per/1 Jam</p>
-                <button className="btn btn-sm follow ">
-                  <Link to="/detail" style={{ textDecoration: "none" }}>
-                    Kirim Pertemuan
-                  </Link>
-                </button>
+        <h1 className="judulprofessional">Software Engineer</h1>
+        <Row className="rowresponsive">
+          {professional.map((people, index) => (
+            <div className="containerprofessionallist" key={index}>
+              <div className="cardprofessional">
+                <img
+                  alt={"users here"}
+                  src={people.img}
+                  height={144}
+                  width={179}
+                />
+                <div className="card-body">
+                  <h5 className="cardtitle">{people.nama}</h5>
+                  <p>
+                    {people.pekerjaan} di {people.lokasi}
+                  </p>
+                  <br />
+                  <p>Rp {people.tarif} Per/1 Jam</p>
+                  <button className="btn btn-sm follow ">
+                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                      Kirim Pertemuan
+                    </Link>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Row>
-      <div className="moveprofessional">
-        <Movepage />
+          ))}
+        </Row>
+        <div className="moveprofessional">
+          <Movepage />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

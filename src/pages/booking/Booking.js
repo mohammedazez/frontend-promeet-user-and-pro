@@ -1,11 +1,9 @@
 import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
-// import "./Booking.css";
 import "./Perbaikan.css";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import { Row, Col, Table, Card, Form, Button } from "react-bootstrap";
-
-
-
 
 const Booking = () => {
   let history = useHistory();
@@ -20,6 +18,7 @@ const Booking = () => {
 
   return (
     <Fragment>
+      <Header />
       {/* Perbaikan */}
       <div className="container-booking">
         {/* Detail Pesanan */}
@@ -199,7 +198,7 @@ const Booking = () => {
               <p>Coworking Space</p>
               <p>2 Jam</p>
               {/* <Button>X</Button> */}
-            </div>
+      {/* </div>
             <hr className="rounded" />
           </Col>
         </Row>
@@ -296,6 +295,8 @@ const Booking = () => {
           </Button>
         </Container>
       </div> */}
+
+      <Footer />
     </Fragment>
   );
 };

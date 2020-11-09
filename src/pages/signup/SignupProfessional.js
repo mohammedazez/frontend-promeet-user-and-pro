@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { proRegisterAction } from "../../redux/action/User.action";
@@ -15,9 +15,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-
 function SignupProfessional() {
-
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -26,11 +24,11 @@ function SignupProfessional() {
     email: "",
     password: "",
     pekerjaan: "",
-    lokasi:"",
+    lokasi: "",
   });
 
   // --------------- Handlechange form ---------------
-  const handleChange = (event) =>{
+  const handleChange = (event) => {
     setProRegister({
       ...proRegister,
       [event.target.name]: event.target.value,
@@ -38,7 +36,7 @@ function SignupProfessional() {
   };
 
   return (
-    <div>
+    <div className="containersignup">
       <Container>
         <Row>
           <Col></Col>
@@ -46,10 +44,20 @@ function SignupProfessional() {
             <div className="section-signupb">
               {/* <Card className="gambar-section"></Card> */}
               <Card className="form-sectionb">
+                <Link to="/">
+                  <img
+                    src="https://res.cloudinary.com/def4tydoe/image/upload/v1604382830/promeet_transparan_rvyoda.png"
+                    alt="logo"
+                    className="logosignlog"
+                  />
+                </Link>
                 <h4>Sign Up</h4>
-                <Form onSubmit={(event) => {
+                <Form
+                  onSubmit={(event) => {
                     dispatch(proRegisterAction(proRegister, event, history));
-                  }} className="formb">
+                  }}
+                  className="formb"
+                >
                   <Form.Group>
                     <Form.Label className="label-formb">Full Name</Form.Label>
                     <Form.Control
@@ -136,20 +144,23 @@ function SignupProfessional() {
                       <option>Depok</option>
                       <option>Tanggerang</option>
                       <option>Bekasi</option>
-                      
                     </Form.Control>
                   </Form.Group>
 
-                  <Button type="submit" className="buttonb" >
+                  <Button type="submit" className="buttonb">
                     Sign Up
                   </Button>
                 </Form>
                 <div className="option-signupb">
-                  <h6 className="option-textb">Sudah punya akun ?, silahkan </h6>
+                  <h6 className="option-textb">
+                    Sudah punya akun ?, silahkan{" "}
+                  </h6>
                   <Link to="/login">Login</Link>
                 </div>
                 <div className="option-signupb">
-                  <h6 className="option-textb">Info lebih lanjut, kembali ke </h6>
+                  <h6 className="option-textb">
+                    Info lebih lanjut, kembali ke{" "}
+                  </h6>
                   <Link to="/">Home</Link>
                 </div>
               </Card>

@@ -2,12 +2,15 @@ import React, { Fragment } from "react";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Detailaccordion from "../../components/accordion/Detailaccordion";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
 
 function DetailProduk() {
   return (
     <Fragment>
+      <Header />
       <div className="container-detail">
         <div className="tulisan-penanda-detail">
           <p>Home</p>
@@ -88,6 +91,7 @@ function DetailProduk() {
       <div>
         <SliderProduk />
       </div>
+      <Footer />
     </Fragment>
   );
 }

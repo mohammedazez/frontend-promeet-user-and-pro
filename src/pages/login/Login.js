@@ -36,7 +36,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="containersignup">
       <Container>
         <Row>
           <Col></Col>
@@ -72,7 +72,7 @@ function Login() {
                       onChange={(event) => handleChange(event)}
                     />
                   </Form.Group>
-                  <Button  type="submit" className="buttona" >
+                  <Button type="submit" className="buttona">
                     Login
                   </Button>
                 </Form>
