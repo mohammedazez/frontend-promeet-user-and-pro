@@ -117,7 +117,6 @@ function Professional() {
               <option>Jakarta</option>
               <option>Depok</option>
               <option>Bekasi</option>
-              <option>Bogor</option>
               <option>Tangerang</option>
             </select>
           </div>

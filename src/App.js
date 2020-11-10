@@ -16,6 +16,9 @@ import Forminput from "./pages/forminput/Forminput";
 import ProfilUser from "./pages/profil/user/js/ProfilUser";
 import BookingSayaUser from "./pages/profil/user/js/BookingSayaUser";
 import CompletedUser from "./pages/profil/user/js/CompletedUser";
+import ProfilPro from "./pages/profil/pro/js/ProfilPro";
+import PesananSayaPro from "./pages/profil/pro/js/PesananSayaPro";
+import CompletedPro from "./pages/profil/pro/js/CompletedPro";
 
 function App() {
   return (
@@ -60,6 +63,15 @@ function App() {
           </Route>
           <Route path="/completed/user">
             <CompletedUser />
+          </Route>
+          <Route path="/profil/pro">
+            <ProfilPro />
+          </Route>
+          <Route path="/pesanansaya/pro">
+            <PesananSayaPro />
+          </Route>
+          <Route path="/completed/pro">
+            <CompletedPro />
           </Route>
         </Switch>
       </Router>

@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
-import Detailaccordion from "../../components/accordion/Detailaccordion";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Tabs, Tab } from "react-bootstrap";
 
 function DetailProduk() {
   return (
@@ -85,8 +84,47 @@ function DetailProduk() {
           </Col>
         </Row>
       </div>
-      <div>
-        <Detailaccordion />
+      <div className="container-deskripsi-detail">
+        <div style={{ backgroundColor: "#30F5FF" }}>
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            <Tab eventKey="tentang" title="Tentang">
+              <p>
+                When to the sessions of sweet silent thought I summon up
+                remembrance of things past, I sigh the lack of many a thing I
+                sought, And with old woes new wail my dear time's waste: Then
+                can I drown an eye, unused to flow, For precious friends hid in
+                death's dateless night, And weep afresh love's long since
+                cancell'd woe, And moan the expense of many a vanish'd sight:
+                Then can I grieve at grievances foregone, And heavily from woe
+                to woe tell o'er
+              </p>
+            </Tab>
+            <Tab eventKey="pengalaman" title="Pengalaman">
+              <p>
+                When to the sessions of sweet silent thought I summon up
+                remembrance of things past, I sigh the lack of many a thing I
+                sought, And with old woes new wail my dear time's waste: Then
+                can I drown an eye, unused to flow, For precious friends hid in
+                death's dateless night, And weep afresh love's long since
+                cancell'd woe, And moan the expense of many a vanish'd sight:
+                Then can I grieve at grievances foregone, And heavily from woe
+                to woe tell o'er
+              </p>
+            </Tab>
+            <Tab eventKey="contact" title="Contact">
+              <p>
+                When to the sessions of sweet silent thought I summon up
+                remembrance of things past, I sigh the lack of many a thing I
+                sought, And with old woes new wail my dear time's waste: Then
+                can I drown an eye, unused to flow, For precious friends hid in
+                death's dateless night, And weep afresh love's long since
+                cancell'd woe, And moan the expense of many a vanish'd sight:
+                Then can I grieve at grievances foregone, And heavily from woe
+                to woe tell o'er
+              </p>
+            </Tab>
+          </Tabs>
+        </div>
       </div>
       <div>
         <SliderProduk />

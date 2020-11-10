@@ -45,7 +45,6 @@ function Header() {
               </Link>
             </Button>
             <Button className="button-navbar">
-              {" "}
               <Link
                 to="/login"
                 style={{ textDecoration: "none", color: "white" }}
@@ -67,7 +66,7 @@ function Header() {
                 <a className="teks-kebawah" href="/profil/user">
                   Profile User
                 </a>
-                <a className="teks-kebawah" href="#profilpro">
+                <a className="teks-kebawah" href="/profil/pro">
                   Profile Pro
                 </a>
                 <a className="teks-kebawah" href="#logout">
