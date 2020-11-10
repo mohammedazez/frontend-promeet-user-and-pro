@@ -13,7 +13,8 @@ import SignupUser from "./pages/signup/SignupUser";
 import SignupPro from "./pages/signup/SignupProfessional";
 import Confirmation from "./pages/confirmation/Confirmation";
 import Forminput from "./pages/forminput/Forminput";
-import Sidebar from "./pages/profil/Sidebar";
+import ProfilUser from "./pages/profil/user/ProfilUser";
+import TransaksiUser from "./pages/profil/user/TransaksiUser";
 
 function App() {
   return (
@@ -50,8 +51,11 @@ function App() {
           <Route path="/forminput">
             <Forminput />
           </Route>
-          <Route path="/sidebar">
-            <Sidebar />
+          <Route path="/profil/user">
+            <ProfilUser />
+          </Route>
+          <Route path="/transaksi/user">
+            <TransaksiUser />
           </Route>
         </Switch>
       </Router>

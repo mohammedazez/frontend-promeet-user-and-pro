@@ -1,13 +1,10 @@
 import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 export default function sidebar() {
   return (
     <div>
-      <Header />
       <div className="container-sidebar">
         <div className="sidebar-left">
           <img
@@ -29,7 +26,7 @@ export default function sidebar() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/profilsaya">Profil saya</Link>
+                  <Link to="/profil/user">Profil saya</Link>
                 </strong>
               </p>
             </div>
@@ -47,7 +44,9 @@ export default function sidebar() {
             </div>
             <div>
               <p style={{ marginTop: "4px" }}>
-                <strong>Transaksi</strong>
+                <strong>
+                  <Link to="/transaksi/user">Transaksi</Link>
+                </strong>
               </p>
             </div>
           </div>
@@ -68,26 +67,8 @@ export default function sidebar() {
               </p>
             </div>
           </div>
-          <hr className="garispemisah-sectionfour" />
-          {/* Edit profil */}
-          <div className="grid-sidebar">
-            <div className="icon-sidebar-align">
-              <img
-                src="https://i.ibb.co/znTXjv6/perfil.png"
-                alt=""
-                height="26.25px"
-                width="26.25px"
-              />
-            </div>
-            <div>
-              <p style={{ marginTop: "4px" }}>
-                <strong>Edit profil</strong>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

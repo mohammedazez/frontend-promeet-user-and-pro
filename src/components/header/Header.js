@@ -50,7 +50,7 @@ function Header() {
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/sidebar" style={{ textDecoration: "none" }}>
+              <Link to="/profil/user" style={{ textDecoration: "none" }}>
                 My Profile
               </Link>
             </Button>
