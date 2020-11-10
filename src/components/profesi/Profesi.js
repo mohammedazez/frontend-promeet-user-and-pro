@@ -167,7 +167,7 @@ function Profesi() {
                 />
               </Link>
               <Link to="/professional" style={{ textDecoration: "none" }}>
-                <p className="p-profesi">marketing</p>
+                <p className="p-profesi">Marketing</p>
               </Link>
             </Col>
           </Row>

@@ -32,28 +32,49 @@ function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link">Chat</Link>
+              <Link to="/" className="nav-link">
+                Contact
+              </Link>
             </NavItem>
             <Button className="button-navbar">
-              <Link to="/signup/pro" style={{ textDecoration: "none" }}>
+              <Link
+                to="/signup/pro"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Jadi Konsultan
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/login" style={{ textDecoration: "none" }}>
+              {" "}
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Login
               </Link>
             </Button>
             <Button className="button-navbar">
-              <Link to="/signup/user" style={{ textDecoration: "none" }}>
+              <Link
+                to="/signup/user"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Sign Up
               </Link>
             </Button>
-            <Button className="button-navbar">
-              <Link to="/profil/user" style={{ textDecoration: "none" }}>
-                My Profile
-              </Link>
-            </Button>
+            <div className="kebawah">
+              <button className="kebawah-tombol">My Profile</button>
+              <div className="kebawah-content">
+                <a className="teks-kebawah" href="/profil/user">
+                  Profile User
+                </a>
+                <a className="teks-kebawah" href="#profilpro">
+                  Profile Pro
+                </a>
+                <a className="teks-kebawah" href="#logout">
+                  Logout
+                </a>
+              </div>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

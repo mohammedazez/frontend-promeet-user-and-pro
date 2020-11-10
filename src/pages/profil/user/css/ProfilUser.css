@@ -1,14 +1,8 @@
-.container-row-profil {
+.container-row-profilsaya {
   max-width: 100%;
 }
 
-/* Profil saya user */
 .container-profilsaya {
-  padding: 128px;
-}
-
-/* Transaksi user  */
-.container-transaksiuser {
   padding: 128px;
 }
 
@@ -20,14 +14,8 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  /* Profil saya user */
   .container-profilsaya {
-    padding: 0px;
-  }
-
-  /* Transaksi user  */
-  .container-transaksiuser {
-    padding: 0px;
+    padding: 30px;
   }
 }
 

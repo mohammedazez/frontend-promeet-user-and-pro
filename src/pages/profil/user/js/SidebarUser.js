@@ -1,8 +1,8 @@
 import React from "react";
-import "./Sidebar.css";
+import "../css/SidebarUser.css";
 import { Link } from "react-router-dom";
 
-export default function sidebar() {
+export default function SidebarUser() {
   return (
     <div>
       <div className="container-sidebar">
@@ -32,7 +32,7 @@ export default function sidebar() {
             </div>
           </div>
           <hr className="garispemisah-sectionfour" />
-          {/* Transaksi */}
+          {/* Booking */}
           <div className="grid-sidebar">
             <div className="icon-sidebar-align">
               <img
@@ -45,7 +45,26 @@ export default function sidebar() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/transaksi/user">Transaksi</Link>
+                  <Link to="/bookingsaya/user">Booking</Link>
+                </strong>
+              </p>
+            </div>
+          </div>
+          <hr className="garispemisah-sectionfour" />
+          {/* Completed */}
+          <div className="grid-sidebar">
+            <div className="icon-sidebar-align">
+              <img
+                src="https://i.ibb.co/Gsr7qyX/notification.png"
+                alt=""
+                height="26.25px"
+                width="26.25px"
+              />
+            </div>
+            <div>
+              <p style={{ marginTop: "4px" }}>
+                <strong>
+                  <Link to="/completed/user">Completed</Link>
                 </strong>
               </p>
             </div>
