@@ -89,38 +89,54 @@ function DetailProduk() {
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
             <Tab eventKey="tentang" title="Tentang">
               <p>
-                When to the sessions of sweet silent thought I summon up
-                remembrance of things past, I sigh the lack of many a thing I
-                sought, And with old woes new wail my dear time's waste: Then
-                can I drown an eye, unused to flow, For precious friends hid in
-                death's dateless night, And weep afresh love's long since
-                cancell'd woe, And moan the expense of many a vanish'd sight:
-                Then can I grieve at grievances foregone, And heavily from woe
-                to woe tell o'er
+                Hi, let me introduce my self my full name is Angeia Jolie I am a
+                Software Engineer I specialize in a variety of skills, namely
+                the development what technology that i use MERN stack MonggoDB,
+                Express JS, React Js, and Node JS, state, Software engineering
+                concepts, design patterns, and algorithms, UI & UX to code,
+                Testing / Debugging and I am ready to collaborate with the team.
+                My passion is a combination of business and information
+                technology.
               </p>
             </Tab>
             <Tab eventKey="pengalaman" title="Pengalaman">
-              <p>
-                When to the sessions of sweet silent thought I summon up
-                remembrance of things past, I sigh the lack of many a thing I
-                sought, And with old woes new wail my dear time's waste: Then
-                can I drown an eye, unused to flow, For precious friends hid in
-                death's dateless night, And weep afresh love's long since
-                cancell'd woe, And moan the expense of many a vanish'd sight:
-                Then can I grieve at grievances foregone, And heavily from woe
-                to woe tell o'er
-              </p>
+              <ul>
+                <li>Software Engineer at Google 2017-2019</li>
+                <li>Software Engineer at Microsoft 2019-2020</li>
+                <li>Software Engineer at Microsoft 2019-2020</li>
+              </ul>
             </Tab>
-            <Tab eventKey="contact" title="Contact">
+            <Tab eventKey="term" title="Terms and Condition">
               <p>
-                When to the sessions of sweet silent thought I summon up
-                remembrance of things past, I sigh the lack of many a thing I
-                sought, And with old woes new wail my dear time's waste: Then
-                can I drown an eye, unused to flow, For precious friends hid in
-                death's dateless night, And weep afresh love's long since
-                cancell'd woe, And moan the expense of many a vanish'd sight:
-                Then can I grieve at grievances foregone, And heavily from woe
-                to woe tell o'er
+                <ul>
+                  <li>
+                    1.Untuk menjamin keamanan bersama kami terlebih dahulu
+                    meminta data pribadi yang diperlukan dari user.
+                  </li>
+                  <li>
+                    <h5>Tetap patuhi peraturan protokol kesehatan</h5>
+                  </li>
+                  <li> 1. Tetap waspada dan tidak panik.</li>
+                  <li>
+                    2. Hindari keramaian baik itu tempat tertutup maupun tempat
+                    terbuka.
+                  </li>
+                  <li>
+                    3. Gunakan masker di mana saja dan kapan saja bahkan dalam
+                    ruangan.
+                  </li>
+                  <li>
+                    4. Ciptakan ruangan dengan ventilasi yang baik seperti,
+                    membuka jendela sesering mungkin.
+                  </li>
+                  <li>
+                    5. Tetap jaga kebersihan tangan serta hindari menyentuh
+                    bagian wajah sebelum mencuci tangan.
+                  </li>
+                  <li>
+                    6. Selalu terapkan jaga jarak pada aktivitas sehari-hari.
+                  </li>
+                </ul>
               </p>
             </Tab>
           </Tabs>

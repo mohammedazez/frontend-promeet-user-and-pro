@@ -63,15 +63,15 @@ function Header() {
             <div className="kebawah">
               <button className="kebawah-tombol">My Profile</button>
               <div className="kebawah-content">
-                <a className="teks-kebawah" href="/profil/user">
-                  Profile User
-                </a>
-                <a className="teks-kebawah" href="/profil/pro">
-                  Profile Pro
-                </a>
-                <a className="teks-kebawah" href="#logout">
-                  Logout
-                </a>
+                <Link to="/profil/user">
+                  <p className="teks-kebawah">Profile User</p>
+                </Link>
+                <Link to="/profil/pro">
+                  <p className="teks-kebawah">Profile Pro</p>
+                </Link>
+                <Link to="/logout">
+                  <p className="teks-kebawah">Logout</p>
+                </Link>
               </div>
             </div>
           </Nav>

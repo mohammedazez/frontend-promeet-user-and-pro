@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/CompletedPro.css";
-import { Row, Col, Card, Table } from "react-bootstrap";
+import { Row, Col, Card, Table, Button } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
@@ -23,13 +23,14 @@ function CompletedPro() {
                   <thead>
                     <tr>
                       <th>Photo</th>
+                      <th>Customer</th>
                       <th>Nama</th>
                       <th>Tanggal Pertemuan</th>
                       <th>Jam</th>
                       <th>Jenis</th>
                       <th>Tempat</th>
                       <th>Durasi</th>
-                      <th>Telp Konsultan</th>
+                      <th>Telp User</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -41,6 +42,7 @@ function CompletedPro() {
                           className="foto-completedpro"
                         />
                       </td>
+                      <td>The girl of snow</td>
                       <td>Meeting with Angelia</td>
                       <td>02-11-2020</td>
                       <td>08:00 WIB</td>
@@ -52,11 +54,12 @@ function CompletedPro() {
                   </tbody>
                 </Table>
                 <h4>Note:</h4>
-                <p>*Mohon jangan menyebar luaskan kontak milik Konsultan. </p>
+                <p>*Mohon jangan menyebar luaskan kontak milik User. </p>
                 <p>*Mohon datang ke tempat jam 07:30 WIB.</p>
                 <p>
-                  *Jika belum datang sebelum jam 09:00 WIB Maka akan di cancel.{" "}
+                  *Jika belum datang sebelum jam 09:00 WIB Maka akan di cancel.
                 </p>
+                <Button>Cek Profil User</Button>
               </div>
             </Card>
           </Col>

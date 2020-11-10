@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/CompletedUser.css";
-import { Row, Col, Card, Table } from "react-bootstrap";
+import { Row, Col, Card, Table, Button } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
@@ -57,6 +57,7 @@ function CompletedUser() {
                 <p>
                   *Jika belum datang sebelum jam 09:00 WIB Maka akan di cancel.{" "}
                 </p>
+                <Button>Cek Alamat Lengkap</Button>
               </div>
             </Card>
           </Col>
