@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
-import Detailaccordion from "../../components/accordion/Detailaccordion";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Tabs, Tab } from "react-bootstrap";
 
 function DetailProduk() {
   return (
@@ -85,8 +84,63 @@ function DetailProduk() {
           </Col>
         </Row>
       </div>
-      <div>
-        <Detailaccordion />
+      <div className="container-deskripsi-detail">
+        <div style={{ backgroundColor: "#30F5FF" }}>
+          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+            <Tab eventKey="tentang" title="Tentang">
+              <p>
+                Hi, let me introduce my self my full name is Angeia Jolie I am a
+                Software Engineer I specialize in a variety of skills, namely
+                the development what technology that i use MERN stack MonggoDB,
+                Express JS, React Js, and Node JS, state, Software engineering
+                concepts, design patterns, and algorithms, UI & UX to code,
+                Testing / Debugging and I am ready to collaborate with the team.
+                My passion is a combination of business and information
+                technology.
+              </p>
+            </Tab>
+            <Tab eventKey="pengalaman" title="Pengalaman">
+              <ul>
+                <li>Software Engineer at Google 2017-2019</li>
+                <li>Software Engineer at Microsoft 2019-2020</li>
+                <li>Software Engineer at Microsoft 2019-2020</li>
+              </ul>
+            </Tab>
+            <Tab eventKey="term" title="Terms and Condition">
+              <p>
+                <ul>
+                  <li>
+                    1.Untuk menjamin keamanan bersama kami terlebih dahulu
+                    meminta data pribadi yang diperlukan dari user.
+                  </li>
+                  <li>
+                    <h5>Tetap patuhi peraturan protokol kesehatan</h5>
+                  </li>
+                  <li> 1. Tetap waspada dan tidak panik.</li>
+                  <li>
+                    2. Hindari keramaian baik itu tempat tertutup maupun tempat
+                    terbuka.
+                  </li>
+                  <li>
+                    3. Gunakan masker di mana saja dan kapan saja bahkan dalam
+                    ruangan.
+                  </li>
+                  <li>
+                    4. Ciptakan ruangan dengan ventilasi yang baik seperti,
+                    membuka jendela sesering mungkin.
+                  </li>
+                  <li>
+                    5. Tetap jaga kebersihan tangan serta hindari menyentuh
+                    bagian wajah sebelum mencuci tangan.
+                  </li>
+                  <li>
+                    6. Selalu terapkan jaga jarak pada aktivitas sehari-hari.
+                  </li>
+                </ul>
+              </p>
+            </Tab>
+          </Tabs>
+        </div>
       </div>
       <div>
         <SliderProduk />
