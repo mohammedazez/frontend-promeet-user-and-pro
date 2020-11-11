@@ -10,7 +10,7 @@ function Confirmation() {
 
   function handleClick() {
     try {
-      history.push("/profil");
+      history.push("/bookingsaya/user");
     } catch (error) {
       alert(error);
     }
@@ -56,7 +56,7 @@ function Confirmation() {
                   className="btnconfirmation"
                   onClick={handleClick}
                 >
-                  <span>To Profile</span>
+                  <span>Cek Pesanan Saya</span>
                 </Button>
               </div>
             </Col>

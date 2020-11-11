@@ -1,13 +1,15 @@
-.container-accordian-detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
+.container-row-profilsayapro {
+  max-width: 100%;
 }
 
-.card-accordian-detail {
-  padding-left: 600px;
-  padding-right: 600px;
+.container-profilsayapro {
+  padding: 128px;
+}
+
+.foto-profilprosaya {
+  max-width: 100%;
+  height: auto;
+  width: 500px;
 }
 
 /* untuk responsive */
@@ -18,9 +20,8 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  .card-accordian-detail {
-    padding-left: 0px;
-    padding-right: 0px;
+  .container-profilsaya {
+    padding: 30px;
   }
 }
 

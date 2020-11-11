@@ -85,7 +85,6 @@ function Forminput() {
               <option>Depok</option>
               <option>Bekasi</option>
               <option>Tangerang</option>
-              <option>Bogor</option>
             </Form.Control>
           </Form.Group>
           <Form.Group

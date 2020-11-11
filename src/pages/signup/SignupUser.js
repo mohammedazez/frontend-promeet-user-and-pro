@@ -8,9 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Signup.css";
 
 // ---------------- Bootstrap Component --------------
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -36,102 +36,98 @@ function SignupUser() {
 
   return (
     <div className="containersignup">
-      <Container>
+      {/* <Container>
         <Row>
           <Col></Col>
-          <Col>
-            <div className="section-signupb">
-              {/* <Card className="gambar-section"></Card> */}
-              <Card className="form-sectionb">
-                <Link to="/">
-                  <img
-                    src="https://res.cloudinary.com/def4tydoe/image/upload/v1604382830/promeet_transparan_rvyoda.png"
-                    alt="logo"
-                    className="logosignlog"
-                  />
-                </Link>
-                <h4>Sign Up</h4>
-                <Form
-                  onSubmit={(event) => {
-                    dispatch(userRegisterAction(register, event, history));
-                  }}
-                  className="formb"
-                >
-                  <Form.Group>
-                    <Form.Label className="label-formb">Full Name</Form.Label>
-                    <Form.Control
-                      className="kolom-formb"
-                      size="sm"
-                      type="text"
-                      placeholder="Masukkan Nama lengkap anda"
-                      name="fullName"
-                      value={register.fullName}
-                      onChange={(event) => handleChange(event)}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label className="label-formb">
-                      Email Address
-                    </Form.Label>
-                    <Form.Control
-                      className="kolom-formb"
-                      size="sm"
-                      type="email"
-                      placeholder="Masukkan Email anda"
-                      name="email"
-                      value={register.email}
-                      onChange={(event) => handleChange(event)}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label className="label-formb">Password</Form.Label>
-                    <Form.Control
-                      className="kolom-formb"
-                      size="sm"
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                      value={register.password}
-                      onChange={(event) => handleChange(event)}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label className="label-formb">
-                      Phone Number
-                    </Form.Label>
-                    <Form.Control
-                      className="kolom-formb"
-                      size="sm"
-                      type="text"
-                      placeholder="Masukkan nomor telpon anda"
-                      name="numberPhone"
-                      value={register.numberPhone}
-                      onChange={(event) => handleChange(event)}
-                    />
-                  </Form.Group>
+          <Col> */}
+      <div className="section-signupb">
+        {/* <Card className="gambar-section"></Card> */}
+        <Card className="form-sectionb">
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604382830/promeet_transparan_rvyoda.png"
+              alt="logo"
+              className="logosignlog"
+            />
+          </Link>
+          <h4>Sign Up</h4>
+          <Form
+            onSubmit={(event) => {
+              dispatch(userRegisterAction(register, event, history));
+            }}
+            className="formb"
+          >
+            <Form.Group>
+              <Form.Label className="label-formb">Full Name</Form.Label>
+              <Form.Control
+                className="kolom-formb"
+                size="sm"
+                type="text"
+                placeholder="Masukkan Nama lengkap anda"
+                name="fullName"
+                value={register.fullName}
+                onChange={(event) => handleChange(event)}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="label-formb">Email Address</Form.Label>
+              <Form.Control
+                className="kolom-formb"
+                size="sm"
+                type="email"
+                placeholder="Masukkan Email anda"
+                name="email"
+                value={register.email}
+                onChange={(event) => handleChange(event)}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="label-formb">Password</Form.Label>
+              <Form.Control
+                className="kolom-formb"
+                size="sm"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={register.password}
+                onChange={(event) => handleChange(event)}
+                required
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="label-formb">Phone Number</Form.Label>
+              <Form.Control
+                className="kolom-formb"
+                size="sm"
+                type="text"
+                placeholder="Masukkan nomor telpon anda"
+                name="numberPhone"
+                value={register.numberPhone}
+                onChange={(event) => handleChange(event)}
+                required
+              />
+            </Form.Group>
 
-                  <Button type="submit" className="buttonb">
-                    Sign Up
-                  </Button>
-                </Form>
-                <div className="option-signupb">
-                  <h6 className="option-textb">
-                    Sudah punya akun ?, silahkan{" "}
-                  </h6>
-                  <Link to="/login">Login</Link>
-                </div>
-                <div className="option-signupb">
-                  <h6 className="option-textb">
-                    Info lebih lanjut, kembali ke{" "}
-                  </h6>
-                  <Link to="/">Home</Link>
-                </div>
-              </Card>
-            </div>
-          </Col>
+            <Button type="submit" className="buttonb">
+              Sign Up
+            </Button>
+          </Form>
+          <div className="option-signupb">
+            <h6 className="option-textb">Sudah punya akun ?, silahkan </h6>
+            <Link to="/login">Login</Link>
+          </div>
+          <div className="option-signupb">
+            <h6 className="option-textb">Info lebih lanjut, kembali ke </h6>
+            <Link to="/">Home</Link>
+          </div>
+        </Card>
+      </div>
+      {/* </Col>
           <Col></Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 }

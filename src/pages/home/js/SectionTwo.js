@@ -13,7 +13,7 @@ function SectionTwo() {
       </p>
       <Link to="/professional">
         <img
-          src="https://res.cloudinary.com/def4tydoe/image/upload/v1604504276/jadwalkan_sekarang_qfwiv1.png"
+          src="https://res.cloudinary.com/def4tydoe/image/upload/v1605019934/Cari_Professional_di_kota_terdekat_anda_taebbi.png"
           alt="terdekat"
           className="img-sectiontwo"
         />
