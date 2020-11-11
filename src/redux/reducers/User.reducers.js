@@ -1,4 +1,4 @@
-import { LOGIN, USERREGISTER, PROREGISTER } from "../action/User.action";
+import { LOGIN, USERREGISTER, PROREGISTER, GET_USER_INFO, LOGOUT } from "../action/User.action";
 
 // --------------- Check Token ---------------
 const token = localStorage.getItem("token");
@@ -29,6 +29,16 @@ export default function user ( state=initialState, action ) {
             return {
                 ...state,
                 isLogged : true,
+            };
+        case GET_USER_INFO :
+            return {
+                ...state,
+                data: action.payload,
+            };
+        case LOGOUT :
+            return {
+                ...state,
+                isLogged : false,
             };
         default :
             return state;
