@@ -124,6 +124,13 @@ function Forminput() {
               size="lg"
             />
           </Form.Group>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Isi alamat lengkap tempat untuk meeting"
+            />
+          </Form.Group>
           <Form.Group
             controlId="exampleForm.ControlInput1"
             className="grupform"

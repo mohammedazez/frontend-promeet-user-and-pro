@@ -159,11 +159,14 @@ function Professional() {
                   </p>
                   <br />
                   <p>Rp {people.tarif} Per/1 Jam</p>
-                  <button className="btn btn-sm follow ">
-                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                  <Button className="btn btn-sm tombol-professional">
+                    <Link
+                      to="/detail"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
                       Kirim Pertemuan
                     </Link>
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>

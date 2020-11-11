@@ -16,7 +16,10 @@ function SectionOne() {
           </div>
           <div className="container-sectionone">
             <Button className="button-sectionone">
-              <Link to="/professional" style={{ textDecoration: "none" }}>
+              <Link
+                to="/professional"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Jadwalkan Pertemuan
               </Link>
             </Button>

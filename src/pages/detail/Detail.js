@@ -31,14 +31,17 @@ function DetailProduk() {
             <h2 className="pekerjaan-detail">Software Engineer dari Jakarta</h2>
             <p className="harga-detail">Rp 1.000.000 /Jam</p>
             <Button className="button-detail">
-              <Link to="/booking" style={{ textDecoration: "none" }}>
+              <Link
+                to="/booking"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Kirim Pertemuan
               </Link>
             </Button>
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Jam Tersedia :</p>
+                  <p className="judul-filter-detail">Pilihan Jam Tersedia :</p>
                   <select>
                     <option>08:00 WIB</option>
                     <option>10:00 WIB</option>
@@ -49,7 +52,9 @@ function DetailProduk() {
               </Col>
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Tanggal Tersedia:</p>
+                  <p className="judul-filter-detail">
+                    Pilihan Tanggal Tersedia:
+                  </p>
                   <select>
                     <option>18-11-2020</option>
                     <option>19-11-2020</option>

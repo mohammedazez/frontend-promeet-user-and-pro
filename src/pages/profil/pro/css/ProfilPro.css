@@ -6,10 +6,26 @@
   padding: 128px;
 }
 
+.card-profilpro {
+  width: 25rem;
+  margin: auto;
+  background: #9ff9ff;
+  border-radius: 10px;
+}
+
 .foto-profilprosaya {
   max-width: 100%;
   height: auto;
   width: 500px;
+}
+
+.tombol-profilpro {
+  color: white;
+  background-color: #78aff4;
+  border-radius: 8px;
+  margin-left: 10px;
+  box-shadow: -3px 3px #a7ceff, -2px 2px #a7ceff, -1px 1px #a7ceff;
+  border: 1px solid #a7ceff;
 }
 
 /* untuk responsive */
@@ -21,7 +37,7 @@
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
   .container-profilsaya {
-    padding: 30px;
+    padding: 0px;
   }
 }
 
