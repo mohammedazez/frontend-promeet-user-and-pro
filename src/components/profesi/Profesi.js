@@ -1,15 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Profesi.css";
 import { Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getProfesiAction } from "../../redux/action/Profesi.action";
 
 function Profesi() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const listProfesi = useSelector((state) => state.profesi);
+  const { profession } = listProfesi;
+  // console.log("ini data di profesi", listProfesi);
+
+  useEffect(() => {
+    dispatch(getProfesiAction());
+  }, [dispatch]);
+
+  const handleClick = (_id) => {
+    history.push(`/professional/${_id}`);
+  };
+
   return (
     <div className="container-profesi">
       <h1 className="judul-profesi">Profesi</h1>
+      {/* Mapping */}
+      <Row>
+        {profession.map((profesi) => (
+          <Row key={profesi.id}>
+            <Col style={{ marginBottom: "20px" }} sm={6}>
+              <img
+                src={`${profesi.imgUrl}`}
+                alt="img"
+                className="img-profesi"
+              />
+              <p className="p-profesi" onClick={() => handleClick(profesi._id)}>
+                {profesi.nameProfesi}
+              </p>
+            </Col>
+          </Row>
+        ))}
+      </Row>
+      {/* Mapping */}
+
+      {/*  START KATEGORI */}
       <Row className="row-profesi">
+        {/* COL PERTAMA */}
         <Col style={{ marginBottom: "20px" }} sm={6}>
+          {/* ROW PERTAMA */}
           <Row>
+            {/* SOFTWARE ENGINEER */}
             <Col>
               <Link to="/professional">
                 <img
@@ -24,6 +63,7 @@ function Profesi() {
                 </Link>
               </p>
             </Col>
+            {/* ACTRESS */}
             <Col>
               <Link to="/professional">
                 <img
@@ -36,6 +76,8 @@ function Profesi() {
                 <p className="p-profesi">Actress</p>
               </Link>
             </Col>
+
+            {/* ARSITEK */}
             <Col>
               <Link to="/professional">
                 <img
@@ -50,8 +92,12 @@ function Profesi() {
             </Col>
           </Row>
         </Col>
+
+        {/* COL KEDUA */}
         <Col style={{ marginBottom: "20px" }} sm={6}>
+          {/* ROW KEDUA */}
           <Row>
+            {/* AKUNTAN */}
             <Col>
               <Link to="/professional">
                 <img
@@ -64,6 +110,8 @@ function Profesi() {
                 <p className="p-profesi">Akuntan</p>
               </Link>
             </Col>
+
+            {/* GURU */}
             <Col>
               <Link to="/professional">
                 <img
@@ -76,6 +124,8 @@ function Profesi() {
                 <p className="p-profesi">Guru</p>
               </Link>
             </Col>
+
+            {/* FOTOGRAFER */}
             <Col>
               <Link to="/professional">
                 <img
@@ -91,6 +141,8 @@ function Profesi() {
           </Row>
         </Col>
       </Row>
+      {/*  END KATEGORI */}
+
       <Row className="row-profesi">
         <Col style={{ marginBottom: "20px" }} sm={6}>
           <Row>
