@@ -28,10 +28,10 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/professional">
+          <Route path="/professional/:id">
             <Professional />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/booking">

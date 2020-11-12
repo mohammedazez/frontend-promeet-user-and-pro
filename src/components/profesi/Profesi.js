@@ -25,8 +25,8 @@ function Profesi() {
       <h1 className="judul-profesi">Profesi</h1>
       {/* Mapping */}
       <Row>
-        {profession.map((profesi) => (
-          <Row key={profesi.id}>
+        {profession.map((profesi, index) => (
+          <Row key={index}>
             <Col style={{ marginBottom: "20px" }} sm={6}>
               <img
                 src={`${profesi.imgUrl}`}
