@@ -1,11 +1,43 @@
 import React from "react";
 import "../css/CompletedPro.css";
-import { Row, Col, Card, Table, Button } from "react-bootstrap";
+import { Row, Col, Card, Table, Button, Modal } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <img
+          src="https://res.cloudinary.com/def4tydoe/image/upload/v1604923749/Instinct_psvxgg.jpg"
+          alt="kepoprofiluser"
+          style={{
+            maxWidth: "100%",
+            width: "450px",
+            height: "auto",
+          }}
+        />
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Nama: The girl of snow</h4>
+        <h4>Alamat : Jakarta</h4>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Tutup</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 function CompletedPro() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <div>
       <Header />
@@ -59,7 +91,13 @@ function CompletedPro() {
                 <p>
                   *Jika belum datang sebelum jam 09:00 WIB Maka akan di cancel.
                 </p>
-                <Button>Cek Profil User</Button>
+                <Button onClick={() => setModalShow(true)}>
+                  Cek Profil User
+                </Button>
+                <MyVerticallyCenteredModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />
               </div>
             </Card>
           </Col>

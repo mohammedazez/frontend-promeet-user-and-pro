@@ -46,6 +46,8 @@ h3 {
 .button-sectionone {
   background: #78aff4;
   border-radius: 8px;
+  box-shadow: -3px 3px #a7ceff, -2px 2px #a7ceff, -1px 1px #a7ceff;
+  border: 1px solid #a7ceff;
 }
 
 /* untuk responsive */

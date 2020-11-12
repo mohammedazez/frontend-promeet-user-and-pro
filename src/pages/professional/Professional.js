@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Button } from "react-bootstrap";
 import { FcSearch } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Movepage from "../../components/pagination/Movepage";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./Professional.css";
+import { getProfesiById } from "../../redux/action/Profesi.action";
 
 function Professional() {
+  const dispatch = useDispatch();
+  const detailProfesi = useSelector((state) => state.profesi);
+  // const { professionDetails } = detailProfesi;
+  console.log("ini data detail profesi di view", detailProfesi);
+  const { _id } = useParams();
+
+  useEffect(() => {
+    dispatch(getProfesiById(_id));
+    // eslint-disable-next-line
+  }, []);
+
   const [input, setInput] = useState("");
 
   let professional = [
@@ -159,11 +172,14 @@ function Professional() {
                   </p>
                   <br />
                   <p>Rp {people.tarif} Per/1 Jam</p>
-                  <button className="btn btn-sm follow ">
-                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                  <Button className="btn btn-sm tombol-professional">
+                    <Link
+                      to="/detail"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
                       Kirim Pertemuan
                     </Link>
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
