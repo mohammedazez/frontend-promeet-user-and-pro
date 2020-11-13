@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./SliderProduk.css";
 import Slider from "react-slick";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function SliderProduk() {
   const [suggestions, setSuggestions] = useState([]);
@@ -43,10 +44,14 @@ function SliderProduk() {
 
   return (
     <div className="container-sliderproduk">
-      <h1>Spesial hari ini</h1>
+      <h1 className="judul-sliderproduk">Professional terbaik kami</h1>
       <Row>
-        <Col>Orang yang menarik buat kamu</Col>
-        <Col>Lihat semua</Col>
+        <Col className="kalimat-sliderproduk">Orang yang menarik buat kamu</Col>
+        <Col className="lihatsemua">
+          <Link to="/professional" style={{ textDecoration: "none" }}>
+            Lihat semua
+          </Link>
+        </Col>
       </Row>
       {suggestions.length === 0 ? (
         <div className="spinner-border" role="status">
@@ -56,7 +61,7 @@ function SliderProduk() {
         <Slider {...settings}>
           {suggestions.map((current) => (
             <div className="out" key={current.id}>
-              <div className="card">
+              <div className="cardsliderproduk">
                 <img
                   alt={"users here"}
                   src={`https://source.unsplash.com/random/${current.id}`}
@@ -69,7 +74,9 @@ function SliderProduk() {
                   <br />
                   <p>Rp 1.000.000 /1 Jam</p>
                   <button className="btn btn-sm follow ">
-                    Kirim Pertemuan
+                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                      Kirim Pertemuan
+                    </Link>
                   </button>
                 </div>
               </div>

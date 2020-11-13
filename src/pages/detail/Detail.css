@@ -1,3 +1,101 @@
+.container-detail {
+  padding-top: 150px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+.img-professional {
+  height: 514px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tulisan-penanda-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.nama-detail {
+  font-weight: 500;
+  font-size: 28px;
+  text-align: left;
+  color: #4d4d4d;
+}
+
+.pekerjaan-detail {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  color: #4d4d4d;
+}
+
+.harga-detail {
+  font-weight: 700;
+  font-size: 26px;
+  color: #4d4d4d;
+  text-align: left;
+}
+
+.button-detail {
+  display: flex;
+  background: #78aff4;
+  border-radius: 4px;
+}
+
+.container-filter-detail {
+  padding-top: 30px;
+}
+
+.judul-filter-detail {
+  text-align: left;
+}
+
+.container-deskripsi-detail {
+  padding-top: 150px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+/* styling Filter */
+.box-detail {
+  padding: 0px;
+  text-align: left;
+}
+
+.box-detail select {
+  background-color: #78aff4;
+  color: white;
+  padding: 12px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  border-radius: 4px;
+}
+
+.box-detail::before {
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box-detail:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box-detail select option {
+  padding: 30px;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -6,6 +104,51 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .container-detail {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .responsive-detail {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .img-professional {
+    height: 314px;
+    width: 80%;
+  }
+
+  .nama-detail {
+    text-align: center;
+  }
+
+  .pekerjaan-detail {
+    text-align: center;
+  }
+
+  .harga-detail {
+    text-align: center;
+  }
+
+  .button-detail {
+    margin: auto;
+  }
+
+  .box-detail {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .judul-filter-detail {
+    text-align: center;
+  }
+
+  .container-deskripsi-detail {
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

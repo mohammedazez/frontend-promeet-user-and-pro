@@ -2,29 +2,30 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// Components
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-
-// Page
+// Pages
 import Home from "./pages/home/js/Main";
 import Professional from "./pages/professional/Professional";
 import Detail from "./pages/detail/Detail";
 import Booking from "./pages/booking/Booking";
+import About from "./pages/about/About";
 import Login from "./pages/login/Login";
 import SignupUser from "./pages/signup/SignupUser";
 import SignupPro from "./pages/signup/SignupProfessional";
 import Confirmation from "./pages/confirmation/Confirmation";
-import ProfilUser from "./pages/profil/ProfilUser";
-import ProfilPro from "./pages/profil/ProfilProfessional";
+import Forminput from "./pages/forminput/Forminput";
+import ProfilUser from "./pages/profil/user/js/ProfilUser";
+import BookingSayaUser from "./pages/profil/user/js/BookingSayaUser";
+import CompletedUser from "./pages/profil/user/js/CompletedUser";
+import ProfilPro from "./pages/profil/pro/js/ProfilPro";
+import PesananSayaPro from "./pages/profil/pro/js/PesananSayaPro";
+import CompletedPro from "./pages/profil/pro/js/CompletedPro";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/professional">
@@ -36,11 +37,14 @@ function App() {
           <Route path="/booking">
             <Booking />
           </Route>
-          <Route path="/signupuser">
+          <Route path="/signup/user">
             <SignupUser />
           </Route>
-          <Route path="/signuppro">
+          <Route path="/signup/pro">
             <SignupPro />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/confirmation">
             <Confirmation />
@@ -48,14 +52,28 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/profiluser">
+          <Route path="/forminput">
+            <Forminput />
+          </Route>
+          <Route path="/profil/user">
             <ProfilUser />
           </Route>
-          <Route path="/profilpro">
+          <Route path="/bookingsaya/user">
+            <BookingSayaUser />
+          </Route>
+          <Route path="/completed/user">
+            <CompletedUser />
+          </Route>
+          <Route path="/profil/pro">
             <ProfilPro />
           </Route>
+          <Route path="/pesanansaya/pro">
+            <PesananSayaPro />
+          </Route>
+          <Route path="/completed/pro">
+            <CompletedPro />
+          </Route>
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

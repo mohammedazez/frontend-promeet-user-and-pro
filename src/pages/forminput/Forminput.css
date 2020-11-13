@@ -1,0 +1,53 @@
+.container-forminput {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  padding-left: 423px;
+  padding-right: 423px;
+  background-color: #e5e5e5;
+}
+
+.judulutama-form {
+  font-weight: 500;
+  font-size: 36px;
+  color: #4d4d4d;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 30px;
+}
+
+.judulform {
+  text-align: left;
+  font-weight: 300;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.grupform {
+  padding-bottom: 20px;
+}
+
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+  .container-forminput {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .judulutama-form {
+    font-size: 20px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}
