@@ -10,7 +10,6 @@ function Profesi() {
   const history = useHistory();
   const listProfesi = useSelector((state) => state.profesi);
   const { profession } = listProfesi;
-  // console.log("ini data di profesi", listProfesi);
 
   useEffect(() => {
     dispatch(getProfesiAction());
@@ -32,6 +31,7 @@ function Profesi() {
                 src={`${profesi.imgUrl}`}
                 alt="img"
                 className="img-profesi"
+                onClick={() => handleClick(profesi._id)}
               />
               <p className="p-profesi" onClick={() => handleClick(profesi._id)}>
                 {profesi.nameProfesi}
