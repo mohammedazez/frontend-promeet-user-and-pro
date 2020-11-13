@@ -63,13 +63,18 @@ const Booking = () => {
           <Form className="container-card-booking">
             <Form.Group>
               <Form.Label>Nama Anda:</Form.Label>
-              <Form.Control type="text" placeholder="Masukkan nama anda" />
+              <Form.Control
+                type="text"
+                placeholder="Masukkan nama anda"
+                required
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Nomor Telepon:</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Masukkan nomor telepon anda"
+                required
               />
             </Form.Group>
           </Form>
