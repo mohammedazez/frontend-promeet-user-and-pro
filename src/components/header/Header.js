@@ -9,7 +9,6 @@ import { userLogout } from "../../redux/action/User.action";
 function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
-
   const dataUser = useSelector((state) => state.user);
 
   const logoutSuccess = () => {
@@ -99,14 +98,12 @@ function Header() {
                   <Link to="/profil/pro">
                     <p className="teks-kebawah">Profile Pro</p>
                   </Link>
-                  <Link to="/logout">
-                    <div
-                      onClick={() => logoutSuccess()}
-                      className="teks-kebawah"
-                    >
-                      Logout
-                    </div>
-                  </Link>
+                  <div
+                    onClick={() => logoutSuccess()}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p className="teks-kebawah">Logout</p>
+                  </div>
                 </div>
               </div>
             ) : (
