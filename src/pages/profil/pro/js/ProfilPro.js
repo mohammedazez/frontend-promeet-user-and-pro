@@ -5,6 +5,7 @@ import { Row, Col, Card, Button } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
+import { getDataAction } from "../../../../redux/action/ProfilProfessional.action";
 
 function ProfilPro() {
   let history = useHistory();

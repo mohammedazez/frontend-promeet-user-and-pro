@@ -1,7 +1,7 @@
 import { POST_BOOKING } from "../action/Booking";
 
 const intialState = {
-  postBooking: {},
+  data: [],
 };
 
 export default function bookingReducers(state = intialState, action) {
