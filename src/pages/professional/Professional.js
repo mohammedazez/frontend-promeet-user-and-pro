@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Button } from "react-bootstrap";
 import { FcSearch } from "react-icons/fc";
-import { useParams, useHistory } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Movepage from "../../components/pagination/Movepage";
 import Header from "../../components/header/Header";
@@ -12,7 +12,7 @@ import { getProfesiById } from "../../redux/action/Profesi.action";
 function Professional() {
   const dispatch = useDispatch();
   const detailProfesi = useSelector((state) => state.profesi.professionDetails);
-  // console.log("ini data detail profesi di view", detailProfesi);
+  console.log("ini data detail profesi di view", detailProfesi);
   // console.log("isi profil", detailProfesi.profileId);
   const { id } = useParams();
   const history = useHistory();
@@ -88,7 +88,9 @@ function Professional() {
           </div>
         </div>
         <div className="tulisanpenandaprofessional">
-          <p>Home</p>
+          <p>
+            <Link to="/">Home</Link>
+          </p>
           <p>{" > "}</p>
           <p>{detailProfesi.nameProfesi}</p>
         </div>
@@ -102,12 +104,12 @@ function Professional() {
                 <div className="cardprofessional">
                   <img
                     alt={"users here"}
-                    src={people.img}
+                    src={detailProfesi.imgUrl}
                     height={144}
                     width={179}
                   />
                   <div className="card-body">
-                    {/* <h5 className="cardtitle">{people.userId.fullName}</h5> */}
+                    <h5 className="cardtitle">{people.userId.fullName}</h5>
                     <p>
                       {detailProfesi.nameProfesi} di
                       {people.locationId.nameLocation}

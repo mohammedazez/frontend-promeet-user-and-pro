@@ -12,7 +12,6 @@ function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
   const [deskripsi, setDeskripsi] = useState("");
-  // const [pengalaman, setPengalaman] = useState();
   const [location, setLocation] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
@@ -20,6 +19,8 @@ function DetailProduk() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [userid, setUserid] = useState("");
+  const [picture, setPicture] = useState("");
+  // const [pengalaman, setPengalaman] = useState();
 
   const { id } = useParams();
   useEffect(() => {
@@ -34,6 +35,7 @@ function DetailProduk() {
       setDate(profiledetail.startDateAvailable);
       setTime(profiledetail.timeAvailable);
       setDeskripsi(profiledetail.description);
+      setPicture(profiledetail.imgUrl);
       // setPengalaman(profiledetail.experience);
     }
     // eslint-disable-next-line
@@ -70,7 +72,7 @@ function DetailProduk() {
           <Col>
             <img
               className="img-professional"
-              src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
+              src={picture}
               alt="imgprodetail"
             />
           </Col>
