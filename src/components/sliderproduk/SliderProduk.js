@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SliderProduk.css";
 import Slider from "react-slick";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function SliderProduk() {
@@ -73,11 +73,14 @@ function SliderProduk() {
                   <p>Software Engineer di Jakarta</p>
                   <br />
                   <p>Rp 1.000.000 /1 Jam</p>
-                  <button className="btn btn-sm follow ">
-                    <Link to="/detail" style={{ textDecoration: "none" }}>
+                  <Button className="btn btn-sm tombol-sliderproduk">
+                    <Link
+                      to="/detail"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
                       Kirim Pertemuan
                     </Link>
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
