@@ -1,33 +1,20 @@
-import axios from "axios";
-export const GET_PROFESSIONAL_DETAILS_REQUEST =
-  "GET_PROFESSIONALS_DETAILS_REQUEST";
-export const GET_PROFESSIONAL_DETAILS_SUCCESS =
-  "GET_PROFESSIONALS_DETAILS_SUCCESS";
-export const GET_PROFESSIONAL_DETAILS_FAILED =
-  "GET_PROFESSIONALS_DETAILS_FAILED";
+import Axios from "axios";
+export const GET_PROFILE_DETAIL = "GET_PROFILE_DETAIL";
 
+export function getProfileDetail(data) {
+  return {
+    type: GET_PROFILE_DETAIL,
+    playload: data,
+  };
+}
 
-export const getProfessionalById = (id) => {
+export const getProfileDetailAction = (id) => {
   return async (dispatch) => {
-    try {
-      dispatch({
-        type: GET_PROFESSIONAL_DETAILS_REQUEST,
-      });
-
-      const response = await axios.get(
-        `https://server-promeet.herokuapp.com/api/profesional/${id}`
-      );
-
-      dispatch({
-        type: GET_PROFESSIONAL_DETAILS_SUCCESS,
-        payload: response.data.profile,
-      });
-    } catch (error) {
-      dispatch({
-        type: GET_PROFESSIONAL_DETAILS_FAILED,
-        payload: error,
-      });
-    }
+    const response = await Axios.get(
+      `https://server-promeet.herokuapp.com/api/profesional/${id}`
+    );
+    dispatch(getProfileDetail(response.data.profile));
+    console.log("hasil detail di action", response.data.profile);
   };
 };
 

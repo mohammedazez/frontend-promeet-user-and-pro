@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Jumbotron, Container, Button, Row, Col } from "react-bootstrap";
 import "../css/SectionOne.css";
 
 function SectionOne() {
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push("/allprofile");
+  };
+
   return (
     <div>
       <Jumbotron fluid>
@@ -15,13 +21,8 @@ function SectionOne() {
             </h1>
           </div>
           <div className="container-sectionone">
-            <Button className="button-sectionone">
-              <Link
-                to="/professional"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Jadwalkan Pertemuan
-              </Link>
+            <Button className="button-sectionone" onClick={handleClick}>
+              Jadwalkan Pertemuan
             </Button>
           </div>
           <Row>

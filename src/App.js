@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home/js/Main";
+import AllProfile from "./pages/allprofile/Allprofile";
 import Professional from "./pages/professional/Professional";
 import Detail from "./pages/detail/Detail";
 import Booking from "./pages/booking/Booking";
@@ -28,10 +29,13 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route path="/allprofile">
+            <AllProfile />
+          </Route>
           <Route path="/professional/:id">
             <Professional />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/booking">
