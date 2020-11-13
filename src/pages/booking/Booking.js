@@ -1,12 +1,21 @@
 import React, { Fragment } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { postBookingAction } from "../../redux/action/Booking";
+
+// CSS
 import "./Booking.css";
+
+// Components
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+
+// Boostrap
 import { Row, Col, Table, Card, Form, Button } from "react-bootstrap";
 
 const Booking = () => {
-  let history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   function handleClick() {
     try {
@@ -60,16 +69,26 @@ const Booking = () => {
         {/* Info Anda*/}
         <Card className="card-booking">
           <h1 className="judul-booking">Info Anda</h1>
-          <Form className="container-card-booking">
+          <Form
+            className="container-card-booking"
+            onSubmit={(event) => {
+              dispatch(postBookingAction(event, history));
+            }}
+          >
             <Form.Group>
               <Form.Label>Nama Anda:</Form.Label>
-              <Form.Control type="text" placeholder="Masukkan nama anda" />
+              <Form.Control
+                type="text"
+                placeholder="Masukkan nama anda"
+                required
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Nomor Telepon:</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Masukkan nomor telepon anda"
+                required
               />
             </Form.Group>
           </Form>
