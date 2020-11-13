@@ -3,6 +3,7 @@ import {
   USERREGISTER,
   PROREGISTER,
   GET_USER_INFO,
+  EDIT_USER,
   LOGOUT,
 } from "../action/User.action";
 
@@ -42,6 +43,11 @@ export default function user(state = initialState, action) {
         ...state,
         data: action.payload,
       };
+      case EDIT_USER :
+        return {
+          ...state,
+          data: action.payload
+        }
     case LOGOUT:
       return {
         ...state,
