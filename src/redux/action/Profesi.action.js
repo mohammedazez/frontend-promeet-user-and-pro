@@ -6,6 +6,22 @@ export const GET_PROFESI_DETAILS_REQUEST = "GET_PROFESI_DETAILS_REQUEST";
 export const GET_PROFESI_DETAILS_SUCCESS = "GET_PROFESI_DETAILS_SUCCESS";
 export const GET_PROFESI_DETAILS_FAILED = "GET_PROFESI_DETAILS_FAILED";
 
+export function getProfesiDetail (data) {
+  return {
+      type: GET_PROFESI_DETAILS_SUCCESS,
+      playload: data
+  }
+}
+
+export function getProfesiDetailAction(id) {
+    return async(dispatch) => {
+        const response = await axios 
+        .get(`http://server-promeet.herokuapp.com/api/profesi/${id}`);
+        dispatch(getProfesiDetail(response.data.profesi));
+        console.log('hasil detail', response.data.profesi);
+    }
+}
+
 export const getProfesiAction = () => {
   return async (dispatch) => {
     try {

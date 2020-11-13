@@ -6,6 +6,7 @@ export const GET_PROFESSIONAL_DETAILS_SUCCESS =
 export const GET_PROFESSIONAL_DETAILS_FAILED =
   "GET_PROFESSIONALS_DETAILS_FAILED";
 
+
 export const getProfessionalById = (id) => {
   return async (dispatch) => {
     try {
@@ -29,3 +30,4 @@ export const getProfessionalById = (id) => {
     }
   };
 };
+

@@ -7,19 +7,22 @@ import Movepage from "../../components/pagination/Movepage";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./Professional.css";
-import { getProfesiById } from "../../redux/action/Profesi.action";
+// import { getProfesiById } from "../../redux/action/Profesi.action";
+
+import {getProfesiDetailAction} from "../../redux/action/Profesi.action";
 
 function Professional() {
   const dispatch = useDispatch();
   const detailProfesi = useSelector((state) => state.profesi);
   // const { professionDetails } = detailProfesi;
   console.log("ini data detail profesi di view", detailProfesi);
-  const { _id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(getProfesiById(_id));
+    dispatch(getProfesiDetailAction(id));
     // eslint-disable-next-line
   }, []);
+  console.log('_id', id)
 
   const [input, setInput] = useState("");
 

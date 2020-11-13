@@ -9,7 +9,7 @@ import {
 
 const intialState = {
   profession: [],
-  professionDetails: {},
+  professionDetails: [],
   loading: false,
   error: null,
 };
@@ -42,7 +42,7 @@ export default function profesi(state = intialState, action) {
       return {
         ...state,
         loading: false,
-        professionDetails: action.payload,
+        data: action.payload,
       };
     case GET_PROFESI_DETAILS_FAILED:
       return {

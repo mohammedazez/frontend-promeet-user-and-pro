@@ -5,8 +5,8 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
 import { Row, Col, Button, Tabs, Tab } from "react-bootstrap";
-// import { useDispatch, useSelector } from "react-redux";
-// import { getProfessionalById } from "../../redux/action/Professional.action";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfessionalById } from "../../redux/action/Professional.action";
 
 function DetailProduk() {
   // const dispatch = useDispatch();
