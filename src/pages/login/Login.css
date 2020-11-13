@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(90deg, #b8e5e1, #78aff4);
+  background-image: linear-gradient(90deg, #63cfbb, #338274);
   opacity: 0.8;
   border-radius: 5%;
 }
@@ -39,7 +39,7 @@
 
 .buttona {
   width: 200px;
-  background-image: linear-gradient(90deg, #3f74b5, #1e4370);
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
   margin-bottom: 5px;
 }
 

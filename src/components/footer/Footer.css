@@ -1,15 +1,16 @@
 .container-footer {
-  padding-top: 22px;
+  padding-top: 60px;
   padding-left: 128px;
   padding-right: 128px;
-  background: #30f5ff;
+  background-image: linear-gradient(180deg, #63cfbb, #338274);
+  height: 200px;
 }
 
 .judul-footer-kiri {
   text-align: left;
   font-weight: 500;
   font-size: 16px;
-  color: #4d4d4d;
+  color: aliceblue;
   mix-blend-mode: normal;
 }
 
@@ -17,7 +18,7 @@
   text-align: right;
   font-weight: 500;
   font-size: 16px;
-  color: #4d4d4d;
+  color: aliceblue;
   mix-blend-mode: normal;
 }
 
@@ -25,7 +26,7 @@
   text-align: left;
   font-weight: 300;
   font-size: 14px;
-  color: #4d4d4d;
+  color: aliceblue;
   mix-blend-mode: normal;
 }
 
@@ -47,7 +48,7 @@
   text-align: center;
   font-weight: 300;
   font-size: 14px;
-  color: #4d4d4d;
+  color: aliceblue;
 }
 /* untuk responsive */
 

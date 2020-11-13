@@ -1,16 +1,16 @@
 .container-navbar {
   padding-left: 128px;
   padding-right: 128px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #30f5ff;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
 }
 
 .button-navbar {
-  background-color: #78aff4;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
   border-radius: 8px;
   margin-left: 10px;
   box-shadow: -3px 3px #a7ceff, -2px 2px #a7ceff, -1px 1px #a7ceff;
@@ -25,7 +25,7 @@
 
 /* Dropdown */
 .kebawah-tombol {
-  background-color: #78aff4;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
   color: white;
   font-size: 16px;
   padding: 8px;
@@ -48,7 +48,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  background-color: #78aff4;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
 }
 
 .kebawah-content .teks-kebawah {

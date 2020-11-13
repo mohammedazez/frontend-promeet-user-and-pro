@@ -18,7 +18,7 @@ function SectionOne() {
             <Button className="button-sectionone">
               <Link
                 to="/professional"
-                style={{ textDecoration: "none", color: "white" }}
+                style={{ textDecoration: "none", color: "white", backgroundColor:"#63cfbb", padding:0}}
               >
                 Jadwalkan Pertemuan
               </Link>

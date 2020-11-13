@@ -22,17 +22,17 @@ function Header() {
           </Nav>
           <Nav>
             <NavItem>
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link" style={{ textDecoration: "none", color: "white" }}>
                 Home
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/about" className="nav-link">
+              <Link to="/about" className="nav-link" style={{ textDecoration: "none", color: "white" }}>
                 About
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link" style={{ textDecoration: "none", color: "white" }}>
                 Contact
               </Link>
             </NavItem>

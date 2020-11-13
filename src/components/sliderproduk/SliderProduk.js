@@ -60,18 +60,18 @@ function SliderProduk() {
       ) : (
         <Slider {...settings}>
           {suggestions.map((current) => (
-            <div className="out" key={current.id}>
+            <div className="out" key={current.id} >
               <div className="cardsliderproduk">
                 <img
                   alt={"users here"}
                   src={`https://source.unsplash.com/random/${current.id}`}
-                  height={144}
+                  height={200}
                   width={179}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{current.username}</h5>
                   <p>Software Engineer di Jakarta</p>
-                  <br />
+                  
                   <p>Rp 1.000.000 /1 Jam</p>
                   <Button className="btn btn-sm tombol-sliderproduk">
                     <Link

@@ -1,15 +1,15 @@
 .container-sliderproduk {
   margin-top: 100px;
   margin-bottom: 100px;
-  padding-left: 128px;
-  padding-right: 128px;
+  padding-left: 110px;
+  padding-right: 110px;
 }
 
 .judul-sliderproduk {
   text-align: left;
   font-weight: 500;
   font-size: 36px;
-  color: #4d4d4d;
+  color: #338274;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -26,26 +26,48 @@
 .lihatsemua {
   text-align: right;
 }
+
+.out {
+display: flex;
+justify-content: space-evenly;
+}
+
 .cardsliderproduk {
-  background: #9ff9ff;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
+  opacity: 0.8;
   text-align: center;
   padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 200px;
   mix-blend-mode: normal;
-  opacity: 1;
   box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  
+}
+
+.card-body {
+padding: 0px;
+}
+
+.card-body p {
+  color: aliceblue;
 }
 
 .card-title {
-  color: #262626;
+  color: aliceblue;
   display: block;
   overflow: hidden;
   font-size: 14px;
   line-height: 18px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 10px;
   margin-bottom: 0 !important;
+}
+
+.card-contenta{
+  color: aliceblue;
 }
 
 img {
@@ -58,10 +80,11 @@ img {
 }
 
 .tombol-sliderproduk {
-  background: #78aff4;
+  margin-top: 10px;
+  background-color: #338274;
+  width: 200px;
   border-radius: 8px;
-  box-shadow: -3px 3px #a7ceff, -2px 2px #a7ceff, -1px 1px #a7ceff;
-  border: 1px solid #a7ceff;
+  border: 1px solid #ffffff;
 }
 
 /* untuk responsive */

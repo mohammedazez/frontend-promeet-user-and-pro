@@ -95,7 +95,7 @@ function Professional() {
         {/* Search Bar */}
         <div>
           <div className="search">
-            <Button>
+            <Button style={{ backgroundColor: "#338274" }}>
               <i className="icon">
                 <FcSearch />
               </i>
@@ -113,7 +113,9 @@ function Professional() {
         <div className="containerfilter">
           {/* Filter Lokasi */}
           <div className="box">
+            <h5>Cari berdasarkan lokasi</h5>
             <select>
+              <option>---</option>
               <option>Jakarta</option>
               <option>Depok</option>
               <option>Bekasi</option>
@@ -122,14 +124,18 @@ function Professional() {
           </div>
           {/* Filter harga */}
           <div className="box">
+          <h5>Cari berdasarkan harga</h5>
             <select>
+              <option>---</option>
               <option>Termurah</option>
               <option>Termahal</option>
             </select>
           </div>
           {/* Filter kategori */}
           <div className="box">
+          <h5>Cari berdasarkan pekerjaan</h5>
             <select>
+              <option>---</option>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
@@ -149,13 +155,17 @@ function Professional() {
                 <img
                   alt={"users here"}
                   src={people.img}
-                  height={144}
+                  height={200}
                   width={179}
+                  margin={5}
                 />
                 <div className="card-body">
                   <h5 className="cardtitle">{people.nama}</h5>
                   <p>
-                    {people.pekerjaan} di {people.lokasi}
+                    {people.pekerjaan} 
+                  </p>
+                  <p>
+                    di {people.lokasi}
                   </p>
                   <br />
                   <p>Rp {people.tarif} Per/1 Jam</p>

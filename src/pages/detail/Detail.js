@@ -90,7 +90,7 @@ function DetailProduk() {
         </Row>
       </div>
       <div className="container-deskripsi-detail">
-        <div style={{ backgroundColor: "#30F5FF" }}>
+        <div style={{ backgroundColor: "#63cfbb" }}>
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
             <Tab eventKey="tentang" title="Tentang">
               <p>

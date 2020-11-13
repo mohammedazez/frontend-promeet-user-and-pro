@@ -14,7 +14,7 @@ function Dropdwon() {
   }
   return (
     <div>
-      <NavDropdown title="Profesi" id="basic-nav-dropdown">
+      <NavDropdown title="Profesi" id="basic-nav-dropdown" >
         <NavDropdown.Item className="kotak-dropdown" onClick={handleClick}>
           <img
             src="https://res.cloudinary.com/def4tydoe/image/upload/v1604385580/profesi/032-software_developer_gu5wbe.png"
