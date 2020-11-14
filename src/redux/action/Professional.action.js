@@ -17,3 +17,4 @@ export const getProfileDetailAction = (id) => {
     console.log("hasil detail di action", response.data.profile);
   };
 };
+

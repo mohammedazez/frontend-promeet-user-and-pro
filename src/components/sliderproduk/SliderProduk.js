@@ -48,7 +48,7 @@ function SliderProduk() {
       <Row>
         <Col className="kalimat-sliderproduk">Orang yang menarik buat kamu</Col>
         <Col className="lihatsemua">
-          <Link to="/professional" style={{ textDecoration: "none" }}>
+          <Link to="/allprofile" style={{ textDecoration: "none" }}>
             Lihat semua
           </Link>
         </Col>

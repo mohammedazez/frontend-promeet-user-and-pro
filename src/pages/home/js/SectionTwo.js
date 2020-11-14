@@ -11,7 +11,7 @@ function SectionTwo() {
       <p className="kalimat-sectiontwo">
         Yuk dicek apakah professional anda sudah ada di kotamu?
       </p>
-      <Link to="/professional">
+      <Link to="/allprofile">
         <img
           src="https://res.cloudinary.com/def4tydoe/image/upload/v1605019934/Cari_Professional_di_kota_terdekat_anda_taebbi.png"
           alt="terdekat"
