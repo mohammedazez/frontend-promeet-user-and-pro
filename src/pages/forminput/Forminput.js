@@ -1,66 +1,68 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-import {getUserInfoAction} from '../../redux/action/User.action';
-import {getEditProfessional} from '../../redux/action/User.action'
+import { getUserInfoAction } from "../../redux/action/User.action";
+import { getEditProfessional } from "../../redux/action/User.action";
 
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 
 import "./Forminput.css";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import { Form, Button } from "react-bootstrap";
+// import Header from "../../components/header/Header";
+// import Footer from "../../components/footer/Footer";
+// import { Form, Button } from "react-bootstrap";
 
 function Forminput() {
-  const  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
 
-
-  const detailProfile = useSelector((state) => state.user.data)
-  console.log('detail di form input', detailProfile);
+  const detailProfile = useSelector((state) => state.user.data);
+  console.log("detail di form input", detailProfile);
 
   useEffect(() => {
-   if(detailProfile.length === 0) {
-     dispatch(getUserInfoAction());
-   } else {
-     setProfile(detailProfile )
-   } 
+    if (detailProfile.length === 0) {
+      dispatch(getUserInfoAction());
+    } else {
+      setProfile(detailProfile);
+    }
   }, [dispatch, detailProfile]);
-  
+
   const [profile, setProfile] = useState({
-    fullName : "",
-  })
+    fullName: "",
+  });
 
   // const [startDate, setStartDate] = useState(new Date());
-  
 
-const handleChange = e => {
-  setProfile({
-    ...profile,
-    [e.target.name] : e.target.value
-  })
-}
+  const handleChange = (e) => {
+    setProfile({
+      ...profile,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-
-
-const handleSubmit = (event) => {
-  dispatch(getEditProfessional(profile, detailProfile, event))
-  history.push('/');
-}
-// const handleCalendarClose = () => console.log("Calendar closed");
-// const handleCalendarOpen = () => console.log("Calendar opened");
+  const handleSubmit = (event) => {
+    dispatch(getEditProfessional(profile, detailProfile, event));
+    history.push("/");
+  };
+  // const handleCalendarClose = () => console.log("Calendar closed");
+  // const handleCalendarOpen = () => console.log("Calendar opened");
   // console.log('profile', profile.profileId.experience[0])
-  console.log('detail di componen', profile)
-  console.log('_id', profile._id)
+  console.log("detail di componen", profile);
+  console.log("_id", profile._id);
 
   return (
     <form onSubmit={handleSubmit}>
-        <input type="text" name="fullName" value={profile.fullName} onChange={handleChange} />
-        <label htmlFor="">Nama Lengkap</label><br />
-     
-        <button >update</button>
-  </form>
+      <input
+        type="text"
+        name="fullName"
+        value={profile.fullName}
+        onChange={handleChange}
+      />
+      <label htmlFor="">Nama Lengkap</label>
+      <br />
+
+      <button>update</button>
+    </form>
 
     // <div>
     //   <Header />
@@ -92,7 +94,7 @@ const handleSubmit = (event) => {
     //         className="grupform"
     //       >
     //         <p className="judulform">Email :</p>
-    //         <Form.Control type="email" name="email" value={profile.email} 
+    //         <Form.Control type="email" name="email" value={profile.email}
     //         onChange={handleChange} placeholder="Email" size="lg" />
     //       </Form.Group>
     //       <Form.Group
@@ -162,10 +164,10 @@ const handleSubmit = (event) => {
     //             dateFormat="h:mm aa"
     //         onChange={date => setStartDate(date)} />
     //         </div>
-              
+
     //         {/* </Form.Control> */}
     //         {/* <Form.Control as="select" size="lg" custom> */}
-         
+
     //           {/* <option>08:00 WIB</option>
     //           <option>10:00 WIB</option>
     //           <option>12:00 WIB</option>
@@ -232,7 +234,6 @@ const handleSubmit = (event) => {
     //   </div>
     //   <Footer />
     // </div>
- 
   );
 }
 

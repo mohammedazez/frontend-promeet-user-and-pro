@@ -41,9 +41,9 @@ export const getUserInfo = (data) => {
 export const editUser = (data) => {
   return {
     type: EDIT_USER,
-    payload: data
-  }
-}
+    payload: data,
+  };
+};
 
 export const getlogout = (data) => {
   return {
@@ -157,27 +157,27 @@ export const getUserInfoAction = () => async (dispatch) => {
   const userInfo = await axios.get(url, config);
 
   dispatch(getUserInfo(userInfo.data.member));
-  console.log('user login', userInfo.data.member)
+  console.log("user login", userInfo.data.member);
 };
 
-
 export const getEditProfessional = (values, detailProfile, event) => {
-  return async(dispatch) => {    
-      event.preventDefault();
-      console.log('isi status', values)    
-      return axios
-      .put(`http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`, values)
+  return async (dispatch) => {
+    event.preventDefault();
+    console.log("isi status", values);
+    return axios
+      .put(
+        `http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
+        values
+      )
       .then((response) => {
-          console.log('response edit', response)
-          dispatch(editUser(response.data))
+        console.log("response edit", response);
+        dispatch(editUser(response.data));
       })
       .catch((error) => {
-          console.log(` hasil eror edit ${error}`);
-      })
-  }
-}
-
-
+        console.log(` hasil eror edit ${error}`);
+      });
+  };
+};
 
 export const userLogout = (history) => {
   return (dispatch) => {

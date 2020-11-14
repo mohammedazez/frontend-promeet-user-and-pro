@@ -1,10 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
 import Dropdown from "../dropdown/dropdwon";
 import "./Header.css";
+import { userLogout, getUserInfoAction } from "../../redux/action/User.action";
 
 function Header() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const dataUser = useSelector((state) => state.user);
+  const member = useSelector((state) => state.member);
+
+  console.log(member);
+
+  useEffect(() => {
+    dispatch(getUserInfoAction());
+
+    // eslint-disable-next-line
+  }, []);
+
+  const logoutSuccess = () => {
+    console.log("logout");
+    dispatch(userLogout(history));
+    localStorage.removeItem("token");
+
+    alert("logout");
+    console.log("slesai logoout", dataUser);
+  };
+
   return (
     <div>
       <Navbar className="container-navbar" fixed="top" expand="lg">
@@ -36,44 +60,67 @@ function Header() {
                 Contact
               </Link>
             </NavItem>
-            <Button className="button-navbar">
-              <Link
-                to="/signup/pro"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Jadi Konsultan
-              </Link>
-            </Button>
-            <Button className="button-navbar">
-              <Link
-                to="/login"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Login
-              </Link>
-            </Button>
-            <Button className="button-navbar">
-              <Link
-                to="/signup/user"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Sign Up
-              </Link>
-            </Button>
-            <div className="kebawah">
-              <button className="kebawah-tombol">My Profile</button>
-              <div className="kebawah-content">
-                <Link to="/profil/user">
-                  <p className="teks-kebawah">Profile User</p>
+            {!localStorage.getItem("token") ? (
+              <Button className="button-navbar">
+                <Link
+                  to="/signup/pro"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Jadi Konsultan
                 </Link>
-                <Link to="/profil/pro">
-                  <p className="teks-kebawah">Profile Pro</p>
+              </Button>
+            ) : (
+              ""
+            )}
+            {!localStorage.getItem("token") ? (
+              <Button className="button-navbar">
+                <Link
+                  to="/login"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Login
                 </Link>
-                <Link to="/logout">
-                  <p className="teks-kebawah">Logout</p>
+              </Button>
+            ) : (
+              ""
+            )}
+            {!localStorage.getItem("token") ? (
+              <Button className="button-navbar">
+                <Link
+                  to="/signup/user"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Sign Up
                 </Link>
+              </Button>
+            ) : (
+              ""
+            )}
+
+            {localStorage.getItem("token") ? (
+              <div className="kebawah">
+                <button className="kebawah-tombol">My Profile</button>
+                <div className="kebawah-content">
+                  {!member === "member" ? (
+                    <Link to="/profil/user">
+                      <p className="teks-kebawah">Profile User</p>
+                    </Link>
+                  ) : (
+                    <Link to="/profil/pro">
+                      <p className="teks-kebawah">Profile Pro</p>
+                    </Link>
+                  )}
+                  <div
+                    onClick={() => logoutSuccess()}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p className="teks-kebawah">Logout</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

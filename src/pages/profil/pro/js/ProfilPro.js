@@ -1,13 +1,39 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import "../css/ProfilPro.css";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
+import { getProfileDetailAction } from "../../../../redux/action/Professional.action";
+import { getUserInfoAction } from "../../../../redux/action/User.action";
 
 function ProfilPro() {
-  let history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const profiledetail = useSelector((state) => state.professional.data);
+  const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
+  const [service, setService] = useState("");
+  const [userid, setUserid] = useState("");
+  const [picture, setPicture] = useState("");
+
+  const { id } = useParams();
+  useEffect(() => {
+    if (profiledetail === undefined) {
+      dispatch(getProfileDetailAction(id));
+    } else {
+      setLocation(profiledetail.locationId.nameLocation);
+      setUserid(profiledetail.userId.fullName);
+      setProfesi(profiledetail.profesiId.nameProfesi);
+      setService(profiledetail.serviceId.nameService);
+      setPicture(profiledetail.imgUrl);
+      // setPengalaman(profiledetail.experience);
+    }
+    // eslint-disable-next-line
+  }, [profiledetail, dispatch]);
 
   function handleClick() {
     try {
@@ -27,14 +53,14 @@ function ProfilPro() {
           <Col className="container-profilsayapro">
             <Card className="card-profilpro">
               <Card.Img
-                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
+                src={picture}
                 className="foto-profilprosaya"
                 alt="fotoprofilpro"
               />
               <Card.Body>
-                <Card.Text>Nama : Angelia Jolie</Card.Text>
-                <Card.Text>Pekerjaan : Software Engineer</Card.Text>
-                <Card.Text>Lokasi : Jakarta</Card.Text>
+                <Card.Text>Nama : {userid}</Card.Text>
+                <Card.Text>Pekerjaan : {profesi}</Card.Text>
+                <Card.Text>Lokasi : {location}</Card.Text>
                 <Card.Text>Email : angelia@gmail.com</Card.Text>
                 <Card.Text>No Hp : 08587698585</Card.Text>
                 <Button className="tombol-profilpro" onClick={handleClick}>
