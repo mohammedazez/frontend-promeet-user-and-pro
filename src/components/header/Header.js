@@ -10,7 +10,7 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
   const dataUser = useSelector((state) => state.user);
-  const member = useSelector((state) => state.member);
+  const member = useSelector((state) => state.user.data.role);
 
   console.log(member);
 
@@ -101,7 +101,7 @@ function Header() {
               <div className="kebawah">
                 <button className="kebawah-tombol">My Profile</button>
                 <div className="kebawah-content">
-                  {!member === "member" ? (
+                  {member == "member" ? (
                     <Link to="/profil/user">
                       <p className="teks-kebawah">Profile User</p>
                     </Link>

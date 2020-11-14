@@ -4,6 +4,7 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
+import { getUserInfoAction } from "../../../../redux/action/User.action";
 
 function ProfilUser() {
   return (
