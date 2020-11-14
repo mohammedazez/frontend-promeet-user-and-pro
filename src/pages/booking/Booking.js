@@ -170,9 +170,28 @@ const Booking = () => {
                 <hr className="garispemisah-sectionfour" />
               </Fragment>
             ))}
-            <Button onClick={handleClick} type="submit">
-              Booking Sekarang
-            </Button>
+          </Card>
+
+          {/* Total Price */}
+          <Card className="card-booking-pembayaran ">
+            <Row>
+              <Col>
+                <h4>Total Booking Fee</h4>
+              </Col>
+              <Col>
+                <h4>Rp {price}</h4>
+              </Col>
+            </Row>
+            <hr className="garispemisah-sectionfour" />
+            <Row>
+              <Col>
+                <h4>Total Payment</h4>
+              </Col>
+              <Col>
+                <h4>Rp {price}</h4>
+              </Col>
+            </Row>
+            <Button onClick={handleClick}>Booking Sekarang</Button>
           </Card>
         </div>
         <Footer />

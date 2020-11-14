@@ -8,7 +8,6 @@ import { Row, Col, Button, Tabs, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
 
-
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
@@ -41,8 +40,6 @@ function DetailProduk() {
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
-
-  // console.log(pengalaman);
 
   let history = useHistory();
 
