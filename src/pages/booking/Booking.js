@@ -105,7 +105,6 @@ const Booking = () => {
             </div>
           </Card>
 
-<<<<<<< HEAD
           {/* Info Anda*/}
           <Card className="card-booking">
             <h1 className="judul-booking">Info Anda</h1>
@@ -128,30 +127,6 @@ const Booking = () => {
               </Form.Group>
             </div>
           </Card>
-=======
-        {/* Info Anda*/}
-        <Card className="card-booking">
-          <h1 className="judul-booking">Info Anda</h1>
-          <Form className="container-card-booking">
-            <Form.Group>
-              <Form.Label>Nama Anda:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Masukkan nama anda"
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Nomor Telepon:</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Masukkan nomor telepon anda"
-                required
-              />
-            </Form.Group>
-          </Form>
-        </Card>
->>>>>>> 847c5210aca189c5522a71d64221073b63a4f1d4
 
           {/* Alamat meeting */}
           <Card className="card-booking">

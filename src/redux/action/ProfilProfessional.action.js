@@ -1,6 +1,5 @@
 import Axios from "axios";
 
-<<<<<<< HEAD
 // Daftar Constant
 export const GET_DATA_PROFESSIONAL = "GET_DATA_PROFESSIONAL";
 
@@ -24,15 +23,3 @@ export const getDataAction = (values, event, history) => (dispatch) => {
       console.log("error", error);
     });
 };
-=======
-// Daftar Constaant
-export const GET_DATA_PESANAN = "GET_DATA_PESANAN ";
-
-// Function dari Constant
-export const getDataPesananUSer = (data) => {
-  return {
-    type: GET_DATA_PESANAN,
-    payload: data,
-  };
-};
->>>>>>> 847c5210aca189c5522a71d64221073b63a4f1d4
