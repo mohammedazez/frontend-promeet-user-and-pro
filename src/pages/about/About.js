@@ -28,7 +28,7 @@ function about() {
                 </div>
               </div>
 
-              <div className="container-right" className="teamdetails">
+              <div className="container-right teamdetails">
                 <h2 id="bigname">Name</h2>
                 <h3 id="bigjob">Title</h3>
                 <p id="bigdesc">A brief description.</p>

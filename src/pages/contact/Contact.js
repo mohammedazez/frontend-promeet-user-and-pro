@@ -15,44 +15,25 @@ function contact() {
             possible!
           </h4>
           <fieldset>
-            <input
-              placeholder="Full Name *"
-              type="text"
-              tabindex="1"
-              required
-              autofocus
-            />
+            <input placeholder="Full Name *" type="text" required />
           </fieldset>
           <fieldset>
-            <input
-              placeholder="Email Address *"
-              type="email"
-              tabindex="2"
-              required
-            />
+            <input placeholder="Email Address *" type="email" required />
           </fieldset>
           <fieldset>
-            <input placeholder="Phone Number" type="tel" tabindex="3" />
+            <input placeholder="Phone Number" type="tel" />
           </fieldset>
           <fieldset>
-            <input placeholder="Street Address" type="url" tabindex="4" />
+            <input placeholder="Street Address" type="url" />
           </fieldset>
           <fieldset>
-            <input
-              placeholder="Street Address Line 2"
-              type="url"
-              tabindex="5"
-            />
+            <input placeholder="Street Address Line 2" type="url" />
           </fieldset>
           <fieldset>
-            <input placeholder="City, State, Zip" type="url" tabindex="6" />
+            <input placeholder="City, State, Zip" type="url" />
           </fieldset>
           <fieldset>
-            <textarea
-              placeholder="Your Message Here.... *"
-              tabindex="7"
-              required
-            ></textarea>
+            <textarea placeholder="Your Message Here.... *" required></textarea>
           </fieldset>
           <fieldset>
             <button
