@@ -56,7 +56,7 @@ function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 Contact
               </Link>
             </NavItem>
