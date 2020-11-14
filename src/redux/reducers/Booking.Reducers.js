@@ -1,4 +1,4 @@
-import { POST_BOOKING } from "../action/Booking";
+import { POST_BOOKING } from "../action/Booking.action";
 
 const intialState = {
   data: [],

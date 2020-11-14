@@ -39,7 +39,6 @@ export const getProfesiById = (id) => {
         `https://server-promeet.herokuapp.com/api/profesi/${id}`
       );
 
-      // console.log("ini data detail profesi di action", response);
       dispatch({
         type: GET_PROFESI_DETAILS_SUCCESS,
         payload: response.data.profesi,
