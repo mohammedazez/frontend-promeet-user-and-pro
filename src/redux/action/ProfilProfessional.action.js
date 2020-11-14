@@ -15,7 +15,7 @@ export const getDataAction = (values, event, history) => (dispatch) => {
   event.preventDefault();
 
   return Axios.post(
-    "https://server-promeet.herokuapp.com/api/admin/data/profile/",
+    "https://server-promeet.herokuapp.com/api/admin/data/user/",
     values
   )
     .then((response) => console.log(response))

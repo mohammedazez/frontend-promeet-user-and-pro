@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
 import Dropdown from "../dropdown/dropdwon";
 import "./Header.css";
-import { userLogout } from "../../redux/action/User.action";
+import { userLogout, getUserInfoAction } from "../../redux/action/User.action";
 
 function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
   const dataUser = useSelector((state) => state.user);
+  const member = useSelector((state) => state.member);
+
+  console.log(member);
+
+  useEffect(() => {
+    dispatch(getUserInfoAction());
+
+    // eslint-disable-next-line
+  }, []);
 
   const logoutSuccess = () => {
     console.log("logout");
@@ -92,12 +101,15 @@ function Header() {
               <div className="kebawah">
                 <button className="kebawah-tombol">My Profile</button>
                 <div className="kebawah-content">
-                  <Link to="/profil/user">
-                    <p className="teks-kebawah">Profile User</p>
-                  </Link>
-                  <Link to="/profil/pro">
-                    <p className="teks-kebawah">Profile Pro</p>
-                  </Link>
+                  {!member === "member" ? (
+                    <Link to="/profil/user">
+                      <p className="teks-kebawah">Profile User</p>
+                    </Link>
+                  ) : (
+                    <Link to="/profil/pro">
+                      <p className="teks-kebawah">Profile Pro</p>
+                    </Link>
+                  )}
                   <div
                     onClick={() => logoutSuccess()}
                     style={{ cursor: "pointer" }}
