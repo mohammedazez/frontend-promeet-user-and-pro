@@ -20,7 +20,7 @@ function DetailProduk() {
   const [time, setTime] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
-  // const [pengalaman, setPengalaman] = useState();
+  const [pengalaman, setPengalaman] = useState();
 
   const { id } = useParams();
   useEffect(() => {
@@ -36,10 +36,12 @@ function DetailProduk() {
       setTime(profiledetail.timeAvailable);
       setDeskripsi(profiledetail.description);
       setPicture(profiledetail.imgUrl);
-      // setPengalaman(profiledetail.experience);
+      setPengalaman(profiledetail.experience);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
+
+  console.log(pengalaman);
 
   let history = useHistory();
 
@@ -140,7 +142,7 @@ function DetailProduk() {
             </Tab>
             <Tab eventKey="pengalaman" title="Pengalaman">
               {/* mapping pengalaman */}
-              {/* {pengalaman !== undefined ? (
+              {pengalaman !== undefined ? (
                 pengalaman.map((item, index) => (
                   <ul key={index}>
                     <li>
@@ -150,7 +152,7 @@ function DetailProduk() {
                 ))
               ) : (
                 <h1>loading</h1>
-              )} */}
+              )}
               {/* mapping pengalaman */}
             </Tab>
             <Tab eventKey="term" title="Terms and Condition">
