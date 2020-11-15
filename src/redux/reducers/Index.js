@@ -5,6 +5,7 @@ import profesi from "./Profesi.reducers";
 import booking from "./Booking.Reducers";
 import profilprofessional from "./ProfilProfessional.reducers";
 import transfer from "./Transfer.reducers";
+import semuaprofile from "./Allprofile.reducers";
 
 const rootReducers = combineReducers({
   professional,
@@ -13,6 +14,7 @@ const rootReducers = combineReducers({
   booking,
   profilprofessional,
   transfer,
+  semuaprofile,
 });
 
 export default rootReducers;

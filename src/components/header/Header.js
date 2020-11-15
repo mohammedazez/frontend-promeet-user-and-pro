@@ -13,6 +13,7 @@ function Header() {
   const member = useSelector((state) => state.member);
 
   console.log(member);
+  console.log(dataUser);
 
   useEffect(() => {
     dispatch(getUserInfoAction());
