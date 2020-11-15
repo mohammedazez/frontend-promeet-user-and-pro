@@ -4,7 +4,7 @@ import { FcSearch } from "react-icons/fc";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./Allprofile.css";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfileAction } from "../../redux/action/Allprofile.action";
 
@@ -12,7 +12,6 @@ function Allprofile() {
   const dispatch = useDispatch();
   const ProfilPro = useSelector((state) => state.semuaprofile);
   const { listprofile, loading, error } = ProfilPro;
-  const { id } = useParams();
   const history = useHistory();
 
   const handleClick = (id) => {
