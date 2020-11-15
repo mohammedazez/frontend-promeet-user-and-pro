@@ -10,7 +10,7 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
   const dataUser = useSelector((state) => state.user);
-  const member = useSelector((state) => state.user.data.role);
+  const member = useSelector((state) => state.user.data);
 
   console.log(member);
 
@@ -30,20 +30,22 @@ function Header() {
   };
 
   let button;
-  if (member == "member") {
-    button = (
-      <Link to="/profil/user">
-        <p className="teks-kebawah">Profile User</p>
-      </Link>
-    );
-  } else if (member == "professional") {
-    button = (
-      <Link to="/profil/pro">
-        <p className="teks-kebawah">Profile Pro</p>
-      </Link>
-    );
-  } else {
-    button = "";
+  if (localStorage.getItem("token")) {
+    if (member.role == "member") {
+      button = (
+        <Link to="/profil/user">
+          <p className="teks-kebawah">Profile User</p>
+        </Link>
+      );
+    } else if (member.role == "professional") {
+      button = (
+        <Link to="/profil/pro">
+          <p className="teks-kebawah">Profile Pro</p>
+        </Link>
+      );
+    } else {
+      button = "";
+    }
   }
 
   return (
