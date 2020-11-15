@@ -8,7 +8,7 @@ import SidebarPro from "./SidebarPro";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
 import { getProfileDetailAction } from "../../../../redux/action/Professional.action";
-import { getUserInfoAction } from "../../../../redux/action/User.action";
+// import { getUserInfoAction } from "../../../../redux/action/User.action";
 
 function ProfilPro() {
   const dispatch = useDispatch();
@@ -16,7 +16,6 @@ function ProfilPro() {
   const profiledetail = useSelector((state) => state.professional.data);
   const [location, setLocation] = useState("");
   const [profesi, setProfesi] = useState("");
-  const [service, setService] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
 
@@ -30,9 +29,7 @@ function ProfilPro() {
       setLocation(profiledetail.locationId.nameLocation);
       setUserid(profiledetail.userId.fullName);
       setProfesi(profiledetail.profesiId.nameProfesi);
-      setService(profiledetail.serviceId.nameService);
       setPicture(profiledetail.imgUrl);
-      // setPengalaman(profiledetail.experience);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);

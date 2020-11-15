@@ -12,8 +12,6 @@ import { getProfesiById } from "../../redux/action/Profesi.action";
 function Professional() {
   const dispatch = useDispatch();
   const detailProfesi = useSelector((state) => state.profesi.professionDetails);
-  console.log("ini data detail profesi di view", detailProfesi);
-  // console.log("isi profil", detailProfesi.profileId);
   const { id } = useParams();
   const history = useHistory();
 
@@ -104,7 +102,7 @@ function Professional() {
                 <div className="cardprofessional">
                   <img
                     alt={"users here"}
-                    src={detailProfesi.imgUrl}
+                    src={people.imgUrl}
                     height={144}
                     width={179}
                   />

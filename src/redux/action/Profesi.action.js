@@ -15,6 +15,7 @@ export const getProfesiAction = () => {
       const response = await axios.get(
         "https://server-promeet.herokuapp.com/api/profesi"
       );
+
       dispatch({
         type: GET_ALL_PROFESI_SUCCESS,
         payload: response.data.profesi,
@@ -39,7 +40,6 @@ export const getProfesiById = (id) => {
         `https://server-promeet.herokuapp.com/api/profesi/${id}`
       );
 
-      // console.log("ini data detail profesi di action", response);
       dispatch({
         type: GET_PROFESI_DETAILS_SUCCESS,
         payload: response.data.profesi,

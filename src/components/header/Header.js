@@ -13,6 +13,7 @@ function Header() {
   const member = useSelector((state) => state.user.data);
 
   console.log(member);
+  console.log(dataUser);
 
   useEffect(() => {
     dispatch(getUserInfoAction());
@@ -75,7 +76,7 @@ function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 Contact
               </Link>
             </NavItem>

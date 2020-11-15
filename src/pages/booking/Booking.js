@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
-import { postBookingAction } from "../../redux/action/Booking";
+import { postBookingAction } from "../../redux/action/Booking.action";
+import { dataTransferAction } from "../../redux/action/Transfer.action";
 
 // CSS
 import "./Booking.css";
@@ -17,6 +18,7 @@ import { Row, Col, Table, Card, Form, Button } from "react-bootstrap";
 const Booking = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const datatransfer = useSelector((state) => state.transfer.transferMethod);
   const profiledetail = useSelector((state) => state.professional.data);
   const [price, setPrice] = useState("");
   const [picture, setPicture] = useState("");
@@ -25,6 +27,7 @@ const Booking = () => {
   const [time, setTime] = useState("");
   const [service, setService] = useState("");
   const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
 
   const { id } = useParams();
 
@@ -39,9 +42,14 @@ const Booking = () => {
       setDate(profiledetail.startDateAvailable);
       setTime(profiledetail.timeAvailable);
       setPicture(profiledetail.imgUrl);
+      setProfesi(profiledetail.profesiId.nameProfesi);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
+
+  useEffect(() => {
+    dispatch(dataTransferAction());
+  }, [dispatch]);
 
   function handleClick() {
     try {
@@ -73,7 +81,7 @@ const Booking = () => {
                     <th>Tanggal</th>
                     <th>Jenis</th>
                     <th>Tempat</th>
-                    <th>Durasi</th>
+                    <th>Profesi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -90,7 +98,7 @@ const Booking = () => {
                     <td>{date}</td>
                     <td>{service}</td>
                     <td>{location}</td>
-                    <td>2 Jam</td>
+                    <td>{profesi}</td>
                   </tr>
                 </tbody>
               </Table>
@@ -124,7 +132,7 @@ const Booking = () => {
           <Card className="card-booking">
             <h1 className="judul-booking">Alamat Meeting</h1>
             <div className="container-card-booking">
-              <p>Coworking Space</p>
+              <p>{location}</p>
               <p>
                 Jalan Cilandak Town Square, 2, Jl. Cilandak Town Square No.2,
                 RT.2/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan,
@@ -139,70 +147,39 @@ const Booking = () => {
           <Card className="card-booking">
             <h1 className="judul-booking">Metode Pembayaran</h1>
             <hr className="garispemisah-sectionfour" />
-            <Row>
-              <Col>
-                <img
-                  src="https://res.cloudinary.com/def4tydoe/image/upload/v1604825552/metodepembayaran/LOGO-BANK-BCA-1700X800_tbsloi.png"
-                  alt="bcaimg"
-                  className="img-pembayaran-booking"
-                />
-              </Col>
-              <Col>
-                <Form.Check
-                  type="radio"
-                  label="5919111194 - PT Promeet Indonesia"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios1"
-                  required
-                />
-              </Col>
-            </Row>
-            <hr className="garispemisah-sectionfour" />
-            <Row>
-              <Col>
-                <img
-                  src="https://res.cloudinary.com/def4tydoe/image/upload/v1604826188/metodepembayaran/Logo_BRI_q6tug3.png"
-                  alt="briimg"
-                  className="img-pembayaran-booking"
-                />
-              </Col>
-              <Col>
-                <Form.Check
-                  type="radio"
-                  label="2134111194 - PT Promeet Indonesia"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios2"
-                  required
-                />
-              </Col>
-            </Row>
-            <hr className="garispemisah-sectionfour" />
-            <Row>
-              <Col>
-                <img
-                  src="https://res.cloudinary.com/def4tydoe/image/upload/v1604826188/metodepembayaran/Bank_Mandiri_logo_white_bg-removebg-preview_bwywa7.png"
-                  alt="mandiriimg"
-                  className="img-pembayaran-booking"
-                />
-              </Col>
-              <Col>
-                <Form.Check
-                  type="radio"
-                  label="4536111194 - PT Promeet Indonesia"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios3"
-                  required
-                />
-              </Col>
-            </Row>
+            {datatransfer.map((transfer, index) => (
+              <Fragment key={index}>
+                <Row>
+                  <Col>
+                    {/* <img
+                      src="https://res.cloudinary.com/def4tydoe/image/upload/v1604825552/metodepembayaran/LOGO-BANK-BCA-1700X800_tbsloi.png"
+                      alt="bcaimg"
+                      className="img-pembayaran-booking"
+                    /> */}
+                    <p>{`${transfer.nameMethod}`}</p>
+                  </Col>
+                  <Col>
+                    <Form.Check
+                      type="radio"
+                      label={`${transfer.numberRek}`}
+                      name="formHorizontalRadios"
+                      id="formHorizontalRadios1"
+                    />
+                  </Col>
+                </Row>
+                <hr className="garispemisah-sectionfour" />
+              </Fragment>
+            ))}
           </Card>
+
+          {/* Total Price */}
           <Card className="card-booking-pembayaran ">
             <Row>
               <Col>
                 <h4>Total Booking Fee</h4>
               </Col>
               <Col>
-                <h4>Rp {price} </h4>
+                <h4>Rp {price}</h4>
               </Col>
             </Row>
             <hr className="garispemisah-sectionfour" />
@@ -211,10 +188,10 @@ const Booking = () => {
                 <h4>Total Payment</h4>
               </Col>
               <Col>
-                <h4>Rp {price} </h4>
+                <h4>Rp {price}</h4>
               </Col>
             </Row>
-            <Button type="submit">Booking Sekarang</Button>
+            <Button onClick={handleClick}>Booking Sekarang</Button>
           </Card>
         </div>
         <Footer />
