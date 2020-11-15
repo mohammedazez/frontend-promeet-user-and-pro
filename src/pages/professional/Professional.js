@@ -102,7 +102,7 @@ function Professional() {
                 <div className="cardprofessional">
                   <img
                     alt={"users here"}
-                    src={detailProfesi.imgUrl}
+                    src={people.imgUrl}
                     height={144}
                     width={179}
                   />
