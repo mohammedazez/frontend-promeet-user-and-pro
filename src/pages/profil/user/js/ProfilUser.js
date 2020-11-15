@@ -24,6 +24,13 @@ function ProfilUser() {
   const [nohp, setNohp] = useState("");
   const [picture, setPicture] = useState("");
 
+  const [editProfil, setEditProfil] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    numberPhone: "",
+  });
+
   useEffect(() => {
     if (member === undefined) {
       dispatch(getUserInfoAction());
@@ -79,38 +86,51 @@ function ProfilUser() {
             <Modal.Body>
               <Form>
                 <Form.Group controlId="gantiemail">
+                  <Form.Label>Full Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Full Name"
+                    value={editProfil.fullName}
+                  />
+                </Form.Group>
+                <Form.Group controlId="gantiemail">
                   <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    value={editProfil.email}
+                  />
                 </Form.Group>
                 <Form.Group controlId="gantipassword">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    value={editProfil.password}
+                  />
                 </Form.Group>
                 <Form.Group controlId="gantinomor">
                   <Form.Label>Nomor Handphone</Form.Label>
-                  <Form.Control type="nomor" placeholder="Nomor Hp" />
+                  <Form.Control
+                    type="nomor"
+                    placeholder="Nomor Hp"
+                    value={editProfil.numberPhone}
+                  />
                 </Form.Group>
-                <Form.Group controlId="gantialamat">
+                {/* <Form.Group controlId="gantialamat">
                   <Form.Label>Alamat</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={3}
                     placeholder="Alamat lengkap"
+                    v
                   />
-                </Form.Group>
+                </Form.Group> */}
                 <Button variant="primary" type="submit">
                   Update Profil
                 </Button>
               </Form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
           </Modal>
         </Row>
       </div>
