@@ -7,6 +7,7 @@ import profilprofessional from "./ProfilProfessional.reducers";
 import transfer from "./Transfer.reducers";
 import semuaprofile from "./Allprofile.reducers";
 
+
 const rootReducers = combineReducers({
   professional,
   user,

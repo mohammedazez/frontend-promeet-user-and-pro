@@ -10,7 +10,7 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
   const dataUser = useSelector((state) => state.user);
-  const member = useSelector((state) => state.member);
+  const member = useSelector((state) => state.user.data);
 
   console.log(member);
   console.log(dataUser);
@@ -29,6 +29,25 @@ function Header() {
     alert("logout");
     console.log("slesai logoout", dataUser);
   };
+
+  let button;
+  if (localStorage.getItem("token")) {
+    if (member.role == "member") {
+      button = (
+        <Link to="/profil/user">
+          <p className="teks-kebawah">Profile User</p>
+        </Link>
+      );
+    } else if (member.role == "professional") {
+      button = (
+        <Link to="/profil/pro">
+          <p className="teks-kebawah">Profile Pro</p>
+        </Link>
+      );
+    } else {
+      button = "";
+    }
+  }
 
   return (
     <div>
@@ -102,15 +121,7 @@ function Header() {
               <div className="kebawah">
                 <button className="kebawah-tombol">My Profile</button>
                 <div className="kebawah-content">
-                  {!member === "member" ? (
-                    <Link to="/profil/user">
-                      <p className="teks-kebawah">Profile User</p>
-                    </Link>
-                  ) : (
-                    <Link to="/profil/pro">
-                      <p className="teks-kebawah">Profile Pro</p>
-                    </Link>
-                  )}
+                  {button}
                   <div
                     onClick={() => logoutSuccess()}
                     style={{ cursor: "pointer" }}

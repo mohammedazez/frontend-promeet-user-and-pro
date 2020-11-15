@@ -19,6 +19,8 @@ function ProfilPro() {
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
 
+  console.log(profiledetail);
+
   const { id } = useParams();
   useEffect(() => {
     if (profiledetail === undefined) {
