@@ -41,8 +41,6 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-  console.log(pengalaman);
-
   let history = useHistory();
 
   function handleClick() {

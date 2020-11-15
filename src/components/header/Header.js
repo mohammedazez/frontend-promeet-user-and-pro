@@ -5,6 +5,7 @@ import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
 import Dropdown from "../dropdown/dropdwon";
 import "./Header.css";
 import { userLogout, getUserInfoAction } from "../../redux/action/User.action";
+import Swal from "sweetalert2";
 
 function Header() {
   const dispatch = useDispatch();
@@ -12,7 +13,6 @@ function Header() {
   const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
 
-  console.log(member);
   console.log(dataUser);
 
   useEffect(() => {
@@ -22,23 +22,27 @@ function Header() {
   }, []);
 
   const logoutSuccess = () => {
-    console.log("logout");
     dispatch(userLogout(history));
     localStorage.removeItem("token");
 
-    alert("logout");
-    console.log("slesai logoout", dataUser);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Success Logout",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   let button;
   if (localStorage.getItem("token")) {
-    if (member.role == "member") {
+    if (member.role === "member") {
       button = (
         <Link to="/profil/user">
           <p className="teks-kebawah">Profile User</p>
         </Link>
       );
-    } else if (member.role == "professional") {
+    } else if (member.role === "professional") {
       button = (
         <Link to="/profil/pro">
           <p className="teks-kebawah">Profile Pro</p>

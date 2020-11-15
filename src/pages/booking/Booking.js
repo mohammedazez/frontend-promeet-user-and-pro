@@ -1,9 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
 import { postBookingAction } from "../../redux/action/Booking.action";
-import { dataTransferAction } from "../../redux/action/Transfer.action";
+import {
+  dataTransferAction,
+  addToConfirmation,
+} from "../../redux/action/Transfer.action";
 
 // CSS
 import "./Booking.css";
@@ -51,13 +54,9 @@ const Booking = () => {
     dispatch(dataTransferAction());
   }, [dispatch]);
 
-  function handleClick() {
-    try {
-      history.push("/confirmation");
-    } catch (error) {
-      alert(error);
-    }
-  }
+  const rentHandler = (transfer) => {
+    dispatch(addToConfirmation(transfer));
+  };
 
   return (
     <Fragment>
@@ -104,7 +103,6 @@ const Booking = () => {
               </Table>
             </div>
           </Card>
-
           {/* Info Anda*/}
           <Card className="card-booking">
             <h1 className="judul-booking">Info Anda</h1>
@@ -127,7 +125,6 @@ const Booking = () => {
               </Form.Group>
             </div>
           </Card>
-
           {/* Alamat meeting */}
           <Card className="card-booking">
             <h1 className="judul-booking">Alamat Meeting</h1>
@@ -151,19 +148,16 @@ const Booking = () => {
               <Fragment key={index}>
                 <Row>
                   <Col>
-                    {/* <img
-                      src="https://res.cloudinary.com/def4tydoe/image/upload/v1604825552/metodepembayaran/LOGO-BANK-BCA-1700X800_tbsloi.png"
-                      alt="bcaimg"
-                      className="img-pembayaran-booking"
-                    /> */}
                     <p>{`${transfer.nameMethod}`}</p>
                   </Col>
                   <Col>
                     <Form.Check
                       type="radio"
                       label={`${transfer.numberRek}`}
-                      name="formHorizontalRadios"
-                      id="formHorizontalRadios1"
+                      name="pembayaran"
+                      id="pembayaran"
+                      value="method"
+                      required
                     />
                   </Col>
                 </Row>
@@ -191,8 +185,12 @@ const Booking = () => {
                 <h4>Rp {price}</h4>
               </Col>
             </Row>
-            <Button onClick={handleClick}>Booking Sekarang</Button>
           </Card>
+          <Link to="/confirmation" style={{ textDecoration: "none" }}>
+            <Button onClick={() => rentHandler(datatransfer)}>
+              Booking Sekarang
+            </Button>
+          </Link>
         </div>
         <Footer />
       </Form>

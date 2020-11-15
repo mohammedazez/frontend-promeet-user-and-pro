@@ -18,7 +18,6 @@ export const postBookingAction = (values, event, history) => (dispatch) => {
     values
   )
     .then((response) => {
-      console.log(response);
       if (response) {
         history.push("/confirmation");
       }

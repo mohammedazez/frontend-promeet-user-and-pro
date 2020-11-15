@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../css/ProfilUser.css";
 import { Row, Col, Form, Button, Card, Modal } from "react-bootstrap";
@@ -10,14 +9,11 @@ import { getUserInfoAction } from "../../../../redux/action/User.action";
 
 function ProfilUser() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const member = useSelector((state) => state.user.data);
-
-  console.log(member);
 
   const [email, setEmail] = useState("");
   const [userid, setUserid] = useState("");
@@ -37,14 +33,6 @@ function ProfilUser() {
 
     // eslint-disable-next-line
   }, [member, dispatch]);
-
-  function handleClick() {
-    try {
-      history.push("/forminput");
-    } catch (error) {
-      alert(error);
-    }
-  }
 
   return (
     <div>

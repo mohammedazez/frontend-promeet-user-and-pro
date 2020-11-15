@@ -17,7 +17,6 @@ function Forminput() {
   const history = useHistory();
 
   const detailProfile = useSelector((state) => state.user.data);
-  console.log("detail di form input", detailProfile);
 
   useEffect(() => {
     if (detailProfile.length === 0) {
