@@ -29,6 +29,23 @@ function Header() {
     console.log("slesai logoout", dataUser);
   };
 
+  let button;
+  if (member == "member") {
+    button = (
+      <Link to="/profil/user">
+        <p className="teks-kebawah">Profile User</p>
+      </Link>
+    );
+  } else if (member == "professional") {
+    button = (
+      <Link to="/profil/pro">
+        <p className="teks-kebawah">Profile Pro</p>
+      </Link>
+    );
+  } else {
+    button = "";
+  }
+
   return (
     <div>
       <Navbar className="container-navbar" fixed="top" expand="lg">
@@ -101,15 +118,7 @@ function Header() {
               <div className="kebawah">
                 <button className="kebawah-tombol">My Profile</button>
                 <div className="kebawah-content">
-                  {member == "member" ? (
-                    <Link to="/profil/user">
-                      <p className="teks-kebawah">Profile User</p>
-                    </Link>
-                  ) : (
-                    <Link to="/profil/pro">
-                      <p className="teks-kebawah">Profile Pro</p>
-                    </Link>
-                  )}
+                  {button}
                   <div
                     onClick={() => logoutSuccess()}
                     style={{ cursor: "pointer" }}
