@@ -49,7 +49,6 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-  console.log("profile", profiledetail);
   moment().format("MMM Do YY");
 
   const newDateStart = moment(datestart);
