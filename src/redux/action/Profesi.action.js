@@ -6,6 +6,8 @@ export const GET_PROFESI_DETAILS_REQUEST = "GET_PROFESI_DETAILS_REQUEST";
 export const GET_PROFESI_DETAILS_SUCCESS = "GET_PROFESI_DETAILS_SUCCESS";
 export const GET_PROFESI_DETAILS_FAILED = "GET_PROFESI_DETAILS_FAILED";
 
+
+
 export const getProfesiAction = () => {
   return async (dispatch) => {
     try {
@@ -39,7 +41,7 @@ export const getProfesiById = (id) => {
         `https://server-promeet.herokuapp.com/api/profesi/${id}`
       );
 
-      // console.log("ini data detail profesi di action", response);
+      console.log("ini data detail profesi di action", response.data.profesi);
       dispatch({
         type: GET_PROFESI_DETAILS_SUCCESS,
         payload: response.data.profesi,
