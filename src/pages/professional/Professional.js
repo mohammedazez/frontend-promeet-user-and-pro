@@ -21,6 +21,8 @@ function Professional() {
     // eslint-disable-next-line
   }, []);
 
+
+
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
@@ -44,6 +46,7 @@ function Professional() {
   //   }
   // };
 
+
   return (
     <div>
       <Header />
@@ -57,7 +60,6 @@ function Professional() {
                   <FcSearch />
                 </i>
               </Button>
-
               <input
                 type="text"
                 className="searchTerm"
@@ -68,33 +70,42 @@ function Professional() {
             </div>
           </form>
         </div> */}
-
         {/* <div className="containerfilter"> */}
         {/* Filter Lokasi */}
         {/* <div className="box">
             <select>
+              <option>---</option>
               <option>Jakarta</option>
               <option>Depok</option>
               <option>Bekasi</option>
               <option>Tangerang</option>
             </select>
-          </div> */}
-        {/* Filter harga */}
-        {/* <div className="box">
+
+          </div>
+          {/* Filter harga */}
+          {/* <div className="box">
+          <h5>Cari berdasarkan harga</h5>
+
             <select>
+              <option>---</option>
               <option>Termurah</option>
               <option>Termahal</option>
             </select>
           </div> */}
-        {/* Filter kategori */}
-        {/* <div className="box">
+
+          {/* Filter kategori */}
+          {/* <div className="box">
+          <h5>Cari berdasarkan pekerjaan</h5>
+
             <select>
+              <option>---</option>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
             </select>
           </div>
         </div> */}
+
         <div className="tulisanpenandaprofessional">
           <p>
             <Link to="/">Home</Link>
@@ -106,6 +117,7 @@ function Professional() {
           {detailProfesi.nameProfesi}
         </h1>
         <Row className="rowresponsive">
+
           {detailProfesi.profileId !== undefined ? (
             detailProfesi.profileId.map((people, index) => (
               <div className="containerprofessionallist" key={index}>

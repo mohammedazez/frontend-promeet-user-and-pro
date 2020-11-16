@@ -11,7 +11,6 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
-  console.log(profiledetail);
   const [deskripsi, setDeskripsi] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
@@ -143,7 +142,7 @@ function DetailProduk() {
         </Row>
       </div>
       <div className="container-deskripsi-detail">
-        <div style={{ backgroundColor: "#30F5FF" }}>
+        <div style={{ backgroundColor: "#63cfbb" }}>
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
             <Tab eventKey="tentang" title="Tentang">
               <p>{deskripsi}</p>

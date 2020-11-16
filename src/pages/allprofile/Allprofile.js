@@ -94,8 +94,8 @@ function Allprofile() {
                   <div className="card-body">
                     <h5 className="cardtitle">{profile.userId.fullName}</h5>
                     <p>
-                      {profile.profesiId.nameProfesi} di
-                      {profile.locationId.nameLocation}
+                      {/* {profile.profesiId.nameProfesi} di */}
+                      {/* {profile.locationId.nameLocation} */}
                     </p>
                     <br />
                     <p>Rp {profile.price} Per/1 Jam</p>
