@@ -1,4 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
+// import library momentjs
+import moment from 'moment';
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Header from "../../components/header/Header";
@@ -11,6 +13,7 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
+
   const [deskripsi, setDeskripsi] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
@@ -46,6 +49,13 @@ function DetailProduk() {
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
+
+  console.log('profile', profiledetail)
+  moment().format("MMM Do YY");    
+
+  const newDate = moment(date)
+  
+  console.log('tanggal',newDate.format('L'));
 
   return (
     <Fragment>
@@ -111,9 +121,13 @@ function DetailProduk() {
               </Col>
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">End Date Available :</p>
+
+                  <p className="judul-filter-detail">
+                    Pilihan Tanggal Tersedia:
+                  </p>
+               
                   <select>
-                    <option>{dateend}</option>
+                    <option>{newDate.format('L')}</option>
                   </select>
                 </div>
               </Col>
