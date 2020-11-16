@@ -23,7 +23,7 @@ function SignupProfessional() {
     fullName: "",
     email: "",
     password: "",
-    pekerjaan: "",
+    numberPhone: "",
     lokasi: "",
   });
 
@@ -98,19 +98,19 @@ function SignupProfessional() {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label className="label-formb">Pekerjaan</Form.Label>
+              <Form.Label className="label-formb">No Handphone</Form.Label>
               <Form.Control
-                as="select"
+                // as="select"
                 className="kolom-formb"
                 size="sm"
                 type="text"
                 placeholder="Masukkan info pekerjaan saat ini"
-                name="pekerjaan"
-                value={proRegister.pekerjaan}
+                name="numberPhone"
+                value={proRegister.numberPhone}
                 onChange={(event) => handleChange(event)}
                 required
               >
-                <option>---</option>
+                {/* <option>---</option>
                 <option>Actress</option>
                 <option>Akuntan</option>
                 <option>Arsitek</option>
@@ -126,7 +126,7 @@ function SignupProfessional() {
                 <option>Pilot</option>
                 <option>Software Engineer</option>
                 <option>Teknisi Elektronik</option>
-                <option>Teknisi Listrik</option>
+                <option>Teknisi Listrik</option> */}
               </Form.Control>
             </Form.Group>
             <Form.Group>
