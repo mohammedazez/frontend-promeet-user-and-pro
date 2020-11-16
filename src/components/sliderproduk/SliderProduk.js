@@ -12,12 +12,21 @@ function SliderProduk() {
   const dispatch = useDispatch();
   const ProfilPro = useSelector((state) => state.semuaprofile);
   const { listprofile } = ProfilPro;
-
   const history = useHistory();
+  // const [name, setName] = useState("");
 
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
+
+  // useEffect(() => {
+  //   if (listprofile === undefined) {
+  //     dispatch(getProfileAction());
+  //   } else {
+  //     setName(listprofile.userId.fullName);
+  //   }
+  //   // eslint-disable-next-line
+  // }, [listprofile, dispatch]);
 
   useEffect(() => {
     dispatch(getProfileAction());
@@ -76,7 +85,7 @@ function SliderProduk() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{profile.userId.fullName}</h5>
-                  <p>{profile.profesiId.nameProfesi} di Jakarta</p>
+                  {/* <p>{profile.profesiId.nameProfesi} di Jakarta</p> */}
                   <br />
                   <p>Rp {profile.price} /1 Jam</p>
                   <Button

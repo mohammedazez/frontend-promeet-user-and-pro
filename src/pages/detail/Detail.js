@@ -11,7 +11,6 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
-  console.log(profiledetail);
   const [deskripsi, setDeskripsi] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
