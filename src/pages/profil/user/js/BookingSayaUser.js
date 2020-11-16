@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/BookingSayaUser.css";
 import { Row, Col, Card, Table } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfileDetailAction } from "../../../../redux/action/Professional.action";
 
 function BookingSayaUser() {
+  const dispatch = useDispatch();
+  const profiledetail = useSelector((state) => state.professional.data);
+  const [price, setPrice] = useState("");
+  const [picture, setPicture] = useState("");
+  const [userid, setUserid] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [service, setService] = useState("");
+  const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
+
+  useEffect(() => {
+    if (profiledetail === undefined) {
+      dispatch(getProfileDetailAction());
+    } else {
+      setLocation(profiledetail.locationId.nameLocation);
+      setUserid(profiledetail.userId.fullName);
+      setService(profiledetail.serviceId.nameService);
+      setPrice(profiledetail.price);
+      setDate(profiledetail.startDateAvailable);
+      setTime(profiledetail.timeAvailable);
+      setPicture(profiledetail.imgUrl);
+      setProfesi(profiledetail.profesiId.nameProfesi);
+    }
+    // eslint-disable-next-line
+  }, [profiledetail, dispatch]);
   return (
     <div>
       <Header />
@@ -28,24 +56,24 @@ function BookingSayaUser() {
                       <th>Jam</th>
                       <th>Jenis</th>
                       <th>Tempat</th>
-                      <th>Durasi</th>
+                      <th>Profesi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>
                         <img
-                          src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
+                          src={picture}
                           className="foto-bookingsayauser"
                           alt="fotobookingsaya"
                         />
                       </td>
-                      <td>Meeting with Angelia</td>
-                      <td>02-11-2020</td>
-                      <td>08:00 WIB</td>
-                      <td>Konsultasi</td>
-                      <td>Coworking Space</td>
-                      <td>2 Jam</td>
+                      <td>{userid}</td>
+                      <td>{date}</td>
+                      <td>{time} WIB</td>
+                      <td>{service}</td>
+                      <td>{location}</td>
+                      <td>{profesi}</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -63,7 +91,7 @@ function BookingSayaUser() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Rp 2.000.000</td>
+                      <td>Rp {price}</td>
                       <td>BCA 5919111194 - PT Prommet Indonesia</td>
                       <td>02-11-2020</td>
                       <td>03-11-2020</td>

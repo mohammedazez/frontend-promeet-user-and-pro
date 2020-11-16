@@ -3,7 +3,7 @@ import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Row, Col, Button, Tabs, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
@@ -41,15 +41,6 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-  let history = useHistory();
-
-  function handleClick() {
-    try {
-      history.push("/booking");
-    } catch (error) {
-      alert(error);
-    }
-  }
   return (
     <Fragment>
       <Header />
@@ -80,16 +71,34 @@ function DetailProduk() {
               {profesi} dari {location}
             </h2>
             <p className="harga-detail">Rp {price}/Per jam</p>
-            <Button className="button-detail" onClick={handleClick}>
-              Kirim Pertemuan
-            </Button>
+            {/* Login terlebih dahulu */}
+            {!localStorage.getItem("token") ? (
+              <Link to="/login">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className="button-detail"
+                >
+                  Kirim Pertemuan
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/booking">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className="button-detail"
+                >
+                  Kirim Pertemuan
+                </Button>
+              </Link>
+            )}
+            {/* Login terlebih dahulu */}
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
                   <p className="judul-filter-detail">Pilihan Jam Tersedia :</p>
                   <select>
-                    <option>{time} WIB</option>
-                    <option>{time} WIB</option>
                     <option>{time} WIB</option>
                   </select>
                 </div>
@@ -100,8 +109,6 @@ function DetailProduk() {
                     Pilihan Tanggal Tersedia:
                   </p>
                   <select>
-                    <option>{date}</option>
-                    <option>{date}</option>
                     <option>{date}</option>
                   </select>
                 </div>

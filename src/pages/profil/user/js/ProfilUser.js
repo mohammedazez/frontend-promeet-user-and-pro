@@ -20,7 +20,7 @@ function ProfilUser() {
   const [nohp, setNohp] = useState("");
   const [picture, setPicture] = useState("");
 
-  const [editProfil, setEditProfil] = useState({
+  const [editProfil] = useState({
     fullName: "",
     email: "",
     password: "",
