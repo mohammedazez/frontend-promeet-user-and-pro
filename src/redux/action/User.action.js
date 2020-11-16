@@ -58,7 +58,7 @@ export const userRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/user/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setUserRegister(response.data.user));
       if (response.data !== "email sudah tersedia") {
         Swal.fire({
@@ -87,7 +87,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/prof/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setProRegister(response.data.user));
       if (response.data !== "Email Sudah Tersedia") {
         Swal.fire({
@@ -117,7 +117,7 @@ export const loginAction = (values, event, history) => {
     return axios
       .post("https://server-promeet.herokuapp.com/api/user/login", values)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
 
         if (response.data.token !== undefined) {
           localStorage.setItem("token", response.data.token);
@@ -157,20 +157,20 @@ export const getUserInfoAction = () => async (dispatch) => {
   const userInfo = await axios.get(url, config);
 
   dispatch(getUserInfo(userInfo.data.member));
-  console.log("user login", userInfo.data.member);
+  // console.log("user login", userInfo.data.member);
 };
 
 export const getEditProfessional = (values, detailProfile, event) => {
   return async (dispatch) => {
     event.preventDefault();
-    console.log("isi status", values);
+    // console.log("isi status", values);
     return axios
       .put(
         `http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
         values
       )
       .then((response) => {
-        console.log("response edit", response);
+        // console.log("response edit", response);
         dispatch(editUser(response.data));
       })
       .catch((error) => {
