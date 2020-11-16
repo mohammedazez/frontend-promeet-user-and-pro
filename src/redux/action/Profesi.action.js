@@ -6,6 +6,8 @@ export const GET_PROFESI_DETAILS_REQUEST = "GET_PROFESI_DETAILS_REQUEST";
 export const GET_PROFESI_DETAILS_SUCCESS = "GET_PROFESI_DETAILS_SUCCESS";
 export const GET_PROFESI_DETAILS_FAILED = "GET_PROFESI_DETAILS_FAILED";
 
+
+
 export const getProfesiAction = () => {
   return async (dispatch) => {
     try {
@@ -39,7 +41,6 @@ export const getProfesiById = (id) => {
       const response = await axios.get(
         `https://server-promeet.herokuapp.com/api/profesi/${id}`
       );
-
       dispatch({
         type: GET_PROFESI_DETAILS_SUCCESS,
         payload: response.data.profesi,
