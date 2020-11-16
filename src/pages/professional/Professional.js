@@ -125,8 +125,16 @@ function Professional() {
                     width={179}
                   />
                   <div className="card-body">
-                    <h5 className="cardtitle">{people.userId.fullName}</h5>
-                    <p>
+                    <h5 style={{ fontSize: "20px", fontWeight: "900" }}>
+                      {people.userId.fullName}
+                    </h5>
+                    <p
+                      style={{
+                        fontSize: "15px",
+                        fontWeight: "700",
+                        color: "blue",
+                      }}
+                    >
                       {detailProfesi.nameProfesi} di
                       {people.locationId.nameLocation}
                     </p>

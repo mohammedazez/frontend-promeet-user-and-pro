@@ -84,8 +84,19 @@ function SliderProduk() {
                   width={179}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{profile.userId.fullName}</h5>
-                  {/* <p>{profile.profesiId.nameProfesi} di Jakarta</p> */}
+                  <h5 style={{ fontSize: "20px", fontWeight: "900" }}>
+                    {profile.userId.fullName}
+                  </h5>
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: "700",
+                      color: "blue",
+                    }}
+                  >
+                    {profile.profesiId.nameProfesi} di{" "}
+                    {profile.locationId.nameLocation}
+                  </p>
                   <br />
                   <p>Rp {profile.price} /1 Jam</p>
                   <Button
