@@ -6,6 +6,7 @@ import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
 import { getUserInfoAction } from "../../../../redux/action/User.action";
+import ReactFilestack from "filestack-react";
 
 function ProfilUser() {
   const dispatch = useDispatch();
@@ -52,6 +53,11 @@ function ProfilUser() {
           <Col className="container-profilsaya">
             <h1>Profil Saya</h1>
             <Card className="card-profilpro">
+              <p>Upload KTP anda</p>
+              <ReactFilestack
+                apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+                onSuccess={(res) => console.log(res)}
+              />
               <Card.Img
                 src={picture}
                 className="foto-profilprosaya"

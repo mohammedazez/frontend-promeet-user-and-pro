@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
-import {getProfileById} from "../../redux/action/Allprofile.action";
+// import { getProfileById } from "../../redux/action/Allprofile.action";
 import { postBookingAction } from "../../redux/action/Booking.action";
 import {
   dataTransferAction,
@@ -58,42 +58,37 @@ const Booking = () => {
   }, [dispatch]);
 
   const [userSetBooking, setUserBooking] = useState({
-    userId : userBooking._id,
+    userId: userBooking._id,
     profileId: profiledetail._id,
     transferId: datatransfer._id,
-    total : profiledetail.price,
-    status: 'Pending',
-    imgUrl: 'gambar.jpeg'
-
-  })
+    total: profiledetail.price,
+    status: "Pending",
+    imgUrl: "gambar.jpeg",
+  });
 
   const handleInput = (e) => {
     setUserBooking({
       ...userSetBooking,
-      [e.target.name] : e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   // const rentHandler = (transfer) => {
   //   dispatch(addToConfirmation(transfer));
   // };
 
-  const handleSubmit = ( event ) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(postBookingAction(userSetBooking, history))
-  }
+    dispatch(postBookingAction(userSetBooking, history));
+  };
 
-  console.log('profiledetail', profiledetail._id)
-  console.log('booking', userSetBooking)
-
+  console.log("profiledetail", profiledetail._id);
+  console.log("booking", userSetBooking);
 
   return (
     <Fragment>
-     
-        <Header />
-        <Form
-        onSubmit={handleSubmit}
-      >
+      <Header />
+      <Form onSubmit={handleSubmit}>
         <div className="container-booking">
           {/* Detail Pesanan */}
           <Card className="card-booking">
@@ -139,7 +134,6 @@ const Booking = () => {
                 <Form.Label>Nama Anda:</Form.Label>
                 <Form.Control
                   type="text"
-                  
                   placeholder="Masukkan nama anda"
                   defaultValue={userBooking.fullName}
                   required
@@ -214,16 +208,15 @@ const Booking = () => {
                 <h4>Total Payment</h4>
               </Col>
               <Col>
-                <h4 name="total" defaultValue={userBooking.total} >Rp {price}</h4>
+                <h4 name="total" defaultValue={userBooking.total}>
+                  Rp {price}
+                </h4>
               </Col>
             </Row>
           </Card>
           {/* <Link to="/confirmation" style={{ textDecoration: "none" }}> */}
-            {/* <Button onClick={() => rentHandler(datatransfer)}> */}
-            <Button type="submit" >
-
-              Booking Sekarang
-            </Button>
+          {/* <Button onClick={() => rentHandler(datatransfer)}> */}
+          <Button type="submit">Booking Sekarang</Button>
           {/* </Link> */}
         </div>
         <Footer />

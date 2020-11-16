@@ -101,6 +101,7 @@ function BookingSayaUser() {
                 </Table>
                 <Form>
                   <Form.Group>
+                    <p>Upload bukti Pembayaran</p>
                     <ReactFilestack
                       apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
                       onSuccess={(res) => console.log(res)}

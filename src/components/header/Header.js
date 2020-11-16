@@ -13,15 +13,14 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const dataUser = useSelector((state) => state.user);
+  // const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
-
 
   // console.log("ini data member", member);
   // console.log("ini data user", dataUser);
 
   useEffect(() => {
-      dispatch(getUserInfoAction());
+    dispatch(getUserInfoAction());
     // eslint-disable-next-line
   }, [dispatch]);
 
