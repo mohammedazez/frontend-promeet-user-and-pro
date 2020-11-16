@@ -9,6 +9,7 @@ export const GET_USER_INFO = "GET_USER_INFO";
 export const EDIT_USER = "EDIT_USER";
 export const LOGOUT = "LOGOUT";
 
+
 // --------------- Function dari Constant ---------------
 export const setUserRegister = (data) => {
   return {
@@ -30,6 +31,7 @@ export const setLogin = (data) => {
     payload: data,
   };
 };
+
 
 export const getUserInfo = (data) => {
   return {
@@ -147,6 +149,7 @@ export const loginAction = (values, event, history) => {
   };
 };
 
+
 export const getUserInfoAction = () => async (dispatch) => {
   const url = "https://server-promeet.herokuapp.com/api/auth";
   const config = {
@@ -186,3 +189,4 @@ export const userLogout = (history) => {
     history.push("/");
   };
 };
+

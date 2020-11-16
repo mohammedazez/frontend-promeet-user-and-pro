@@ -7,9 +7,13 @@ import "./Header.css";
 import { userLogout, getUserInfoAction } from "../../redux/action/User.action";
 import Swal from "sweetalert2";
 
+import { userLogout } from "../../redux/action/User.action";
+// import { getUserInfoAction } from "../../redux/action/User.action";
+
 function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
 
@@ -70,17 +74,32 @@ function Header() {
           </Nav>
           <Nav>
             <NavItem>
-              <Link to="/" className="nav-link">
+
+              <Link
+                to="/"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+
                 Home
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/about" className="nav-link">
+              <Link
+                to="/about"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 About
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/contact" className="nav-link">
+              <Link
+                to="/"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+
                 Contact
               </Link>
             </NavItem>
@@ -91,6 +110,7 @@ function Header() {
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   Jadi Konsultan
+
                 </Link>
               </Button>
             ) : (
