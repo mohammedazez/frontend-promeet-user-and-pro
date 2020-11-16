@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+// import library momentjs
 import moment from 'moment';
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
@@ -44,6 +45,12 @@ function DetailProduk() {
   }, [profiledetail, dispatch]);
 
   console.log('profile', profiledetail)
+  moment().format("MMM Do YY");    
+
+  const newDate = moment(date)
+  
+  console.log('tanggal',newDate.format('L'));
+
   return (
     <Fragment>
       <Header />
@@ -111,8 +118,9 @@ function DetailProduk() {
                   <p className="judul-filter-detail">
                     Pilihan Tanggal Tersedia:
                   </p>
+               
                   <select>
-                    <option>{date}</option>
+                    <option>{newDate.format('L')}</option>
                   </select>
                 </div>
               </Col>

@@ -44,6 +44,7 @@ export const getProfileById = (id) => {
         type: GET_PROFILE_DETAILS_SUCCESS,
         payload: response.data.profile,
       });
+      console.log(response.data.profile)
     } catch (error) {
       dispatch({
         type: GET_PROFILE_DETAILS_FAILED,

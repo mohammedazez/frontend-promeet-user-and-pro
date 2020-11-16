@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
+import {getProfileById} from "../../redux/action/Allprofile.action";
 import { postBookingAction } from "../../redux/action/Booking.action";
 import {
   dataTransferAction,
@@ -56,10 +57,10 @@ const Booking = () => {
     dispatch(dataTransferAction());
   }, [dispatch]);
 
-  const [booking, setBooking] = useState({
+  const [userSetBooking, setUserBooking] = useState({
     userId : userBooking._id,
     profileId: profiledetail._id,
-    transferId: datatransfer,
+    transferId: datatransfer._id,
     total : profiledetail.price,
     status: 'Pending',
     imgUrl: 'gambar.jpeg'
@@ -67,8 +68,8 @@ const Booking = () => {
   })
 
   const handleInput = (e) => {
-    setBooking({
-      ...booking,
+    setUserBooking({
+      ...userSetBooking,
       [e.target.name] : e.target.value
     })
   }
@@ -79,10 +80,12 @@ const Booking = () => {
 
   const handleSubmit = ( event ) => {
     event.preventDefault();
-    dispatch(postBookingAction(booking, history))
+    dispatch(postBookingAction(userSetBooking, history))
   }
 
-  console.log('booking', booking)
+  console.log('profiledetail', profiledetail._id)
+  console.log('booking', userSetBooking)
+
 
   return (
     <Fragment>
@@ -211,17 +214,17 @@ const Booking = () => {
                 <h4>Total Payment</h4>
               </Col>
               <Col>
-                <h4 name="total" defaultValue={booking.total} >Rp {price}</h4>
+                <h4 name="total" defaultValue={userBooking.total} >Rp {price}</h4>
               </Col>
             </Row>
           </Card>
-          <Link to="/confirmation" style={{ textDecoration: "none" }}>
+          {/* <Link to="/confirmation" style={{ textDecoration: "none" }}> */}
             {/* <Button onClick={() => rentHandler(datatransfer)}> */}
             <Button type="submit" >
 
               Booking Sekarang
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
         <Footer />
       </Form>

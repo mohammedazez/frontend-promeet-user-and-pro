@@ -19,10 +19,10 @@ console.log('values', values)
   )
     .then((response) => {
       dispatch(postBooking(response.data.booking))
-      console.log('response booking', response)
-      // if (response.data.booking) {
-      //   history.push("/confirmation");
-      // }
+      console.log('response booking', response.data.booking)
+      if (response.data.booking) {
+        history.push("/confirmation");
+      }
     })
     .catch((error) => {
       console.log("error", error);
