@@ -89,7 +89,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
     .then((response) => {
       // console.log("res", response);
       dispatch(setProRegister(response.data.user));
-      console.log('setelah daftar', response)
+      // console.log('setelah daftar', response)
       if (response.data !== "Email Sudah Tersedia") {
         Swal.fire({
           title: "Berhasil mendaftar",
@@ -162,16 +162,17 @@ export const getUserInfoAction = () => async (dispatch) => {
 };
 
 export const getEditProfessional = (values, detailProfile, event) => {
-
-  return async(dispatch) => {    
-      event.preventDefault();
-      console.log('isi status', values )    
-      return axios
-      .put(`https://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`, values)
+  return async (dispatch) => {
+    event.preventDefault();
+    // console.log("isi status", values);
+    return axios
+      .put(
+        `https://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
+        values
+      )
       .then((response) => {
-          console.log('response edit', response.data)
-          dispatch(editUser(response.data))
-
+        // console.log("response edit", response.data);
+        dispatch(editUser(response.data));
       })
       .catch((error) => {
         console.log(` hasil eror edit ${error}`);
