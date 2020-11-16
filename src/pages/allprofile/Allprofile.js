@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Row, Button } from "react-bootstrap";
-import { FcSearch } from "react-icons/fc";
+// import { FcSearch } from "react-icons/fc";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./Allprofile.css";
@@ -27,7 +27,7 @@ function Allprofile() {
       <Header />
       <div className="containerprofessional">
         {/* Search Bar */}
-        <div>
+        {/* <div>
           <div className="search">
             <Button>
               <i className="icon">
@@ -40,34 +40,34 @@ function Allprofile() {
               placeholder="Cari berdasarkan pekerjaan"
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className="containerfilter">
-          {/* Filter Lokasi */}
-          <div className="box">
+        {/* <div className="containerfilter"> */}
+        {/* Filter Lokasi */}
+        {/* <div className="box">
             <select>
               <option>Jakarta</option>
               <option>Depok</option>
               <option>Bekasi</option>
               <option>Tangerang</option>
             </select>
-          </div>
-          {/* Filter harga */}
-          <div className="box">
+          </div> */}
+        {/* Filter harga */}
+        {/* <div className="box">
             <select>
               <option>Termurah</option>
               <option>Termahal</option>
             </select>
-          </div>
-          {/* Filter kategori */}
-          <div className="box">
+          </div> */}
+        {/* Filter kategori */}
+        {/* <div className="box">
             <select>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
             </select>
           </div>
-        </div>
+        </div> */}
         <div className="tulisanpenandaprofessional">
           <p>
             <Link to="/">Home</Link>
@@ -76,7 +76,6 @@ function Allprofile() {
           <p>Semua Professional</p>
         </div>
         <h1 className="tulisanpenandaprofessional">Semua Professional</h1>
-        {/* Mapping */}
         {loading ? (
           <h1>Loading</h1>
         ) : error ? (
@@ -93,9 +92,9 @@ function Allprofile() {
                     width={179}
                   />
                   <div className="card-body">
-                    {/* <h5 className="cardtitle">{profile.userId.fullName}</h5> */}
+                    <h5 className="cardtitle">{profile.userId.fullName}</h5>
                     <p>
-                      {/* {profile.profesiId.nameProfesi} di */}
+                      {profile.profesiId.nameProfesi} di
                       {profile.locationId.nameLocation}
                     </p>
                     <br />
@@ -112,7 +111,6 @@ function Allprofile() {
             ))}
           </Row>
         )}
-        {/* Mapping */}
       </div>
       <Footer />
     </div>
