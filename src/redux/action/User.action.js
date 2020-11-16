@@ -41,9 +41,9 @@ export const getUserInfo = (data) => {
 export const editUser = (data) => {
   return {
     type: EDIT_USER,
-    payload: data
-  }
-}
+    payload: data,
+  };
+};
 
 export const getlogout = (data) => {
   return {
@@ -58,7 +58,7 @@ export const userRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/user/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setUserRegister(response.data.user));
       if (response.data !== "email sudah tersedia") {
         Swal.fire({
@@ -87,7 +87,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/prof/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setProRegister(response.data.user));
       console.log('setelah daftar', response)
       if (response.data !== "Email Sudah Tersedia") {
@@ -118,7 +118,7 @@ export const loginAction = (values, event, history) => {
     return axios
       .post("https://server-promeet.herokuapp.com/api/user/login", values)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
 
         if (response.data.token !== undefined) {
           localStorage.setItem("token", response.data.token);
@@ -158,11 +158,11 @@ export const getUserInfoAction = () => async (dispatch) => {
   const userInfo = await axios.get(url, config);
 
   dispatch(getUserInfo(userInfo.data.member));
-  console.log('user login', userInfo.data.member)
+  // console.log("user login", userInfo.data.member);
 };
 
-
 export const getEditProfessional = (values, detailProfile, event) => {
+
   return async(dispatch) => {    
       event.preventDefault();
       console.log('isi status', values )    
@@ -171,14 +171,13 @@ export const getEditProfessional = (values, detailProfile, event) => {
       .then((response) => {
           console.log('response edit', response.data)
           dispatch(editUser(response.data))
+
       })
       .catch((error) => {
-          console.log(` hasil eror edit ${error}`);
-      })
-  }
-}
-
-
+        console.log(` hasil eror edit ${error}`);
+      });
+  };
+};
 
 export const userLogout = (history) => {
   return (dispatch) => {

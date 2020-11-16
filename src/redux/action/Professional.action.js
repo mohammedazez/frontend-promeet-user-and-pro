@@ -14,7 +14,5 @@ export const getProfileDetailAction = (id) => {
       `https://server-promeet.herokuapp.com/api/profesional/${id}`
     );
     dispatch(getProfileDetail(response.data.profile));
-    console.log("hasil detail di action", response.data.profile);
   };
 };
-

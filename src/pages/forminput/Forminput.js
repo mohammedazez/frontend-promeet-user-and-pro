@@ -1,24 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import {getUserInfoAction, getEditProfessional} from '../../redux/action/User.action';
 import {getLocationAction} from "../../redux/action/Location.action";
 import {getServiceAction} from "../../redux/action/Service.actions";
 import { getProfesiAction } from "../../redux/action/Profesi.action";
 
-import DatePicker from "react-datepicker";
+
+// import DatePicker from "react-datepicker";
 
 
 
 import "./Forminput.css";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import { Form, Button } from "react-bootstrap";
+// import Header from "../../components/header/Header";
+// import Footer from "../../components/footer/Footer";
+// import { Form, Button } from "react-bootstrap";
 
 function Forminput() {
-  const  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
+
 
 
   const detailProfile = useSelector((state) => state.user.data)
@@ -72,19 +73,18 @@ const handleChange = e => {
 
 
 
+  const handleChange = (e) => {
+    setProfile({
+      ...profile,
+      [e.target.name]: e.target.value,
+    });
+  };
 const handleSubmit = (event) => {
   
   dispatch(getEditProfessional( profile, detailProfile, event))
   history.push('/');
 }
-
-
   console.log('detail di componen', detailProfile )
-
-
- 
-
-
   return (
     <div>
       <Header />
@@ -236,10 +236,6 @@ const handleSubmit = (event) => {
             className="grupform"
           >
             <p className="judulform">Jadwal Tersedia :</p>
-             
-            
-          
-          
       <Form.Control></Form.Control> 
     <div>
     </div>
@@ -314,8 +310,6 @@ const handleSubmit = (event) => {
       </div>
       <Footer /> 
     </div>
-  
- 
   );
 }
 

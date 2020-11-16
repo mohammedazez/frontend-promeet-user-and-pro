@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Profesi.css";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfesiAction } from "../../redux/action/Profesi.action";
@@ -25,19 +25,17 @@ function Profesi() {
       {/* Mapping */}
       <Row>
         {profession.map((profesi, index) => (
-          <Row key={index}>
-            <Col style={{ marginBottom: "20px" }} sm={6}>
-              <img
-                src={`${profesi.imgUrl}`}
-                alt="img"
-                className="img-profesi"
-                onClick={() => handleClick(profesi._id)}
-              />
-              <p className="p-profesi" onClick={() => handleClick(profesi._id)}>
-                {profesi.nameProfesi}
-              </p>
-            </Col>
-          </Row>
+          <div className="container-profesi-logo" key={index}>
+            <img
+              src={`${profesi.imgUrl}`}
+              alt="img"
+              className="img-profesi"
+              onClick={() => handleClick(profesi._id)}
+            />
+            <p className="p-profesi" onClick={() => handleClick(profesi._id)}>
+              {profesi.nameProfesi}
+            </p>
+          </div>
         ))}
       </Row>
       {/* Mapping */}

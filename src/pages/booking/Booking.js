@@ -1,175 +1,199 @@
-import React, { Fragment } from "react";
-import { useHistory } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams, useHistory } from "react-router-dom";
+import { getProfileDetailAction } from "../../redux/action/Professional.action";
+import { postBookingAction } from "../../redux/action/Booking.action";
+import {
+  dataTransferAction,
+  addToConfirmation,
+} from "../../redux/action/Transfer.action";
+
+// CSS
 import "./Booking.css";
+
+// Components
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+
+// Boostrap
 import { Row, Col, Table, Card, Form, Button } from "react-bootstrap";
 
 const Booking = () => {
-  let history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const datatransfer = useSelector((state) => state.transfer.transferMethod);
+  const profiledetail = useSelector((state) => state.professional.data);
+  const [price, setPrice] = useState("");
+  const [picture, setPicture] = useState("");
+  const [userid, setUserid] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [service, setService] = useState("");
+  const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
 
-  function handleClick() {
-    try {
-      history.push("/confirmation");
-    } catch (error) {
-      alert(error);
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (profiledetail === undefined) {
+      dispatch(getProfileDetailAction(id));
+    } else {
+      setLocation(profiledetail.locationId.nameLocation);
+      setUserid(profiledetail.userId.fullName);
+      setService(profiledetail.serviceId.nameService);
+      setPrice(profiledetail.price);
+      setDate(profiledetail.startDateAvailable);
+      setTime(profiledetail.timeAvailable);
+      setPicture(profiledetail.imgUrl);
+      setProfesi(profiledetail.profesiId.nameProfesi);
     }
-  }
+    // eslint-disable-next-line
+  }, [profiledetail, dispatch]);
+
+  useEffect(() => {
+    dispatch(dataTransferAction());
+  }, [dispatch]);
+
+  const rentHandler = (transfer) => {
+    dispatch(addToConfirmation(transfer));
+  };
 
   return (
     <Fragment>
-      <Header />
-      <div className="container-booking">
-        {/* Detail Pesanan */}
-        <Card className="card-booking">
-          <h1 className="judul-booking">Detail Pesanan</h1>
-          <div style={{ overflow: "auto" }}>
-            <Table striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th>Photo</th>
-                  <th>Nama</th>
-                  <th>Jam</th>
-                  <th>Tanggal</th>
-                  <th>Jenis</th>
-                  <th>Tempat</th>
-                  <th>Durasi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <img
-                      src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
-                      alt="imgbooking"
-                      className="img-booking"
+      <Form
+        onSubmit={(event) => {
+          dispatch(postBookingAction(event, history));
+        }}
+      >
+        <Header />
+        <div className="container-booking">
+          {/* Detail Pesanan */}
+          <Card className="card-booking">
+            <h1 className="judul-booking">Detail Pesanan</h1>
+            <div style={{ overflow: "auto" }}>
+              <Table striped bordered hover size="sm">
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                    <th>Nama</th>
+                    <th>Jam</th>
+                    <th>Tanggal</th>
+                    <th>Jenis</th>
+                    <th>Tempat</th>
+                    <th>Profesi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img
+                        src={picture}
+                        alt="imgbooking"
+                        className="img-booking"
+                      />
+                    </td>
+                    <td>{userid}</td>
+                    <td>{time}</td>
+                    <td>{date}</td>
+                    <td>{service}</td>
+                    <td>{location}</td>
+                    <td>{profesi}</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </Card>
+          {/* Info Anda*/}
+          <Card className="card-booking">
+            <h1 className="judul-booking">Info Anda</h1>
+            <div className="container-card-booking">
+              <Form.Group>
+                <Form.Label>Nama Anda:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Masukkan nama anda"
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Nomor Telepon:</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Masukkan nomor telepon anda"
+                  required
+                />
+              </Form.Group>
+            </div>
+          </Card>
+          {/* Alamat meeting */}
+          <Card className="card-booking">
+            <h1 className="judul-booking">Alamat Meeting</h1>
+            <div className="container-card-booking">
+              <p>{location}</p>
+              <p>
+                Jalan Cilandak Town Square, 2, Jl. Cilandak Town Square No.2,
+                RT.2/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan,
+                Daerah Khusus Ibukota Jakarta 12430, Indonesia, Kecamatan
+                Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
+              </p>
+              <p>+6284348787834</p>
+            </div>
+          </Card>
+
+          {/* Metode Pembayaran */}
+          <Card className="card-booking">
+            <h1 className="judul-booking">Metode Pembayaran</h1>
+            <hr className="garispemisah-sectionfour" />
+            {datatransfer.map((transfer, index) => (
+              <Fragment key={index}>
+                <Row>
+                  <Col>
+                    <p>{`${transfer.nameMethod}`}</p>
+                  </Col>
+                  <Col>
+                    <Form.Check
+                      type="radio"
+                      label={`${transfer.numberRek}`}
+                      name="pembayaran"
+                      id="pembayaran"
+                      value="method"
+                      required
                     />
-                  </td>
-                  <td>Meet with Angelia Jolie</td>
-                  <td>08:00 WIB</td>
-                  <td>02-11-2020</td>
-                  <td>Konsultasi</td>
-                  <td>Coworking Space</td>
-                  <td>2 Jam</td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
-        </Card>
+                  </Col>
+                </Row>
+                <hr className="garispemisah-sectionfour" />
+              </Fragment>
+            ))}
+          </Card>
 
-        {/* Info Anda*/}
-        <Card className="card-booking">
-          <h1 className="judul-booking">Info Anda</h1>
-          <Form className="container-card-booking">
-            <Form.Group>
-              <Form.Label>Nama Anda:</Form.Label>
-              <Form.Control type="text" placeholder="Masukkan nama anda" />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Nomor Telepon:</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Masukkan nomor telepon anda"
-              />
-            </Form.Group>
-          </Form>
-        </Card>
-
-        {/* Alamat meeting */}
-        <Card className="card-booking">
-          <h1 className="judul-booking">Alamat Meeting</h1>
-          <div className="container-card-booking">
-            <p>Coworking Space</p>
-            <p>
-              Jalan Cilandak Town Square, 2, Jl. Cilandak Town Square No.2,
-              RT.2/RW.1, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan,
-              Daerah Khusus Ibukota Jakarta 12430, Indonesia, Kecamatan
-              Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-            </p>
-            <p>+6284348787834</p>
-          </div>
-        </Card>
-
-        {/* Metode Pembayaran */}
-        <Card className="card-booking">
-          <h1 className="judul-booking">Metode Pembayaran</h1>
-          <hr className="garispemisah-sectionfour" />
-          <Row>
-            <Col>
-              <img
-                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604825552/metodepembayaran/LOGO-BANK-BCA-1700X800_tbsloi.png"
-                alt="bcaimg"
-                className="img-pembayaran-booking"
-              />
-            </Col>
-            <Col>
-              <Form.Check
-                type="radio"
-                label="5919111194 - PT Promeet Indonesia"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios1"
-              />
-            </Col>
-          </Row>
-          <hr className="garispemisah-sectionfour" />
-          <Row>
-            <Col>
-              <img
-                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604826188/metodepembayaran/Logo_BRI_q6tug3.png"
-                alt="briimg"
-                className="img-pembayaran-booking"
-              />
-            </Col>
-            <Col>
-              <Form.Check
-                type="radio"
-                label="2134111194 - PT Promeet Indonesia"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios2"
-              />
-            </Col>
-          </Row>
-          <hr className="garispemisah-sectionfour" />
-          <Row>
-            <Col>
-              <img
-                src="https://res.cloudinary.com/def4tydoe/image/upload/v1604826188/metodepembayaran/Bank_Mandiri_logo_white_bg-removebg-preview_bwywa7.png"
-                alt="mandiriimg"
-                className="img-pembayaran-booking"
-              />
-            </Col>
-            <Col>
-              <Form.Check
-                type="radio"
-                label="4536111194 - PT Promeet Indonesia"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios3"
-              />
-            </Col>
-          </Row>
-        </Card>
-        <Card className="card-booking-pembayaran ">
-          <Row>
-            <Col>
-              <h4>Total Booking Fee</h4>
-            </Col>
-            <Col>
-              <h4>Rp 2.000.000</h4>
-            </Col>
-          </Row>
-          <hr className="garispemisah-sectionfour" />
-          <Row>
-            <Col>
-              <h4>Total Payment</h4>
-            </Col>
-            <Col>
-              <h4>Rp 2.000.000</h4>
-            </Col>
-          </Row>
-          <Button onClick={handleClick}>Booking Sekarang</Button>
-        </Card>
-      </div>
-      <Footer />
+          {/* Total Price */}
+          <Card className="card-booking-pembayaran ">
+            <Row>
+              <Col>
+                <h4>Total Booking Fee</h4>
+              </Col>
+              <Col>
+                <h4>Rp {price}</h4>
+              </Col>
+            </Row>
+            <hr className="garispemisah-sectionfour" />
+            <Row>
+              <Col>
+                <h4>Total Payment</h4>
+              </Col>
+              <Col>
+                <h4>Rp {price}</h4>
+              </Col>
+            </Row>
+          </Card>
+          <Link to="/confirmation" style={{ textDecoration: "none" }}>
+            <Button onClick={() => rentHandler(datatransfer)}>
+              Booking Sekarang
+            </Button>
+          </Link>
+        </div>
+        <Footer />
+      </Form>
     </Fragment>
   );
 };

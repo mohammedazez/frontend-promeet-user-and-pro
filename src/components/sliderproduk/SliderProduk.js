@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SliderProduk.css";
 import Slider from "react-slick";
 import { Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getProfileAction } from "../../redux/action/Allprofile.action";
 
 function SliderProduk() {
-  const [suggestions, setSuggestions] = useState([]);
+  const dispatch = useDispatch();
+  const ProfilPro = useSelector((state) => state.semuaprofile);
+  const { listprofile } = ProfilPro;
+
+  const history = useHistory();
+
+  const handleClick = (id) => {
+    history.push(`/detail/${id}`);
+  };
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => {
-        setSuggestions(data);
-      });
-  }, []);
+    dispatch(getProfileAction());
+  }, [dispatch]);
 
   let settings = {
     infinite: false,
@@ -53,33 +59,31 @@ function SliderProduk() {
           </Link>
         </Col>
       </Row>
-      {suggestions.length === 0 ? (
+      {listprofile.length === 0 ? (
         <div className="spinner-border" role="status">
           <span className="sr-only">Loading...</span>
         </div>
       ) : (
         <Slider {...settings}>
-          {suggestions.map((current) => (
-            <div className="out" key={current.id}>
+          {listprofile.map((profile, index) => (
+            <div className="out" key={index}>
               <div className="cardsliderproduk">
                 <img
                   alt={"users here"}
-                  src={`https://source.unsplash.com/random/${current.id}`}
+                  src={profile.imgUrl}
                   height={144}
                   width={179}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{current.username}</h5>
+                  <h5 className="card-title">Nama</h5>
                   <p>Software Engineer di Jakarta</p>
                   <br />
-                  <p>Rp 1.000.000 /1 Jam</p>
-                  <Button className="btn btn-sm tombol-sliderproduk">
-                    <Link
-                      to="/detail"
-                      style={{ textDecoration: "none", color: "white" }}
-                    >
-                      Kirim Pertemuan
-                    </Link>
+                  <p>Rp {profile.price} /1 Jam</p>
+                  <Button
+                    className="btn btn-sm tombol-sliderproduk"
+                    onClick={() => handleClick(profile._id)}
+                  >
+                    Kirim Pertemuan
                   </Button>
                 </div>
               </div>
