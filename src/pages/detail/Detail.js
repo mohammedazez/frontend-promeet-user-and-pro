@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import moment from 'moment';
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Header from "../../components/header/Header";
@@ -11,6 +12,7 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
+
   const [deskripsi, setDeskripsi] = useState("");
   const [location, setLocation] = useState("");
   const [price, setPrice] = useState("");
@@ -41,6 +43,7 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
+  console.log('profile', profiledetail)
   return (
     <Fragment>
       <Header />

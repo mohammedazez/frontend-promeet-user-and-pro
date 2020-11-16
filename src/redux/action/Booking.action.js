@@ -10,17 +10,19 @@ export const postBooking = (data) => {
   };
 };
 
-export const postBookingAction = (values, event, history) => (dispatch) => {
-  event.preventDefault();
-
+export const postBookingAction = (values, history) => (dispatch) => {
+  
+console.log('values', values)
   return Axios.post(
-    "https://server-promeet.herokuapp.com/api/admin/add-booking",
+    "http://localhost:8080/api/admin/add-booking", 
     values
   )
     .then((response) => {
-      if (response) {
-        history.push("/confirmation");
-      }
+      dispatch(postBooking(response.data.booking))
+      console.log('response booking', response)
+      // if (response.data.booking) {
+      //   history.push("/confirmation");
+      // }
     })
     .catch((error) => {
       console.log("error", error);

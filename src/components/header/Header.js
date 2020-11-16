@@ -13,13 +13,14 @@ function Header() {
   const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
 
-  console.log(dataUser);
+  console.log(member, 'member');
 
   useEffect(() => {
-    dispatch(getUserInfoAction());
+      dispatch(getUserInfoAction());
+    
 
     // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
 
   const logoutSuccess = () => {
     dispatch(userLogout(history));
