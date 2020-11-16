@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../css/BookingSayaUser.css";
-import { Row, Col, Card, Table } from "react-bootstrap";
+import { Row, Col, Card, Table, Form } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfileDetailAction } from "../../../../redux/action/Professional.action";
+import ReactFilestack from "filestack-react";
 
 function BookingSayaUser() {
   const dispatch = useDispatch();
@@ -98,6 +99,14 @@ function BookingSayaUser() {
                     </tr>
                   </tbody>
                 </Table>
+                <Form>
+                  <Form.Group>
+                    <ReactFilestack
+                      apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+                      onSuccess={(res) => console.log(res)}
+                    />
+                  </Form.Group>
+                </Form>
               </div>
             </Card>
           </Col>

@@ -12,7 +12,7 @@ import { getProfesiById } from "../../redux/action/Profesi.action";
 function Professional() {
   const dispatch = useDispatch();
   const detailProfesi = useSelector((state) => state.profesi.professionDetails);
-  console.log(detailProfesi);
+  // console.log(detailProfesi);
   const { id } = useParams();
   const history = useHistory();
 
@@ -20,8 +20,6 @@ function Professional() {
     dispatch(getProfesiById(id));
     // eslint-disable-next-line
   }, []);
-
-
 
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
@@ -45,7 +43,6 @@ function Professional() {
   //     console.log(cari);
   //   }
   // };
-
 
   return (
     <div>
@@ -83,7 +80,7 @@ function Professional() {
 
           </div>
           {/* Filter harga */}
-          {/* <div className="box">
+        {/* <div className="box">
           <h5>Cari berdasarkan harga</h5>
 
             <select>
@@ -93,8 +90,8 @@ function Professional() {
             </select>
           </div> */}
 
-          {/* Filter kategori */}
-          {/* <div className="box">
+        {/* Filter kategori */}
+        {/* <div className="box">
           <h5>Cari berdasarkan pekerjaan</h5>
 
             <select>
@@ -117,7 +114,6 @@ function Professional() {
           {detailProfesi.nameProfesi}
         </h1>
         <Row className="rowresponsive">
-
           {detailProfesi.profileId !== undefined ? (
             detailProfesi.profileId.map((people, index) => (
               <div className="containerprofessionallist" key={index}>
