@@ -61,6 +61,7 @@
   .container-footer {
     padding-left: 30px;
     padding-right: 30px;
+    height: 460px !important;
   }
   .column-footer {
     flex-direction: column;
@@ -85,10 +86,17 @@
   .social-footer {
     text-align: center;
   }
+  
+  
+  
 }
+
 
 /* Medium devices (tablets, less than 992px) */
 @media only screen and (max-width: 991.98px) {
+  .container-footer {
+    height: 250px
+  }
 }
 
 /* Large devices (desktops, less than 1200px) */

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Row, Button } from "react-bootstrap";
-import { FcSearch } from "react-icons/fc";
+// import { FcSearch } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import Movepage from "../../components/pagination/Movepage";
 import Header from "../../components/header/Header";
@@ -8,7 +8,7 @@ import Footer from "../../components/footer/Footer";
 import "./Professional.css";
 
 function Professional() {
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
 
   let professional = [
     {
@@ -77,23 +77,23 @@ function Professional() {
     },
   ];
 
-  const handlechange = (e) => {
-    e.preventDefault();
-    setInput(e.target.value);
-  };
+  // const handlechange = (e) => {
+  //   e.preventDefault();
+  //   setInput(e.target.value);
+  // };
 
-  if (input.length > 0) {
-    professional = professional.filter((i) => {
-      return i.pekerjaan.toLowerCase().match(input);
-    });
-  }
+  // if (input.length > 0) {
+  //   professional = professional.filter((i) => {
+  //     return i.pekerjaan.toLowerCase().match(input);
+  //   });
+  // }
 
   return (
     <div>
       <Header />
       <div className="containerprofessional">
         {/* Search Bar */}
-        <div>
+        {/* <div>
           <div className="search">
             <Button style={{ backgroundColor: "#338274" }}>
               <i className="icon">
@@ -108,7 +108,7 @@ function Professional() {
               value={input}
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="containerfilter">
           {/* Filter Lokasi */}
@@ -123,16 +123,16 @@ function Professional() {
             </select>
           </div>
           {/* Filter harga */}
-          <div className="box">
+          {/* <div className="box">
           <h5>Cari berdasarkan harga</h5>
             <select>
               <option>---</option>
               <option>Termurah</option>
               <option>Termahal</option>
             </select>
-          </div>
+          </div> */}
           {/* Filter kategori */}
-          <div className="box">
+          {/* <div className="box">
           <h5>Cari berdasarkan pekerjaan</h5>
             <select>
               <option>---</option>
@@ -140,7 +140,7 @@ function Professional() {
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
             </select>
-          </div>
+          </div> */}
         </div>
         <div className="tulisanpenandaprofessional">
           <p>Home</p>
@@ -157,7 +157,6 @@ function Professional() {
                   src={people.img}
                   height={200}
                   width={179}
-                  margin={5}
                 />
                 <div className="card-body">
                   <h5 className="cardtitle">{people.nama}</h5>

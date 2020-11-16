@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 export const LOGIN = "LOGIN";
 export const USERREGISTER = "USERREGISTER";
 export const PROREGISTER = "PROREGISTER";
+export const GET_USER_INFO = "GET_USER_INFO";
+export const LOGOUT ="LOGOUT";
 
 // --------------- Function dari Constant ---------------
 export const setUserRegister = (data) => {
@@ -26,6 +28,19 @@ export const setLogin = (data) => {
     type: LOGIN,
     payload: data,
   };
+};
+
+export const getUserInfo = (data) =>{
+  return {
+      type : GET_USER_INFO,
+      payload : data,
+  };
+};
+
+export const setLogout = (data) => {
+  return {
+    type: LOGOUT,    
+};
 };
 
 // --------------- Function isi dari Set --------------
@@ -126,3 +141,31 @@ export const loginAction =(values, event, history) => {
     };
 };
 
+export const getUserInfoAction = () => {
+  return async(dispatch) => {
+      const url = 'http://server-promeet.herokuapp.com/api/auth';
+      const config = {
+          headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+      };
+  
+      const userInfo = await axios.get(url, config);
+      console.log('user info', userInfo)
+      dispatch(getUserInfo(userInfo.data.user));
+  }
+}
+
+export const userLogout = (history) => {
+  return dispatch => {
+      localStorage.removeItem('token');
+      Swal.fire({
+        title: "Berhasil Logout",
+        text: "Terimakasih Atas Kunjungannya",
+        icon: "success",
+        confirmButtonText: "ok"
+    })
+      dispatch(setLogout());
+      history.push('/');
+  } 
+};
