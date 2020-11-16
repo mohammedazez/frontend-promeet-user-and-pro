@@ -8,13 +8,12 @@ import booking from "./Booking.Reducers";
 import transfer from "./Transfer.reducers";
 import semuaprofile from "./Allprofile.reducers";
 
-
 const rootReducers = combineReducers({
   professional,
   user,
   profesi,
   location,
-  service
+  service,
   booking,
   transfer,
   semuaprofile,
