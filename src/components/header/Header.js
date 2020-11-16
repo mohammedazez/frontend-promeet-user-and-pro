@@ -1,10 +1,11 @@
-import React from "react";
-import { useDispatch, } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { Navbar, Nav, Button, NavItem } from "react-bootstrap";
 import Dropdown from "../dropdown/dropdwon";
 import "./Header.css";
+import { userLogout, getUserInfoAction } from "../../redux/action/User.action";
+import Swal from "sweetalert2";
 
 import { userLogout } from "../../redux/action/User.action";
 // import { getUserInfoAction } from "../../redux/action/User.action";
@@ -13,21 +14,48 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(getUserInfoAction());
-  //   }, 1000);
+  const dataUser = useSelector((state) => state.user);
+  const member = useSelector((state) => state.user.data);
 
-  //   // eslint-disable-next-line
-  // }, []);
+  console.log(dataUser);
 
-  // const userInfo = useSelector((state) => state.user);
-  // console.log(userInfo.data);
+  useEffect(() => {
+    dispatch(getUserInfoAction());
+
+    // eslint-disable-next-line
+  }, []);
 
   const logoutSuccess = () => {
-    console.log("logout");
     dispatch(userLogout(history));
+    localStorage.removeItem("token");
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Success Logout",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
+
+  let button;
+  if (localStorage.getItem("token")) {
+    if (member.role === "member") {
+      button = (
+        <Link to="/profil/user">
+          <p className="teks-kebawah">Profile User</p>
+        </Link>
+      );
+    } else if (member.role === "professional") {
+      button = (
+        <Link to="/profil/pro">
+          <p className="teks-kebawah">Profile Pro</p>
+        </Link>
+      );
+    } else {
+      button = "";
+    }
+  }
 
   return (
     <div>
@@ -46,11 +74,13 @@ function Header() {
           </Nav>
           <Nav>
             <NavItem>
+
               <Link
                 to="/"
                 className="nav-link"
                 style={{ textDecoration: "none", color: "white" }}
               >
+
                 Home
               </Link>
             </NavItem>
@@ -69,6 +99,7 @@ function Header() {
                 className="nav-link"
                 style={{ textDecoration: "none", color: "white" }}
               >
+
                 Contact
               </Link>
             </NavItem>
@@ -79,10 +110,11 @@ function Header() {
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   Jadi Konsultan
+
                 </Link>
               </Button>
             ) : (
-              <div></div>
+              ""
             )}
             {!localStorage.getItem("token") ? (
               <Button className="button-navbar">
@@ -94,36 +126,37 @@ function Header() {
                 </Link>
               </Button>
             ) : (
-              <div className="kebawah">
-                <button className="kebawah-tombol">My Profile</button>
-                <div className="kebawah-content">
-                  <Link to="/profil/user">
-                    <p className="teks-kebawah">Profile User</p>
-                  </Link>
-                  <Link to="/profil/pro">
-                    <p className="teks-kebawah">Profile Pro</p>
-                  </Link>
-                  
-                </div>
-              </div>
+              ""
             )}
-            <Button className="button-navbar">
-              {!localStorage.getItem("token") ? (
+            {!localStorage.getItem("token") ? (
+              <Button className="button-navbar">
                 <Link
                   to="/signup/user"
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   Sign Up
                 </Link>
-              ) : (
-                <div
-                  onClick={() => logoutSuccess()}
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  Logout
+              </Button>
+            ) : (
+              ""
+            )}
+
+            {localStorage.getItem("token") ? (
+              <div className="kebawah">
+                <button className="kebawah-tombol">My Profile</button>
+                <div className="kebawah-content">
+                  {button}
+                  <div
+                    onClick={() => logoutSuccess()}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p className="teks-kebawah">Logout</p>
+                  </div>
                 </div>
-              )}
-            </Button>
+              </div>
+            ) : (
+              ""
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

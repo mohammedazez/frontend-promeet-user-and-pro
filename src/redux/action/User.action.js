@@ -6,7 +6,9 @@ export const LOGIN = "LOGIN";
 export const USERREGISTER = "USERREGISTER";
 export const PROREGISTER = "PROREGISTER";
 export const GET_USER_INFO = "GET_USER_INFO";
-export const LOGOUT ="LOGOUT";
+export const EDIT_USER = "EDIT_USER";
+export const LOGOUT = "LOGOUT";
+
 
 // --------------- Function dari Constant ---------------
 export const setUserRegister = (data) => {
@@ -30,17 +32,25 @@ export const setLogin = (data) => {
   };
 };
 
-export const getUserInfo = (data) =>{
+
+export const getUserInfo = (data) => {
   return {
-      type : GET_USER_INFO,
-      payload : data,
+    type: GET_USER_INFO,
+    payload: data,
   };
 };
 
-export const setLogout = (data) => {
+export const editUser = (data) => {
   return {
-    type: LOGOUT,    
+    type: EDIT_USER,
+    payload: data,
+  };
 };
+
+export const getlogout = (data) => {
+  return {
+    type: LOGOUT,
+  };
 };
 
 // --------------- Function isi dari Set --------------
@@ -50,7 +60,7 @@ export const userRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/user/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setUserRegister(response.data.user));
       if (response.data !== "email sudah tersedia") {
         Swal.fire({
@@ -79,8 +89,9 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
   return axios
     .post("https://server-promeet.herokuapp.com/api/prof/register", values)
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       dispatch(setProRegister(response.data.user));
+      console.log('setelah daftar', response)
       if (response.data !== "Email Sudah Tersedia") {
         Swal.fire({
           title: "Berhasil mendaftar",
@@ -90,82 +101,92 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
         history.push("/login");
       } else {
         Swal.fire({
-            title: "Gagal Mendaftar",
-            text: `${response.data}`,
-            icon: "warning",
-            timer: 3000,
-          });
+          title: "Gagal Mendaftar",
+          text: `${response.data}`,
+          icon: "warning",
+          timer: 3000,
+        });
       }
     })
-    .catch ((error)=>{
-        console.log("err", error);
+    .catch((error) => {
+      console.log("err", error);
     });
 };
 
-export const loginAction =(values, event, history) => {
-    return (dispatch) => {
-        event.preventDefault();
+export const loginAction = (values, event, history) => {
+  return (dispatch) => {
+    event.preventDefault();
 
-        return axios
-        .post("https://server-promeet.herokuapp.com/api/user/login", values)
-        .then ((response)=> {
-          console.log(response)
+    return axios
+      .post("https://server-promeet.herokuapp.com/api/user/login", values)
+      .then((response) => {
+        // console.log(response);
 
-            if(response.data.token !== undefined) {
-                localStorage.setItem("token", response.data.token);
+        if (response.data.token !== undefined) {
+          localStorage.setItem("token", response.data.token);
 
-                Swal.fire({
-                    title: "Berhasil Login",
-                    text: "Selamat Datang",
-                    icon: "success",
-                    confirmButtonText: "ok"
-                })
+          Swal.fire({
+            title: "Berhasil Login",
+            text: "Selamat Datang",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
 
-                dispatch(setLogin(response.data.token));
-                history.push("/");
-
-            } else {
-                Swal.fire({
-                    title: " Gagal Login",
-                    text: `${response.data.message}`,
-                    icon: "warning",
-                    confirmButtonText: "ok"
-                })
-            }
-        })
-        .catch ((error)=>{
-            console.log("err", error);
-            
-
-        });
-    };
+          dispatch(setLogin(response.data.token));
+          history.push("/");
+        } else {
+          Swal.fire({
+            title: " Gagal Login",
+            text: `${response.data.message}`,
+            icon: "warning",
+            confirmButtonText: "ok",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("err", error);
+      });
+  };
 };
 
-export const getUserInfoAction = () => {
-  return async(dispatch) => {
-      const url = 'http://server-promeet.herokuapp.com/api/auth';
-      const config = {
-          headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
-          },
-      };
-  
-      const userInfo = await axios.get(url, config);
-      console.log('user info', userInfo)
-      dispatch(getUserInfo(userInfo.data.user));
-  }
-}
+
+export const getUserInfoAction = () => async (dispatch) => {
+  const url = "https://server-promeet.herokuapp.com/api/auth";
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+
+  const userInfo = await axios.get(url, config);
+
+  dispatch(getUserInfo(userInfo.data.member));
+  // console.log("user login", userInfo.data.member);
+};
+
+export const getEditProfessional = (values, detailProfile, event) => {
+
+  return async(dispatch) => {    
+      event.preventDefault();
+      console.log('isi status', values )    
+      return axios
+      .put(`https://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`, values)
+      .then((response) => {
+          console.log('response edit', response.data)
+          dispatch(editUser(response.data))
+
+      })
+      .catch((error) => {
+        console.log(` hasil eror edit ${error}`);
+      });
+  };
+};
 
 export const userLogout = (history) => {
-  return dispatch => {
-      localStorage.removeItem('token');
-      Swal.fire({
-        title: "Berhasil Logout",
-        text: "Terimakasih Atas Kunjungannya",
-        icon: "success",
-        confirmButtonText: "ok"
-    })
-      dispatch(setLogout());
-      history.push('/');
-  } 
+  return (dispatch) => {
+    localStorage.removeItem("token");
+    dispatch(getlogout());
+    history.push("/");
+  };
 };
+

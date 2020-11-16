@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home/js/Main";
+import AllProfile from "./pages/allprofile/Allprofile";
 import Professional from "./pages/professional/Professional";
 import Detail from "./pages/detail/Detail";
 import Booking from "./pages/booking/Booking";
 import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import SignupUser from "./pages/signup/SignupUser";
 import SignupPro from "./pages/signup/SignupProfessional";
@@ -28,10 +30,13 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/professional">
+          <Route path="/allprofile">
+            <AllProfile />
+          </Route>
+          <Route path="/professional/:id">
             <Professional />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/booking">
@@ -45,6 +50,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/confirmation">
             <Confirmation />
