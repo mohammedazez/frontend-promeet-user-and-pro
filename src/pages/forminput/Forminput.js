@@ -62,12 +62,11 @@ function Forminput() {
     // endDateAvailable: "",
     locationId: "",
     profesiId: "",
-    serviceId : "",
-    nameExperience : "",
-    yearExperience : "",
+    serviceId: "",
+    nameExperience: "",
+    yearExperience: "",
     imgUrl: "",
-    imgKtp: ""
-
+    imgKtp: "",
   });
 
   const handleChange = (e) => {
@@ -88,14 +87,13 @@ function Forminput() {
         <h1 className="judulutama-form">
           Berikan pengalaman terbaik untuk orang yang membutuhkan di kota anda
         </h1>
-        <Form onSubmit={handleSubmit} >
+        <Form onSubmit={handleSubmit}>
           <Form.Group
             controlId="exampleForm.ControlInput1"
             className="grupform"
           >
             <p className="judulform">Nama Lengkap :</p>
             <Form.Control
-            name="fullName"
               type="namalengkap"
               name="fullName"
               value={profile.fullName}
@@ -109,28 +107,37 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Email :</p>
-            <Form.Control type="email" name="email" value={profile.email} 
-            onChange={handleChange} placeholder="Email" size="lg" />
+            <Form.Control
+              type="email"
+              name="email"
+              value={profile.email}
+              onChange={handleChange}
+              placeholder="Email"
+              size="lg"
+            />
           </Form.Group>
           <Form.Group
             controlId="exampleForm.ControlInput1"
             className="grupform"
           >
             <p className="judulform">Profesi yang Dipilih :</p>
-             <Form.Control as="select" size="lg" custom
+            <Form.Control
+              as="select"
+              size="lg"
+              custom
               name="profesiId"
               value={profile.profesiId}
               onChange={handleChange}
-             >
-            {listProfesi.length !== 0 ? (
-              listProfesi.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameProfesi}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
+            >
+              {listProfesi.length !== 0 ? (
+                listProfesi.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameProfesi}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
             </Form.Control>
           </Form.Group>
           <Form.Group
@@ -146,16 +153,15 @@ function Forminput() {
               value={profile.serviceId}
               onChange={handleChange}
             >
-
-            {service.length !== 0 ? (
-              service.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameService}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
+              {service.length !== 0 ? (
+                service.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameService}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
             </Form.Control>
           </Form.Group>
           <Form.Group
@@ -188,20 +194,23 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Lokasi :</p>
-            <Form.Control name="locationId"
-            value={profile.locationId}
-            onChange={handleChange}
-            as="select" size="lg" custom>
-            {locate.length !== 0 ? (
-              locate.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameCity}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
-
+            <Form.Control
+              name="locationId"
+              value={profile.locationId}
+              onChange={handleChange}
+              as="select"
+              size="lg"
+              custom
+            >
+              {locate.length !== 0 ? (
+                locate.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameCity}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
             </Form.Control>
           </Form.Group>
           <Form.Group
@@ -209,11 +218,13 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Tanggal Tersedia :</p>
-            <Form.Control size="lg" custom
-             type="date"
-             name="startDateAvailable"
-             value={profile.startDateAvailable}
-             onChange={handleChange}
+            <Form.Control
+              size="lg"
+              custom
+              type="date"
+              name="startDateAvailable"
+              value={profile.startDateAvailable}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group
@@ -227,8 +238,8 @@ function Forminput() {
               value={profile.nameExperience}
               placeholder="Pengalaman anda selama bekerja"
               size="lg"
-            /> 
-               <Form.Control
+            />
+            <Form.Control
               type="text"
               name="yearExperience"
               value={profile.yearExperience}
@@ -238,28 +249,30 @@ function Forminput() {
           </Form.Group>
           <p className="judulform">Upload Foto profil anda :</p>
           <Form.Group>
-            < ReactFilestack
+            <ReactFilestack
               apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
               onSuccess={(res) => {
                 setProfile({
                   ...profile,
-                  imgKtp : res.filesUploaded[0].url
-                })
-              }}ewqa23d5td      
+                  imgKtp: res.filesUploaded[0].url,
+                });
+              }}
+              ewqa23d5td
             />
             <p className="judulform">Upload KTP anda</p>
-            <   ReactFilestack
-            apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
-            onSuccess={(res) => {
-              setProfile({
-                ...profile,
-                imgKtp : res.filesUploaded[0].url
-              })
-            }}ewqa23d5td     
-            id="exampleFormControlFile1" />
+            <ReactFilestack
+              apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+              onSuccess={(res) => {
+                setProfile({
+                  ...profile,
+                  imgKtp: res.filesUploaded[0].url,
+                });
+              }}
+              ewqa23d5td
+              id="exampleFormControlFile1"
+            />
           </Form.Group>
-          <Button onSubmit={handleSubmit} >Daftar Jadi Konsultan</Button>
-
+          <Button onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
         </Form>
       </div>
       <Footer />

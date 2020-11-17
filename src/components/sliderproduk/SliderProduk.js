@@ -88,7 +88,7 @@ function SliderProduk() {
                   </h5>
                   <p
                     style={{
-                      fontSize: "15px",
+                      fontSize: "12px",
                       fontWeight: "700",
                     }}
                   >

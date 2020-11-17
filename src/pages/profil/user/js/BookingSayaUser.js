@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+// import axios from 'axios';
 import "../css/BookingSayaUser.css";
 import { Row, Col, Card, Table, Form } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
@@ -7,7 +7,10 @@ import Header from "../../../../components/header/Header";
 import Footer from "../../../../components/footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfileDetailAction } from "../../../../redux/action/Professional.action";
-import {getBookingAction, editBookingAction} from "../../../../redux/action/Booking.action";
+import {
+  getBookingAction,
+  editBookingAction,
+} from "../../../../redux/action/Booking.action";
 
 import ReactFilestack from "filestack-react";
 
@@ -18,13 +21,15 @@ function BookingSayaUser() {
   const profiledetail = useSelector((state) => state.professional.data);
   const listBooking = useSelector((state) => state.bookingReducers.data);
 
-  console.log('list booking', listBooking)
- 
-  const newBooking = listBooking.filter(item => item.userId && item.userId._id === member._id)
-  console.log('newbooking', newBooking)
-  
-  const lastBooking = newBooking[newBooking.length -1];
-  console.log('last', lastBooking);
+  console.log("list booking", listBooking);
+
+  const newBooking = listBooking.filter(
+    (item) => item.userId && item.userId._id === member._id
+  );
+  console.log("newbooking", newBooking);
+
+  const lastBooking = newBooking[newBooking.length - 1];
+  console.log("last", lastBooking);
 
   // let bookingFilter = listBooking.filter()
   // console.log('user d comp', userBooking)
@@ -61,28 +66,25 @@ function BookingSayaUser() {
     // transferId: datatransfer._id,
     // total : profiledetail.price,
     // status: 'Pending',
-    imgUrl: 'gambar.jpeg'
+    imgUrl: "gambar.jpeg",
   });
 
-  const handleUpdate =  e => {
+  const handleUpdate = (e) => {
     setImgTf({
       ...imgTf,
-      [e.target.name] : e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
- const handleSubmit = (event) => {
-      dispatch(editBookingAction(imgTf, profiledetail, event))
-      // history.push('/bookingsaya/user')
-    };
-console.log('image', imgTf)
+  const handleSubmit = (event) => {
+    dispatch(editBookingAction(imgTf, profiledetail, event));
+    // history.push('/bookingsaya/user')
+  };
+  console.log("image", imgTf);
   return (
     <div>
       <Header />
       <div>
-
-      
-        
         <Row className="container-row-bookingsayauser">
           <Col md="auto">
             <SidebarUser />
@@ -145,11 +147,16 @@ console.log('image', imgTf)
                     </tr>
                   </tbody>
                 </Table>
-               <form onSubmit={handleSubmit}>
-               <input type="text" name="imgUrl" value={imgTf.imgUrl} onChange={handleUpdate}/> 
-                <label htmlFor="">gambar</label>
-                <button type="submit">klik</button>
-               </form>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="imgUrl"
+                    value={imgTf.imgUrl}
+                    onChange={handleUpdate}
+                  />
+                  <label htmlFor="">gambar</label>
+                  <button type="submit">klik</button>
+                </form>
                 <Form>
                   <Form.Group>
                     <p>Upload bukti Pembayaran</p>
@@ -159,18 +166,16 @@ console.log('image', imgTf)
                     />
                   </Form.Group>
                 </Form>
-        
               </div>
             </Card>
-             <div>
-        <h1>riwayatr boking</h1>
-      {/* {listBooking.filter(newBooking => newBooking.userId === member._id ).map(filterBooking => (
+            <div>
+              <h1>riwayatr boking</h1>
+              {/* {listBooking.filter(newBooking => newBooking.userId === member._id ).map(filterBooking => (
         <li>
           <p>isi : {filterBooking}</p>
         </li>
       ))} */}
-      </div>
-  
+            </div>
           </Col>
         </Row>
       </div>
