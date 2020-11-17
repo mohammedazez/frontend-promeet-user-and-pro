@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import {
   getUserInfoAction,
   getEditProfessional,
@@ -18,7 +17,7 @@ import { Form, Button } from "react-bootstrap";
 
 function Forminput() {
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
 
   const detailProfile = useSelector((state) => state.user.data);
   // const detailProfilePro =  useSelector((state) => state.user.data.profileId)
@@ -55,11 +54,6 @@ function Forminput() {
     userId: detailProfile._id,
     fullName: "",
     email: "",
-    price: "",
-    imgUrl: "",
-    imgKtp: "",
-    startDateAvailable: new Date(),
-    endDateAvailable: new Date(),
     numberPhone: "",
     price: "",
     description: "",
@@ -83,7 +77,7 @@ function Forminput() {
   };
   const handleSubmit = (event) => {
     dispatch(getEditProfessional(profile, detailProfile, event));
-    // history.push("/");
+    history.push("/");
   };
   console.log("profile di componen", profile);
   return (
@@ -93,151 +87,7 @@ function Forminput() {
         <h1 className="judulutama-form">
           Berikan pengalaman terbaik untuk orang yang membutuhkan di kota anda
         </h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="fullName"
-            value={profile.fullName}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Nama Lengkap</label>
-          <br />
-          <input
-            type="email"
-            name="email"
-            value={profile.email}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Email</label>
-          <br />
-          <input
-            type="text"
-            name="numberPhone"
-            value={profile.numberPhone}
-            onChange={handleChange}
-          />
-          <label htmlFor="">No Hp</label>
-          <br />
-          <input
-            type="text"
-            name="imgurl"
-            value={profile.imgUrl}
-            onChange={handleChange}
-          />
-          <label htmlFor="">ImageURL</label>
-          <br />
-          <input
-            type="text"
-            name="imgktp"
-            value={profile.imgKtp}
-            onChange={handleChange}
-          />
-          <label htmlFor="">ImageKTP</label>
-          <br />
-          <input
-            type="number"
-            name="price"
-            value={profile.price}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Harga per Jam</label>
-          <br />
-          <input
-            type="text"
-            name="description"
-            value={profile.description}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Deskripsi</label>
-          <br />
-          <input
-            type="date"
-            name="startDateAvailable"
-            value={profile.startDateAvailable}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Tanggal mulai</label>
-          <br />
-          <input
-            type="date"
-            name="endDateAvailable"
-            value={profile.endDateAvailable}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Tanggal akhir</label>
-          <br />
-          <input
-            type="date"
-            name="timeAvailable"
-            value={profile.timeAvailable}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Waktu</label>
-          <br />
-          <select
-            name="locationId"
-            value={profile.locationId}
-            onChange={handleChange}
-          >
-            {locate.length !== 0 ? (
-              locate.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameCity}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
-          </select>
-          <label htmlFor="">Lokasi</label>
-          <br />
-          <select
-            name="serviceId"
-            value={profile.serviceId}
-            onChange={handleChange}
-          >
-            {service.length !== 0 ? (
-              service.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameService}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
-          </select>
-          <label htmlFor="">Jasa Layanan</label>
-          <br />
-
-          <select
-            name="profesiId"
-            value={profile.profesiId}
-            onChange={handleChange}
-          >
-            {listProfesi.length !== 0 ? (
-              listProfesi.map((item, index) => (
-                <option key={index} value={item._id}>
-                  {item.nameProfesi}
-                </option>
-              ))
-            ) : (
-              <p>Loading</p>
-            )}
-          </select>
-          <label htmlFor="">Pilihan Profesi</label>
-          <br />
-
-          <br />
-
-          <button>update</button>
-        </form>
-
-        {/* <Form onSubmit={handleSubmit} >
-
-          <p className="judulform">Upload Foto profil anda :</p>
-          <Form.Group>
-            <Form.File id="exampleFormControlFile1" />
-          </Form.Group>
+        <Form onSubmit={handleSubmit}>
           <Form.Group
             controlId="exampleForm.ControlInput1"
             className="grupform"
@@ -423,7 +273,7 @@ function Forminput() {
             />
           </Form.Group>
           <Button onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
-        </Form> */}
+        </Form>
       </div>
       <Footer />
     </div>
