@@ -9,7 +9,7 @@
 .card-profilpro {
   width: 25rem;
   margin: auto;
-  background: #9ff9ff;
+  background-image: linear-gradient(0deg, #63cfbb, #338274);
   border-radius: 10px;
 }
 

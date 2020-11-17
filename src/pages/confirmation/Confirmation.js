@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
-import { dataTransferAction } from "../../redux/action/Transfer.action";
+import { getUserInfoAction } from "../../redux/action/User.action";
 
 // Components
 import Header from "../../components/header/Header";
@@ -18,7 +18,8 @@ function Confirmation() {
   const dispatch = useDispatch();
   let history = useHistory();
   const profiledetail = useSelector((state) => state.professional.data);
-  const datatransfer = useSelector((state) => state.transfer.transferMethod);
+  const member = useSelector((state) => state.user.data);
+  const [userid, setUserid] = useState("");
   const [price, setPrice] = useState("");
 
   const { id } = useParams();
@@ -28,13 +29,19 @@ function Confirmation() {
       dispatch(getProfileDetailAction(id));
     } else {
       setPrice(profiledetail.price);
+      setUserid(member.fullName);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
   useEffect(() => {
-    dispatch(dataTransferAction());
-  }, [dispatch]);
+    if (member === undefined) {
+      dispatch(getUserInfoAction());
+    } else {
+      setUserid(member.fullName);
+    }
+    // eslint-disable-next-line
+  }, [member, dispatch]);
 
   function handleClick() {
     try {
@@ -59,16 +66,9 @@ function Confirmation() {
                 </p>
               </div>
               <div className="metodepembayaran">
-                <p>Metode Pembayaran</p>
+                <p>Nama Pemesan</p>
               </div>
-              <div className="marbot">
-                {datatransfer.map((transfer, index) => (
-                  <div key={index}>
-                    <p>{transfer.nameMethod}</p>
-                    <p>{transfer.numberRek}</p>
-                  </div>
-                ))}
-              </div>
+              <h1>{userid}</h1>
             </Col>
           </Row>
         </Container>
