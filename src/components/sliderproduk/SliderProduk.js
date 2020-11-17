@@ -12,6 +12,7 @@ function SliderProduk() {
   const dispatch = useDispatch();
   const ProfilPro = useSelector((state) => state.semuaprofile);
   const { listprofile } = ProfilPro;
+  console.log("ini data untuk slider produk", ProfilPro);
   const history = useHistory();
   // const [name, setName] = useState("");
 
@@ -20,7 +21,7 @@ function SliderProduk() {
   };
 
   // useEffect(() => {
-  //   if (listprofile === undefined) {
+  //   if (listprofile.length === 0) {
   //     dispatch(getProfileAction());
   //   } else {
   //     setName(listprofile.userId.fullName);
