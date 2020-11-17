@@ -16,12 +16,11 @@ function Header() {
   const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
 
-
   // console.log("ini data member", member);
   // console.log("ini data user", dataUser);
 
   useEffect(() => {
-      dispatch(getUserInfoAction());
+    dispatch(getUserInfoAction());
     // eslint-disable-next-line
   }, [dispatch]);
 
@@ -65,7 +64,7 @@ function Header() {
           <p className="teks-kebawah">Profile User</p>
         </Link>
       );
-    } else if (member.role === "professional") {
+    } else if (member.role === "profesional") {
       button = (
         <Link to="/profil/pro">
           <p className="teks-kebawah">Profile Pro</p>
