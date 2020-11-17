@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
 import {
   getUserInfoAction,
   getEditProfessional,
@@ -16,7 +17,7 @@ import Footer from "../../components/footer/Footer";
 
 function Forminput() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
 
   const detailProfile = useSelector((state) => state.user.data);
   // const detailProfilePro =  useSelector((state) => state.user.data.profileId)
@@ -53,6 +54,9 @@ function Forminput() {
     fullName: "",
     email: "",
     price: "",
+    imgUrl: "",
+    imgKtp: "",
+    startDateAvailable: new Date(),
     endDateAvailable: new Date(),
     numberPhone: "",
     description: "",
@@ -76,7 +80,7 @@ function Forminput() {
   };
   const handleSubmit = (event) => {
     dispatch(getEditProfessional(profile, detailProfile, event));
-    history.push("/");
+    // history.push("/");
   };
   console.log("detail di componen", detailProfile);
   return (
@@ -114,6 +118,22 @@ function Forminput() {
           <label htmlFor="">No Hp</label>
           <br />
           <input
+            type="text"
+            name="imgurl"
+            value={profile.imgUrl}
+            onChange={handleChange}
+          />
+          <label htmlFor="">ImageURL</label>
+          <br />
+          <input
+            type="text"
+            name="imgktp"
+            value={profile.imgKtp}
+            onChange={handleChange}
+          />
+          <label htmlFor="">ImageKTP</label>
+          <br />
+          <input
             type="number"
             name="price"
             value={profile.price}
@@ -131,11 +151,19 @@ function Forminput() {
           <br />
           <input
             type="date"
+            name="startDateAvailable"
+            value={profile.startDateAvailable}
+            onChange={handleChange}
+          />
+          <label htmlFor="">Tanggal mulai</label>
+          <br />
+          <input
+            type="date"
             name="endDateAvailable"
             value={profile.endDateAvailable}
             onChange={handleChange}
           />
-          <label htmlFor="">Tanggal Akhir</label>
+          <label htmlFor="">Tanggal akhir</label>
           <br />
           <input
             type="date"

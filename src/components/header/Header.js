@@ -42,7 +42,7 @@ function Header() {
           <p className="teks-kebawah">Profile User</p>
         </Link>
       );
-    } else if (member.role === "professional") {
+    } else if (member.role === "profesional") {
       button = (
         <Link to="/profil/pro">
           <p className="teks-kebawah">Profile Pro</p>
