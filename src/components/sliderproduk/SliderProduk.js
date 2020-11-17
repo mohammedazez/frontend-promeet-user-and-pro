@@ -80,8 +80,7 @@ function SliderProduk() {
                 <img
                   alt={"users here"}
                   src={profile.imgUrl}
-                  height={144}
-                  width={179}
+                  className="img-sliderproduk"
                 />
                 <div className="card-body">
                   <h5 style={{ fontSize: "20px", fontWeight: "900" }}>
@@ -91,7 +90,6 @@ function SliderProduk() {
                     style={{
                       fontSize: "15px",
                       fontWeight: "700",
-                      color: "blue",
                     }}
                   >
                     {profile.profesiId.nameProfesi} di{" "}
