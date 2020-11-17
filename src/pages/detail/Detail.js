@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react";
-// import library momentjs
 import moment from "moment";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
@@ -50,12 +49,15 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-  console.log("profile", profiledetail);
+
   moment().format("MMM Do YY");
 
-  const newDate = moment(Date.time);
 
-  console.log("tanggal", newDate.format("L"));
+  const newDateStart = moment(datestart);
+  const newDateEnd = moment(dateend);
+
+  console.log("tanggal", newDateStart.format("L"));
+  console.log("tanggal", newDateEnd.format("L"));
 
   return (
     <Fragment>
@@ -113,23 +115,21 @@ function DetailProduk() {
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Start Date Available :</p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
                   <select>
-                    <option>{datestart} WIB</option>
+                    <option>{newDateStart.format("LL")} </option>
                   </select>
                 </div>
               </Col>
-              <Col>
+              {/* <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">
-                    Pilihan Tanggal Tersedia:
-                  </p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
 
                   <select>
-                    <option>{newDate.format("L")}</option>
+                    <option>{newDateEnd.format("LL")}</option>
                   </select>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
             <Row className="container-filter-detail">
               <Col>
