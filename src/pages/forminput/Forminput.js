@@ -423,7 +423,7 @@ function Forminput() {
             />
           </Form.Group>
           <Button onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
-        </Form>
+        </Form> */}
       </div>
       <Footer />
     </div>

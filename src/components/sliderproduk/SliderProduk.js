@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SliderProduk.css";
@@ -12,21 +12,22 @@ function SliderProduk() {
   const dispatch = useDispatch();
   const ProfilPro = useSelector((state) => state.semuaprofile);
   const { listprofile } = ProfilPro;
+  console.log("ini data untuk slider produk", ProfilPro);
   const history = useHistory();
-  // const [name, setName] = useState("");
+  const [name, setName] = useState("");
 
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
 
-  // useEffect(() => {
-  //   if (listprofile === undefined) {
-  //     dispatch(getProfileAction());
-  //   } else {
-  //     setName(listprofile.userId.fullName);
-  //   }
-  //   // eslint-disable-next-line
-  // }, [listprofile, dispatch]);
+  useEffect(() => {
+    if (listprofile.length === 0) {
+      dispatch(getProfileAction());
+    } else {
+      setName(listprofile.userId.fullName);
+    }
+    // eslint-disable-next-line
+  }, [listprofile, dispatch]);
 
   useEffect(() => {
     dispatch(getProfileAction());
