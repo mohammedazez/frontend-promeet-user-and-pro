@@ -12,7 +12,8 @@ import { getProfesiAction } from "../../redux/action/Profesi.action";
 import "./Forminput.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-// import { Form, Button } from "react-bootstrap";
+import ReactFilestack from "filestack-react";
+import { Form } from "react-bootstrap";
 
 function Forminput() {
   const dispatch = useDispatch();
@@ -33,9 +34,9 @@ function Forminput() {
   const service = useSelector((state) => state.service.listService);
   const listProfesi = useSelector((state) => state.profesi.profession);
 
-  console.log("locate", locate);
-  console.log("service", service);
-  console.log("listProfesi", listProfesi);
+  // console.log("locate", locate);
+  // console.log("service", service);
+  // console.log("listProfesi", listProfesi);
 
   useEffect(() => {
     if (
@@ -78,7 +79,7 @@ function Forminput() {
     dispatch(getEditProfessional(profile, detailProfile, event));
     history.push("/");
   };
-  console.log("detail di componen", detailProfile);
+  // console.log("detail di componen", detailProfile);
   return (
     <div>
       <Header />
@@ -87,7 +88,24 @@ function Forminput() {
         <h1 className="judulutama-form">
           Berikan pengalaman terbaik untuk orang yang membutuhkan di kota anda
         </h1>
-
+        <Form>
+          <p>Upload KTP</p>
+          <Form.Group>
+            <ReactFilestack
+              apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+              onSuccess={(res) => console.log(res)}
+            />
+          </Form.Group>
+        </Form>
+        <Form>
+          <p>Upload Gambar</p>
+          <Form.Group>
+            <ReactFilestack
+              apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+              onSuccess={(res) => console.log(res)}
+            />
+          </Form.Group>
+        </Form>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -96,6 +114,7 @@ function Forminput() {
             onChange={handleChange}
           />
           <label htmlFor="">Nama Lengkap</label>
+
           <br />
           <input
             type="email"

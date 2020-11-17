@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import moment from "moment";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Header from "../../components/header/Header";
@@ -11,6 +12,7 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
+
   const [deskripsi, setDeskripsi] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
@@ -46,6 +48,14 @@ function DetailProduk() {
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
+
+  moment().format("MMM Do YY");
+
+  const newDateStart = moment(datestart);
+  const newDateEnd = moment(dateend);
+
+  console.log("tanggal", newDateStart.format("L"));
+  console.log("tanggal", newDateEnd.format("L"));
 
   return (
     <Fragment>
@@ -103,17 +113,18 @@ function DetailProduk() {
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Start Date Available :</p>
+                  <p className="judul-filter-detail">Waktu Tersedia :</p>
                   <select>
-                    <option>{datestart} WIB</option>
+                    <option>{newDateStart.format("LT")} </option>
                   </select>
                 </div>
               </Col>
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">End Date Available :</p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
+
                   <select>
-                    <option>{dateend}</option>
+                    <option>{newDateEnd.format("LL")}</option>
                   </select>
                 </div>
               </Col>
