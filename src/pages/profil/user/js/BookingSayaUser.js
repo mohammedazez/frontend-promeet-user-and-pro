@@ -169,7 +169,6 @@ function BookingSayaUser() {
               </div>
             </Card>
             <div>
-              <h1>riwayatr boking</h1>
               {/* {listBooking.filter(newBooking => newBooking.userId === member._id ).map(filterBooking => (
         <li>
           <p>isi : {filterBooking}</p>

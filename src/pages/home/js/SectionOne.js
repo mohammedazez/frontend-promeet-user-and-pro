@@ -40,7 +40,7 @@ function SectionOne() {
                 alt="members"
                 className="img-sectionone"
               />
-              <h3>10K Job</h3>
+              <h3>18 Job</h3>
             </Col>
             <Col>
               <img
@@ -48,7 +48,7 @@ function SectionOne() {
                 alt="location"
                 className="img-sectionone"
               />
-              <h3>50 Locations</h3>
+              <h3>4 Locations</h3>
             </Col>
           </Row>
         </Container>
