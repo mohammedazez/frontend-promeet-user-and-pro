@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
 import { getUserInfoAction } from "../../redux/action/User.action";
 
@@ -16,7 +16,6 @@ import { Image, Button, Container, Row, Col } from "react-bootstrap";
 
 function Confirmation() {
   const dispatch = useDispatch();
-  let history = useHistory();
   const profiledetail = useSelector((state) => state.professional.data);
   const member = useSelector((state) => state.user.data);
   const [userid, setUserid] = useState("");
@@ -43,13 +42,6 @@ function Confirmation() {
     // eslint-disable-next-line
   }, [member, dispatch]);
 
-  function handleClick() {
-    try {
-      history.push("/bookingsaya/user");
-    } catch (error) {
-      alert(error);
-    }
-  }
   return (
     <div>
       <Header />
@@ -90,9 +82,9 @@ function Confirmation() {
                   onClick={handleClick}
                 > */}
                 <Link to="/bookingsaya/user" style={{ textDecoration: "none" }}>
-                <Button>
-                  <span>Cek Pesanan Saya</span>
-                </Button>
+                  <Button>
+                    <span>Cek Pesanan Saya</span>
+                  </Button>
                 </Link>
               </div>
             </Col>
