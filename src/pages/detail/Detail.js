@@ -51,11 +51,13 @@ function DetailProduk() {
 
   moment().format("MMM Do YY");
 
+
   const newDateStart = moment(datestart);
   const newDateEnd = moment(dateend);
 
   console.log("tanggal", newDateStart.format("L"));
   console.log("tanggal", newDateEnd.format("L"));
+
 
   return (
     <Fragment>
