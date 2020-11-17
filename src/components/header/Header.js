@@ -12,7 +12,9 @@ function Header() {
   const history = useHistory();
   const member = useSelector((state) => state.user.data);
 
+
   console.log("ini data member", member);
+
 
   useEffect(() => {
     dispatch(getUserInfoAction());

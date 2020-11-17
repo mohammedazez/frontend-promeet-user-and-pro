@@ -49,6 +49,7 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
+
   moment().format("MMM Do YY");
 
 
@@ -57,7 +58,6 @@ function DetailProduk() {
 
   console.log("tanggal", newDateStart.format("L"));
   console.log("tanggal", newDateEnd.format("L"));
-
 
   return (
     <Fragment>
