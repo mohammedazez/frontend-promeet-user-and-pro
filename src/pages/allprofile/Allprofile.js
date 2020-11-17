@@ -99,7 +99,7 @@ function Allprofile() {
                       style={{
                         fontSize: "15px",
                         fontWeight: "700",
-                        color: "blue",
+                        color: "white",
                       }}
                     >
                       {profile.profesiId.nameProfesi} di{" "}
