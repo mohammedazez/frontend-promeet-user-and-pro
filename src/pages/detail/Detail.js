@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import moment from "moment";
 import "./Detail.css";
 import SliderProduk from "../../components/sliderproduk/SliderProduk";
 import Header from "../../components/header/Header";
@@ -11,35 +12,54 @@ import { getProfileDetailAction } from "../../redux/action/Professional.action";
 function DetailProduk() {
   const dispatch = useDispatch();
   const profiledetail = useSelector((state) => state.professional.data);
+
   const [deskripsi, setDeskripsi] = useState("");
-  const [location, setLocation] = useState("");
   const [price, setPrice] = useState("");
   const [profesi, setProfesi] = useState("");
   const [service, setService] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [datestart, setDatestart] = useState("");
+  const [dateend, setDateend] = useState("");
+  // const [time, setTime] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
   const [pengalaman, setPengalaman] = useState();
+  const [namelocation, setNamelocation] = useState("");
+  const [detaillocation, setDetaillocation] = useState("");
+  const [namecity, setNamecity] = useState("");
 
   const { id } = useParams();
   useEffect(() => {
     if (profiledetail === undefined) {
       dispatch(getProfileDetailAction(id));
     } else {
-      setLocation(profiledetail.locationId.nameLocation);
       setUserid(profiledetail.userId.fullName);
       setProfesi(profiledetail.profesiId.nameProfesi);
       setService(profiledetail.serviceId.nameService);
       setPrice(profiledetail.price);
-      setDate(profiledetail.startDateAvailable);
-      setTime(profiledetail.timeAvailable);
+      setDatestart(profiledetail.startDateAvailable);
+      setDateend(profiledetail.endDateAvailable);
+      // setTime(profiledetail.timeAvailable);
       setDeskripsi(profiledetail.description);
       setPicture(profiledetail.imgUrl);
       setPengalaman(profiledetail.experience);
+      setNamelocation(profiledetail.locationId.nameLocation);
+      setDetaillocation(profiledetail.locationId.detailLocation);
+      setNamecity(profiledetail.locationId.nameCity);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
+
+
+
+  moment().format("MMM Do YY");
+
+
+
+  const newDateStart = moment(datestart);
+  const newDateEnd = moment(dateend);
+
+  console.log("tanggal", newDateStart.format("L"));
+  console.log("tanggal", newDateEnd.format("L"));
 
   return (
     <Fragment>
@@ -68,7 +88,7 @@ function DetailProduk() {
           <Col>
             <h1 className="nama-detail">{userid}</h1>
             <h2 className="pekerjaan-detail">
-              {profesi} dari {location}
+              {profesi} dari {namecity}
             </h2>
             <p className="harga-detail">Rp {price}/Per jam</p>
             {/* Login terlebih dahulu */}
@@ -97,30 +117,27 @@ function DetailProduk() {
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Pilihan Jam Tersedia :</p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
                   <select>
-                    <option>{time} WIB</option>
+                    <option>{newDateStart.format("LL")} </option>
                   </select>
                 </div>
               </Col>
-              <Col>
+              {/* <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">
-                    Pilihan Tanggal Tersedia:
-                  </p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
+
                   <select>
-                    <option>{date}</option>
+                    <option>{newDateEnd.format("LL")}</option>
                   </select>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
                   <p className="judul-filter-detail">Pilihan Jasa :</p>
                   <select>
-                    <option>{service}</option>
-                    <option>{service}</option>
                     <option>{service}</option>
                   </select>
                 </div>
@@ -129,9 +146,9 @@ function DetailProduk() {
                 <div className="box-detail">
                   <p className="judul-filter-detail">Tempat Meeting :</p>
                   <select>
-                    <option>Coworking Space</option>
-                    <option>Cafe</option>
-                    <option>Kantor</option>
+                    <option>
+                      {namelocation} - {detaillocation}
+                    </option>
                   </select>
                 </div>
               </Col>
@@ -140,7 +157,7 @@ function DetailProduk() {
         </Row>
       </div>
       <div className="container-deskripsi-detail">
-        <div style={{ backgroundColor: "#30F5FF" }}>
+        <div style={{ backgroundColor: "#63cfbb" }}>
           <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
             <Tab eventKey="tentang" title="Tentang">
               <p>{deskripsi}</p>

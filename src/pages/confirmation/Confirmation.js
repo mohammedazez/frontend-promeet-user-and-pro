@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
-import { dataTransferAction } from "../../redux/action/Transfer.action";
+import { getUserInfoAction } from "../../redux/action/User.action";
 
 // Components
 import Header from "../../components/header/Header";
@@ -16,9 +16,9 @@ import { Image, Button, Container, Row, Col } from "react-bootstrap";
 
 function Confirmation() {
   const dispatch = useDispatch();
-  let history = useHistory();
   const profiledetail = useSelector((state) => state.professional.data);
-  const datatransfer = useSelector((state) => state.transfer.transferMethod);
+  const member = useSelector((state) => state.user.data);
+  const [userid, setUserid] = useState("");
   const [price, setPrice] = useState("");
 
   const { id } = useParams();
@@ -28,21 +28,20 @@ function Confirmation() {
       dispatch(getProfileDetailAction(id));
     } else {
       setPrice(profiledetail.price);
+      setUserid(member.fullName);
     }
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
   useEffect(() => {
-    dispatch(dataTransferAction());
-  }, [dispatch]);
-
-  function handleClick() {
-    try {
-      history.push("/bookingsaya/user");
-    } catch (error) {
-      alert(error);
+    if (member === undefined) {
+      dispatch(getUserInfoAction());
+    } else {
+      setUserid(member.fullName);
     }
-  }
+    // eslint-disable-next-line
+  }, [member, dispatch]);
+
   return (
     <div>
       <Header />
@@ -59,16 +58,9 @@ function Confirmation() {
                 </p>
               </div>
               <div className="metodepembayaran">
-                <p>Metode Pembayaran</p>
+                <p>Nama Pemesan</p>
               </div>
-              <div className="marbot">
-                {datatransfer.map((transfer, index) => (
-                  <div key={index}>
-                    <p>{transfer.nameMethod}</p>
-                    <p>{transfer.numberRek}</p>
-                  </div>
-                ))}
-              </div>
+              <h1>{userid}</h1>
             </Col>
           </Row>
         </Container>
@@ -84,13 +76,16 @@ function Confirmation() {
               </div>
               <div>
                 <h3>Terima kasih sudah pesan di Promeet.com</h3>
-                <Button
+                {/* <Button
                   style={{ border: "none" }}
                   className="btnconfirmation"
                   onClick={handleClick}
-                >
-                  <span>Cek Pesanan Saya</span>
-                </Button>
+                > */}
+                <Link to="/bookingsaya/user" style={{ textDecoration: "none" }}>
+                  <Button>
+                    <span>Cek Pesanan Saya</span>
+                  </Button>
+                </Link>
               </div>
             </Col>
           </Row>

@@ -45,7 +45,7 @@ export default function Sidebarpro() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/pesanansaya/pro">Pesanan</Link>
+                  <Link to="/pesanansaya/pro">Pesanan dari user</Link>
                 </strong>
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function Sidebarpro() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/completed/pro">Completed</Link>
+                  <Link to="/completed/pro">Riwayat pesanan</Link>
                 </strong>
               </p>
             </div>

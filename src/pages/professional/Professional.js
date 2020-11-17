@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Row, Button } from "react-bootstrap";
-import { FcSearch } from "react-icons/fc";
+// import { FcSearch } from "react-icons/fc";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Movepage from "../../components/pagination/Movepage";
+// import Movepage from "../../components/pagination/Movepage";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./Professional.css";
@@ -12,6 +12,7 @@ import { getProfesiById } from "../../redux/action/Profesi.action";
 function Professional() {
   const dispatch = useDispatch();
   const detailProfesi = useSelector((state) => state.profesi.professionDetails);
+  // console.log(detailProfesi);
   const { id } = useParams();
   const history = useHistory();
 
@@ -24,67 +25,84 @@ function Professional() {
     history.push(`/detail/${id}`);
   };
 
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
+  // const [search, setSearch] = useState([]);
 
-  const handlechange = (e) => {
-    e.preventDefault();
-    setInput(e.target.value);
-  };
+  // const handlechange = (e) => {
+  //   e.preventDefault();
+  //   setInput(e.target.value);
+  // };
 
-  // if (input.length > 0) {
-  //   professional = professional.filter((i) => {
-  //     return i.pekerjaan.toLowerCase().match(input);
-  //   });
-  // }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (input.length > 0) {
+  //     let cari = detailProfesi.profileId.filter((i) => {
+  //       return i.userId.fullName === input;
+  //     });
+
+  //     console.log(cari);
+  //   }
+  // };
 
   return (
     <div>
       <Header />
       <div className="containerprofessional">
         {/* Search Bar */}
-        <div>
-          <div className="search">
-            <Button>
-              <i className="icon">
-                <FcSearch />
-              </i>
-            </Button>
-            <input
-              type="text"
-              className="searchTerm"
-              placeholder="Cari berdasarkan pekerjaan"
-              onChange={handlechange}
-              value={input}
-            />
-          </div>
-        </div>
-
-        <div className="containerfilter">
-          {/* Filter Lokasi */}
-          <div className="box">
+        {/* <div>
+          <form onSubmit={handleSubmit}>
+            <div className="search">
+              <Button>
+                <i className="icon">
+                  <FcSearch />
+                </i>
+              </Button>
+              <input
+                type="text"
+                className="searchTerm"
+                placeholder="Cari berdasarkan pekerjaan"
+                onChange={handlechange}
+                value={input}
+              />
+            </div>
+          </form>
+        </div> */}
+        {/* <div className="containerfilter"> */}
+        {/* Filter Lokasi */}
+        {/* <div className="box">
             <select>
+              <option>---</option>
               <option>Jakarta</option>
               <option>Depok</option>
               <option>Bekasi</option>
               <option>Tangerang</option>
             </select>
+
           </div>
           {/* Filter harga */}
-          <div className="box">
+        {/* <div className="box">
+          <h5>Cari berdasarkan harga</h5>
+
             <select>
+              <option>---</option>
               <option>Termurah</option>
               <option>Termahal</option>
             </select>
-          </div>
-          {/* Filter kategori */}
-          <div className="box">
+          </div> */}
+
+        {/* Filter kategori */}
+        {/* <div className="box">
+          <h5>Cari berdasarkan pekerjaan</h5>
+
             <select>
+              <option>---</option>
               <option>Frontend Developer</option>
               <option>Backend Developer</option>
               <option>Fullstack Developer</option>
             </select>
           </div>
-        </div>
+        </div> */}
+
         <div className="tulisanpenandaprofessional">
           <p>
             <Link to="/">Home</Link>
@@ -107,8 +125,16 @@ function Professional() {
                     width={179}
                   />
                   <div className="card-body">
-                    <h5 className="cardtitle">{people.userId.fullName}</h5>
-                    <p>
+                    <h5 style={{ fontSize: "20px", fontWeight: "900" }}>
+                      {people.userId.fullName}
+                    </h5>
+                    <p
+                      style={{
+                        fontSize: "15px",
+                        fontWeight: "700",
+                        color: "blue",
+                      }}
+                    >
                       {detailProfesi.nameProfesi} di
                       {people.locationId.nameLocation}
                     </p>
@@ -128,9 +154,9 @@ function Professional() {
             <h1>Loading</h1>
           )}
         </Row>
-        <div className="moveprofessional">
+        {/* <div className="moveprofessional">
           <Movepage />
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>

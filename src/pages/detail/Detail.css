@@ -5,7 +5,7 @@
 }
 
 .img-professional {
-  height: 514px;
+  height: 560px;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
@@ -22,26 +22,26 @@
   font-weight: 500;
   font-size: 28px;
   text-align: left;
-  color: #4d4d4d;
+  color: #338274;
 }
 
 .pekerjaan-detail {
   font-weight: bold;
   font-size: 20px;
   text-align: left;
-  color: #4d4d4d;
+  color:#338274;
 }
 
 .harga-detail {
   font-weight: 700;
   font-size: 26px;
-  color: #4d4d4d;
+  color: #338274;
   text-align: left;
 }
 
 .button-detail {
   display: flex;
-  background-color: #78aff4;
+  background-color:#338274;
   border-radius: 8px;
   margin-left: 10px;
   box-shadow: -3px 3px #a7ceff, -2px 2px #a7ceff, -1px 1px #a7ceff;
@@ -57,9 +57,10 @@
 }
 
 .container-deskripsi-detail {
-  padding-top: 150px;
-  padding-left: 128px;
-  padding-right: 128px;
+  padding-top: 50px;
+  padding-left: 120px;
+  padding-right: 120px;
+  width: 1150px;
 }
 
 /* styling Filter */
@@ -69,7 +70,7 @@
 }
 
 .box-detail select {
-  background-color: #78aff4;
+  background-color: #338274;
   color: white;
   padding: 12px;
   width: 300px;
@@ -103,6 +104,12 @@
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
+  .container-deskripsi-detail {
+    padding-top: 50px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 400px !important;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -148,14 +155,21 @@
   }
 
   .container-deskripsi-detail {
-    padding-top: 100px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 50px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 700px;
   }
 }
 
 /* Medium devices (tablets, less than 992px) */
 @media only screen and (max-width: 991.98px) {
+  .container-deskripsi-detail {
+    padding-top: 50px;
+    padding-left: 120px;
+    padding-right: 120px;
+    width: 900px;
+  }
 }
 
 /* Large devices (desktops, less than 1200px) */

@@ -13,7 +13,8 @@ import { getProfesiAction } from "../../redux/action/Profesi.action";
 import "./Forminput.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-// import { Form, Button } from "react-bootstrap";
+import ReactFilestack from "filestack-react";
+import { Form, Button } from "react-bootstrap";
 
 function Forminput() {
   const dispatch = useDispatch();
@@ -34,9 +35,9 @@ function Forminput() {
   const service = useSelector((state) => state.service.listService);
   const listProfesi = useSelector((state) => state.profesi.profession);
 
-  console.log("locate", locate);
-  console.log("service", service);
-  console.log("listProfesi", listProfesi);
+  // console.log("locate", locate);
+  // console.log("service", service);
+  // console.log("listProfesi", listProfesi);
 
   useEffect(() => {
     if (
@@ -51,6 +52,7 @@ function Forminput() {
   }, [dispatch, locate, service, listProfesi]);
 
   const [profile, setProfile] = useState({
+    userId: detailProfile._id,
     fullName: "",
     email: "",
     price: "",
@@ -59,18 +61,19 @@ function Forminput() {
     startDateAvailable: new Date(),
     endDateAvailable: new Date(),
     numberPhone: "",
+    price: "",
     description: "",
+    // timeAvailable: "",
+    startDateAvailable: "",
+    // endDateAvailable: "",
     locationId: "",
     profesiId: "",
-    timeAvailable: new Date().getHours(),
+    serviceId: "",
+    nameExperience: "",
+    yearExperience: "",
+    imgUrl: "",
+    imgKtp: "",
   });
-
-  // const handleChange = (e) => {
-  //   setProfile({
-  //     ...profile,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
   const handleChange = (e) => {
     setProfile({
@@ -82,16 +85,14 @@ function Forminput() {
     dispatch(getEditProfessional(profile, detailProfile, event));
     // history.push("/");
   };
-  console.log("detail di componen", detailProfile);
+  console.log("profile di componen", profile);
   return (
     <div>
       <Header />
-
       <div className="container-forminput">
         <h1 className="judulutama-form">
           Berikan pengalaman terbaik untuk orang yang membutuhkan di kota anda
         </h1>
-
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -243,7 +244,6 @@ function Forminput() {
           >
             <p className="judulform">Nama Lengkap :</p>
             <Form.Control
-            name="fullName"
               type="namalengkap"
               name="fullName"
               value={profile.fullName}
@@ -257,24 +257,12 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Email :</p>
-            <Form.Control type="email" name="email" value={profile.email} 
-            onChange={handleChange} placeholder="Email" size="lg" />
-          </Form.Group>
-          <Form.Group
-            controlId="exampleForm.ControlInput1"
-            className="grupform"
-          >
-            <p className="judulform">Pekerjaan :</p>
-            <Form.Control type="date" value={profile.timeAvailable} format = {"HH:mm:ss"} placeholder="Pekerjaan" size="lg" />
-          </Form.Group>
-          <Form.Group
-            controlId="exampleForm.ControlInput1"
-            className="grupform"
-          >
-            <p className="judulform">Jasa yang ditawarkan:</p>
             <Form.Control
-              type="jasa"
-              placeholder="Jasa apa yang ingin ditawarkan"
+              type="email"
+              name="email"
+              value={profile.email}
+              onChange={handleChange}
+              placeholder="Email"
               size="lg"
             />
           </Form.Group>
@@ -282,9 +270,57 @@ function Forminput() {
             controlId="exampleForm.ControlInput1"
             className="grupform"
           >
+            <p className="judulform">Profesi yang Dipilih :</p>
+            <Form.Control
+              as="select"
+              size="lg"
+              custom
+              name="profesiId"
+              value={profile.profesiId}
+              onChange={handleChange}
+            >
+              {listProfesi.length !== 0 ? (
+                listProfesi.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameProfesi}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
+            </Form.Control>
+          </Form.Group>
+          <Form.Group
+            controlId="exampleForm.ControlInput1"
+            className="grupform"
+          >
+            <p className="judulform">Jasa yang ditawarkan:</p>
+            <Form.Control
+              as="select"
+              size="lg"
+              custom
+              name="serviceId"
+              value={profile.serviceId}
+              onChange={handleChange}
+            >
+              {service.length !== 0 ? (
+                service.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameService}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
+            </Form.Control>
+          </Form.Group>
+          <Form.Group
+            controlId="exampleForm.ControlInput1"
+            className="grupform"
+          >
             <p className="judulform">Tarif pertemuan /Hitungan perjam :</p>
             <Form.Control
-              type="tarif"
+              type="number"
               placeholder="Tarif meeting dihitung berdasarkan per jam"
               size="lg"
             />
@@ -295,7 +331,7 @@ function Forminput() {
           >
             <p className="judulform">No.Handphone :</p>
             <Form.Control
-              type="phone"
+              type="text"
               name="numberPhone"
               value={profile.numberPhone}
               onChange={handleChange}
@@ -308,30 +344,23 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Lokasi :</p>
-            <Form.Control as="select" size="lg" custom>
-              <option>Jakarta</option>
-              <option>Depok</option>
-              <option>Bekasi</option>
-              <option>Tangerang</option>
-            </Form.Control>
-          </Form.Group>
-          <Form.Group
-            controlId="exampleForm.SelectCustomSizeLg"
-            className="grupform"
-          >
-            <p className="judulform">Jadwal Tersedia :</p>
-      <Form.Control></Form.Control> 
-    <div>
-    </div>
-    <Form.Control>
-            </Form.Control>
-            <Form.Control as="select" size="lg" custom>
-         
-              <option>08:00 WIB</option>
-              <option>10:00 WIB</option>
-              <option>12:00 WIB</option>
-              <option>14:00 WIB</option>
-              <option>18:00 WIB</option>
+            <Form.Control
+              name="locationId"
+              value={profile.locationId}
+              onChange={handleChange}
+              as="select"
+              size="lg"
+              custom
+            >
+              {locate.length !== 0 ? (
+                locate.map((item, index) => (
+                  <option key={index} value={item._id}>
+                    {item.nameCity}
+                  </option>
+                ))
+              ) : (
+                <p>Loading</p>
+              )}
             </Form.Control>
           </Form.Group>
           <Form.Group
@@ -339,30 +368,13 @@ function Forminput() {
             className="grupform"
           >
             <p className="judulform">Tanggal Tersedia :</p>
-            <Form.Control as="select" size="lg" custom>
-              <option>08-11-2020</option>
-              <option>09-11-2020</option>
-              <option>10-11-2020</option>
-              <option>11-11-2020</option>
-              <option>12-11-2020</option>
-            </Form.Control>
-          </Form.Group>
-          <Form.Group
-            controlId="exampleForm.ControlInput1"
-            className="grupform"
-          >
-            <p className="judulform">Tempat :</p>
             <Form.Control
-              type="tarif"
-              placeholder="Tempat untuk meeting"
               size="lg"
-            />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Isi alamat lengkap tempat untuk meeting"
+              custom
+              type="date"
+              name="startDateAvailable"
+              value={profile.startDateAvailable}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group
@@ -371,26 +383,47 @@ function Forminput() {
           >
             <p className="judulform">Pengalaman :</p>
             <Form.Control
-              type="tarif"
+              type="text"
+              name="nameExperience"
+              value={profile.nameExperience}
               placeholder="Pengalaman anda selama bekerja"
               size="lg"
             />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <p className="judulform">Tentang Anda</p>
             <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Tulis Tentang anda"
+              type="text"
+              name="yearExperience"
+              value={profile.yearExperience}
+              placeholder="Tahun"
+              size="lg"
             />
           </Form.Group>
-          <Button onSubmit={handleSubmit} >Daftar Jadi Konsultan</Button>
-
+          <p className="judulform">Upload Foto profil anda :</p>
           <Form.Group>
+            <ReactFilestack
+              apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+              onSuccess={(res) => {
+                setProfile({
+                  ...profile,
+                  imgKtp: res.filesUploaded[0].url,
+                });
+              }}
+              ewqa23d5td
+            />
             <p className="judulform">Upload KTP anda</p>
-            <Form.File id="exampleFormControlFile1" />
+            <ReactFilestack
+              apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
+              onSuccess={(res) => {
+                setProfile({
+                  ...profile,
+                  imgKtp: res.filesUploaded[0].url,
+                });
+              }}
+              ewqa23d5td
+              id="exampleFormControlFile1"
+            />
           </Form.Group>
-        </Form> */}
+          <Button onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
+        </Form>
       </div>
       <Footer />
     </div>

@@ -10,16 +10,16 @@ import Swal from "sweetalert2";
 function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const dataUser = useSelector((state) => state.user);
   const member = useSelector((state) => state.user.data);
 
-  console.log(dataUser);
+
+  console.log("ini data member", member);
+
 
   useEffect(() => {
     dispatch(getUserInfoAction());
-
     // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
 
   const logoutSuccess = () => {
     dispatch(userLogout(history));
@@ -70,17 +70,29 @@ function Header() {
           </Nav>
           <Nav>
             <NavItem>
-              <Link to="/" className="nav-link">
+              <Link
+                to="/"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Home
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/about" className="nav-link">
+              <Link
+                to="/about"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 About
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/contact" className="nav-link">
+              <Link
+                to="/contact"
+                className="nav-link"
+                style={{ textDecoration: "none", color: "white" }}
+              >
                 Contact
               </Link>
             </NavItem>

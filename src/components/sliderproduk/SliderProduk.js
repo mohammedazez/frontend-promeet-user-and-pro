@@ -12,12 +12,21 @@ function SliderProduk() {
   const dispatch = useDispatch();
   const ProfilPro = useSelector((state) => state.semuaprofile);
   const { listprofile } = ProfilPro;
-
   const history = useHistory();
+  // const [name, setName] = useState("");
 
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
+
+  // useEffect(() => {
+  //   if (listprofile === undefined) {
+  //     dispatch(getProfileAction());
+  //   } else {
+  //     setName(listprofile.userId.fullName);
+  //   }
+  //   // eslint-disable-next-line
+  // }, [listprofile, dispatch]);
 
   useEffect(() => {
     dispatch(getProfileAction());
@@ -42,7 +51,7 @@ function SliderProduk() {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -71,12 +80,21 @@ function SliderProduk() {
                 <img
                   alt={"users here"}
                   src={profile.imgUrl}
-                  height={144}
-                  width={179}
+                  className="img-sliderproduk"
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Nama</h5>
-                  <p>Software Engineer di Jakarta</p>
+                  <h5 style={{ fontSize: "15px", fontWeight: "900" }}>
+                    {profile.userId.fullName}
+                  </h5>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {profile.profesiId.nameProfesi} di{" "}
+                    {profile.locationId.nameLocation}
+                  </p>
                   <br />
                   <p>Rp {profile.price} /1 Jam</p>
                   <Button

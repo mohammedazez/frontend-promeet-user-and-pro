@@ -40,10 +40,12 @@ export const getProfileById = (id) => {
       const response = await axios.get(
         `https://server-promeet.herokuapp.com/api/admin/data/profile/${id}`
       );
+      // console.log("ini data semua profile", response);
       dispatch({
         type: GET_PROFILE_DETAILS_SUCCESS,
         payload: response.data.profile,
       });
+      console.log(response.data.profile)
     } catch (error) {
       dispatch({
         type: GET_PROFILE_DETAILS_FAILED,

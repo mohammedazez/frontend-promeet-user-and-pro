@@ -10,6 +10,8 @@
     "bootstrap": "^4.5.3",
     "filestack-react": "^3.2.1",
     "framer-motion": "^2.9.4",
+    "momen": "^0.0.1-security",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-autosuggest": "^10.0.3",
     "react-bootstrap": "^1.4.0",

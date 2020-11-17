@@ -104,7 +104,7 @@ function SignupProfessional() {
                 className="kolom-formb"
                 size="sm"
                 type="text"
-                placeholder="Masukkan info pekerjaan saat ini"
+                placeholder="Masukkan Nomor anda"
                 name="numberPhone"
                 value={proRegister.numberPhone}
                 onChange={(event) => handleChange(event)}
@@ -129,7 +129,7 @@ function SignupProfessional() {
                 <option>Teknisi Listrik</option> */}
               </Form.Control>
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label className="label-formb">Lokasi</Form.Label>
               <Form.Control
                 as="select"
@@ -148,7 +148,7 @@ function SignupProfessional() {
                 <option>Tanggerang</option>
                 <option>Bekasi</option>
               </Form.Control>
-            </Form.Group>
+            </Form.Group> */}
 
             <Button type="submit" className="buttonb">
               Sign Up
