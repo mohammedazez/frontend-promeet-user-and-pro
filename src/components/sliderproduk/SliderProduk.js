@@ -83,12 +83,12 @@ function SliderProduk() {
                   className="img-sliderproduk"
                 />
                 <div className="card-body">
-                  <h5 style={{ fontSize: "20px", fontWeight: "900" }}>
+                  <h5 style={{ fontSize: "15px", fontWeight: "900" }}>
                     {profile.userId.fullName}
                   </h5>
                   <p
                     style={{
-                      fontSize: "15px",
+                      fontSize: "12px",
                       fontWeight: "700",
                     }}
                   >

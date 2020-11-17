@@ -51,11 +51,13 @@ function DetailProduk() {
 
   moment().format("MMM Do YY");
 
+
   const newDateStart = moment(datestart);
   const newDateEnd = moment(dateend);
 
   console.log("tanggal", newDateStart.format("L"));
   console.log("tanggal", newDateEnd.format("L"));
+
 
   return (
     <Fragment>
@@ -113,13 +115,13 @@ function DetailProduk() {
             <Row className="container-filter-detail">
               <Col>
                 <div className="box-detail">
-                  <p className="judul-filter-detail">Waktu Tersedia :</p>
+                  <p className="judul-filter-detail">Tanggal Tersedia :</p>
                   <select>
-                    <option>{newDateStart.format("LT")} </option>
+                    <option>{newDateStart.format("LL")} </option>
                   </select>
                 </div>
               </Col>
-              <Col>
+              {/* <Col>
                 <div className="box-detail">
                   <p className="judul-filter-detail">Tanggal Tersedia :</p>
 
@@ -127,7 +129,7 @@ function DetailProduk() {
                     <option>{newDateEnd.format("LL")}</option>
                   </select>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
             <Row className="container-filter-detail">
               <Col>
