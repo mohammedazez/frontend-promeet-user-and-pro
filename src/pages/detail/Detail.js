@@ -50,7 +50,9 @@ function DetailProduk() {
   }, [profiledetail, dispatch]);
 
 
+
   moment().format("MMM Do YY");
+
 
 
   const newDateStart = moment(datestart);
