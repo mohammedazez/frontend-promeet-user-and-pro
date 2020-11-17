@@ -53,8 +53,7 @@ function DetailProduk() {
   console.log('profile', profiledetail)
   moment().format("MMM Do YY");    
 
-  const newDate = moment(date)
-  
+  const newDate = moment(datestart)
   console.log('tanggal',newDate.format('L'));
 
   return (
