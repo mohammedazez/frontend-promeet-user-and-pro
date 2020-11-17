@@ -16,11 +16,26 @@ import {
   getUserInfoAction,
   getEditProfessional,
 } from "../../../../redux/action/User.action";
-// import { getUserInfoAction } from "../../../../redux/action/User.action";
-
 function ProfilPro() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const profiledetail = useSelector((state) => state.user.data);
+  const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
+  const [userid, setUserid] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  console.log("ini data", profiledetail);
+  useEffect(() => {
+    if (profiledetail === undefined) {
+      dispatch(getUserInfoAction());
+    } else {
+      setLocation(profiledetail.profileId.locationId.nameLocation);
+      setUserid(profiledetail.fullName);
+      setProfesi(profiledetail.profileId.profesiId.nameProfesi);
+      setEmail(profiledetail.email);
+      setNumber(profiledetail.numberPhone);
+
   const detailProfile = useSelector((state) => state.user.data);
   const [location, setLocation] = useState("");
   const [profesi, setProfesi] = useState("");
@@ -71,8 +86,18 @@ function ProfilPro() {
       dispatch(getLocationAction());
       dispatch(getServiceAction());
       dispatch(getProfesiAction());
+
     }
   }, [dispatch, locate, service, listProfesi]);
+
+
+  console.log("ini nama", profiledetail);
+
+  function handleClick() {
+    try {
+      history.push("/forminput");
+    } catch (error) {
+      alert(error);
 
   useEffect(() => {
     if (detailProfile.length !== 0) {
@@ -85,6 +110,7 @@ function ProfilPro() {
       setNumber(detailProfile.numberPhone);
     } else {
       setProfile(detailProfile);
+
     }
   }, [detailProfile, dispatch]);
 
@@ -104,7 +130,7 @@ function ProfilPro() {
           <Col className="container-profilsayapro">
             <Card className="card-profilpro">
               <Card.Img
-                src={picture}
+                src=""
                 className="foto-profilprosaya"
                 alt="fotoprofilpro"
               />
@@ -114,7 +140,9 @@ function ProfilPro() {
                 <Card.Text>Lokasi : {location}</Card.Text>
                 <Card.Text>Email : {email}</Card.Text>
                 <Card.Text>No Hp : {number}</Card.Text>
+                <Button className="tombol-profilpro" onClick={handleClick}>
                 <Button className="tombol-profilpro" onClick={handleShow}>
+
                   Edit Profil
                 </Button>
               </Card.Body>
