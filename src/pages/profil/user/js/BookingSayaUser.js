@@ -44,7 +44,7 @@ function BookingSayaUser() {
             <SidebarUser />
           </Col>
           <Col className="container-bookingsayauser">
-            <h1>Booking Saya</h1>
+            <h1>pesanan Baru</h1>
             <Card className="container-card-bookingsayauser">
               <div style={{ overflow: "auto" }}>
                 <p>Detail</p>
@@ -58,6 +58,7 @@ function BookingSayaUser() {
                       <th>Jenis</th>
                       <th>Tempat</th>
                       <th>Profesi</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -75,6 +76,7 @@ function BookingSayaUser() {
                       <td>{service}</td>
                       <td>{location}</td>
                       <td>{profesi}</td>
+                      <td>Belum dibayar</td>
                     </tr>
                   </tbody>
                 </Table>

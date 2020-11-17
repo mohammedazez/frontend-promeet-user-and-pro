@@ -45,7 +45,7 @@ export default function SidebarUser() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/bookingsaya/user">Booking</Link>
+                  <Link to="/bookingsaya/user">Pesanan Baru</Link>
                 </strong>
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function SidebarUser() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/completed/user">Completed</Link>
+                  <Link to="/completed/user">Riwayat Pesanan</Link>
                 </strong>
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function SidebarUser() {
             </div>
             <div>
               <p style={{ marginTop: "4px" }}>
-                <strong>Chat</strong>
+                <strong>Pesan</strong>
               </p>
             </div>
           </div>

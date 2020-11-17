@@ -41,7 +41,7 @@ function CompletedUser() {
             <SidebarUser />
           </Col>
           <Col className="container-completeduser">
-            <h1>Completed</h1>
+            <h1>Riwayat pesanan</h1>
             <Card className="container-card-completeduser">
               <div style={{ overflow: "auto" }}>
                 <p>Pembayaran Sukses</p>
@@ -55,6 +55,7 @@ function CompletedUser() {
                       <th>Jenis</th>
                       <th>Tempat</th>
                       <th>Profesi</th>
+                      <th>Status</th>
                       <th>Telp Konsultan</th>
                     </tr>
                   </thead>
@@ -73,6 +74,7 @@ function CompletedUser() {
                       <td>{service}</td>
                       <td>{location}</td>
                       <td>{profesi}</td>
+                      <td>Selesai</td>
                       <td>08586856858</td>
                     </tr>
                   </tbody>
