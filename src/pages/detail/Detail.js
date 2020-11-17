@@ -49,7 +49,7 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-  moment().format("MMM Do YY");
+  // moment().format("MMM Do YY");
 
 
   const newDateStart = moment(datestart);

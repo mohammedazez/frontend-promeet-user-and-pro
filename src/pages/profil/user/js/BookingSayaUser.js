@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-// import axios from 'axios';
 import "../css/BookingSayaUser.css";
+import moment from "moment";
+import Swal from "sweetalert2";
+
 import { Row, Col, Card, Table, Form } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
@@ -11,14 +13,14 @@ import {
   getBookingAction,
   editBookingAction,
 } from "../../../../redux/action/Booking.action";
-
+import { Link, Button } from "react-bootstrap";
 import ReactFilestack from "filestack-react";
 
 function BookingSayaUser() {
   const dispatch = useDispatch();
 
   const member = useSelector((state) => state.user.data);
-  const profiledetail = useSelector((state) => state.professional.data);
+  // const profiledetail = useSelector((state) => state.professional.data);
   const listBooking = useSelector((state) => state.bookingReducers.data);
 
   console.log("list booking", listBooking);
@@ -26,47 +28,23 @@ function BookingSayaUser() {
   const newBooking = listBooking.filter(
     (item) => item.userId && item.userId._id === member._id
   );
-  console.log("newbooking", newBooking);
-
+  
   const lastBooking = newBooking[newBooking.length - 1];
-  console.log("last", lastBooking);
+  console.log("lastBooking", lastBooking);
+  
+  // const dateBooking = moment(lastBooking.profileId.startDateAvailable);
 
-  // let bookingFilter = listBooking.filter()
-  // console.log('user d comp', userBooking)
-  // console.log('data transfer d comp', datatransfer)
-  const [price, setPrice] = useState("");
-  const [picture, setPicture] = useState("");
-  const [userid, setUserid] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [service, setService] = useState("");
-  const [location, setLocation] = useState("");
-  const [profesi, setProfesi] = useState("");
+  // console.log("tanggal", dateBooking.format("L"));
 
+    
   useEffect(() => {
-    dispatch(getBookingAction());
-    if (profiledetail === undefined) {
-      dispatch(getProfileDetailAction());
-    } else {
-      setLocation(profiledetail.locationId.nameLocation);
-      setUserid(profiledetail.userId.fullName);
-      setService(profiledetail.serviceId.nameService);
-      setPrice(profiledetail.price);
-      setDate(profiledetail.startDateAvailable);
-      setTime(profiledetail.timeAvailable);
-      setPicture(profiledetail.imgUrl);
-      setProfesi(profiledetail.profesiId.nameProfesi);
+    if(listBooking.length === 0 || lastBooking === undefined) {
+      dispatch(getBookingAction())
     }
-    // eslint-disable-next-line
-  }, [profiledetail, dispatch]);
+  }, [dispatch])
 
   const [imgTf, setImgTf] = useState({
-    // userId : userBooking._id,
-    // profileId: profiledetail._id,
-    // transferId: datatransfer._id,
-    // total : profiledetail.price,
-    // status: 'Pending',
-    imgUrl: "gambar.jpeg",
+     imgUrl: "gambar.jpeg",
   });
 
   const handleUpdate = (e) => {
@@ -77,13 +55,21 @@ function BookingSayaUser() {
   };
 
   const handleSubmit = (event) => {
-    dispatch(editBookingAction(imgTf, profiledetail, event));
+    dispatch(editBookingAction(imgTf, lastBooking, event));
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Success Success Upload",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     // history.push('/bookingsaya/user')
   };
   console.log("image", imgTf);
   return (
     <div>
       <Header />
+      {lastBooking !== undefined ? (
       <div>
         <Row className="container-row-bookingsayauser">
           <Col md="auto">
@@ -100,7 +86,6 @@ function BookingSayaUser() {
                       <th>Photo</th>
                       <th>Nama</th>
                       <th>Tanggal Pertemuan</th>
-                      <th>Jam</th>
                       <th>Jenis</th>
                       <th>Tempat</th>
                       <th>Profesi</th>
@@ -111,18 +96,17 @@ function BookingSayaUser() {
                     <tr>
                       <td>
                         <img
-                          src={picture}
+                          src={lastBooking.profileId.imgUrl}
                           className="foto-bookingsayauser"
-                          alt="fotobookingsaya"
+                          alt="ImageProfessional"
                         />
                       </td>
-                      <td>{userid}</td>
-                      <td>{date}</td>
-                      <td>{time} WIB</td>
-                      <td>{service}</td>
-                      <td>{location}</td>
-                      <td>{profesi}</td>
-                      <td>Belum dibayar</td>
+                      <td>{lastBooking.profileId.userId.fullName}</td>
+                      <td>{moment(lastBooking.profileId.startDateAvailable).format('L')}</td>
+                      <td>{lastBooking.profileId.serviceId.nameService}</td>
+                      <td>{lastBooking.profileId.locationId.nameLocation}</td>
+                      <td>{lastBooking.profileId.serviceId.nameService}</td>
+                      <td>{lastBooking.status}</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -140,45 +124,39 @@ function BookingSayaUser() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Rp {price}</td>
+                      <td>Rp {lastBooking.total}</td>
                       <td>BCA 5919111194 - PT Prommet Indonesia</td>
-                      <td>02-11-2020</td>
-                      <td>03-11-2020</td>
+                      <td>17-11-2020</td>
+                      <td>18-11-2020</td>
                     </tr>
                   </tbody>
                 </Table>
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    name="imgUrl"
-                    value={imgTf.imgUrl}
-                    onChange={handleUpdate}
-                  />
-                  <label htmlFor="">gambar</label>
-                  <button type="submit">klik</button>
-                </form>
-                <Form>
+                
+                  
+                <Form >
                   <Form.Group>
                     <p>Upload bukti Pembayaran</p>
                     <ReactFilestack
                       apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
-                      onSuccess={(res) => console.log(res)}
+                      onSuccess={(res) => {
+                        setImgTf({
+                          ...imgTf,
+                          imgUrl: res.filesUploaded[0].url,
+                        });
+                      }}
                     />
+                    <br/> <br/>
+                    <Button type="submit" onSubmit={handleSubmit}> 
+                  Upload Bukti Transfer
+                </Button>
                   </Form.Group>
                 </Form>
               </div>
             </Card>
-            <div>
-              <h1>riwayatr boking</h1>
-              {/* {listBooking.filter(newBooking => newBooking.userId === member._id ).map(filterBooking => (
-        <li>
-          <p>isi : {filterBooking}</p>
-        </li>
-      ))} */}
-            </div>
           </Col>
         </Row>
       </div>
+      ) : (<p>Loading</p>) } 
       <Footer />
     </div>
   );

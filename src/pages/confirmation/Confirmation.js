@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { getProfileDetailAction } from "../../redux/action/Professional.action";
 import { dataTransferAction } from "../../redux/action/Transfer.action";
 
@@ -84,13 +84,16 @@ function Confirmation() {
               </div>
               <div>
                 <h3>Terima kasih sudah pesan di Promeet.com</h3>
-                <Button
+                {/* <Button
                   style={{ border: "none" }}
                   className="btnconfirmation"
                   onClick={handleClick}
-                >
+                > */}
+                <Link to="/bookingsaya/user" style={{ textDecoration: "none" }}>
+                <Button>
                   <span>Cek Pesanan Saya</span>
                 </Button>
+                </Link>
               </div>
             </Col>
           </Row>

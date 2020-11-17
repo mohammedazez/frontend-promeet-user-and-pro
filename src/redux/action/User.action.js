@@ -96,7 +96,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
           icon: "success",
           timer: 3000,
         });
-        history.push("/login");
+        history.push("/forminput");
       } else {
         Swal.fire({
           title: "Gagal Mendaftar",
