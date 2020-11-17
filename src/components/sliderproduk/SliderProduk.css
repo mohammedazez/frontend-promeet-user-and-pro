@@ -3,15 +3,17 @@
   margin-bottom: 100px;
   padding-left: 110px;
   padding-right: 110px;
+  max-width: 100%;
 }
 
 .judul-sliderproduk {
   text-align: left;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 20px;
   color: #338274;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
 }
 
 .kalimat-sliderproduk {
@@ -21,15 +23,18 @@
   color: #4d4d4d;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
 }
 
 .lihatsemua {
   text-align: right;
+  max-width: 100%;
 }
 
 .out {
-display: flex;
-justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%;
 }
 
 .cardsliderproduk {
@@ -39,19 +44,27 @@ justify-content: space-evenly;
   padding-top: 10px;
   padding-left: 0px;
   padding-right: 0px;
-  width: 200px;
+  width: 170px;
   mix-blend-mode: normal;
   box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  
+  max-width: 100%;
+}
+
+.img-sliderproduk {
+  height: 200px;
+  width: 179px;
+  max-width: 100%;
 }
 
 .card-body {
-padding: 0px;
+  padding: 0px;
+  max-width: 100%;
 }
 
 .card-body p {
   color: aliceblue;
+  max-width: 100%;
 }
 
 .card-title {
@@ -64,15 +77,18 @@ padding: 0px;
   white-space: nowrap;
   margin-top: 10px;
   margin-bottom: 0 !important;
+  max-width: 100%;
 }
 
-.card-contenta{
+.card-contenta {
   color: aliceblue;
+  max-width: 100%;
 }
 
 img {
   display: block;
   margin: auto;
+  max-width: 100%;
 }
 .slick-prev:before,
 .slick-next:before {
@@ -85,6 +101,7 @@ img {
   width: 200px;
   border-radius: 8px;
   border: 1px solid #ffffff;
+  max-width: 100%;
 }
 
 /* untuk responsive */
@@ -102,11 +119,10 @@ img {
 
   .cardsliderproduk {
     margin-left: 60px;
-    
   }
   .card {
     max-width: 100%;
-    width: 300px;
+    width: 100px;
   }
 
   .judul-sliderproduk {
@@ -128,4 +144,7 @@ img {
 
 /* Large devices (desktops, less than 1200px) */
 @media only screen and (max-width: 1199.98px) {
+  ..cardsliderproduk {
+    width: 160px;
+  }
 }

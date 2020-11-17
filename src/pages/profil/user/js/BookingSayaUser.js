@@ -88,7 +88,7 @@ console.log('image', imgTf)
             <SidebarUser />
           </Col>
           <Col className="container-bookingsayauser">
-            <h1>Booking Saya</h1>
+            <h1>pesanan Baru</h1>
             <Card className="container-card-bookingsayauser">
               <div style={{ overflow: "auto" }}>
                 <p>Detail</p>
@@ -102,6 +102,7 @@ console.log('image', imgTf)
                       <th>Jenis</th>
                       <th>Tempat</th>
                       <th>Profesi</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -119,6 +120,7 @@ console.log('image', imgTf)
                       <td>{service}</td>
                       <td>{location}</td>
                       <td>{profesi}</td>
+                      <td>Belum dibayar</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -150,6 +152,7 @@ console.log('image', imgTf)
                </form>
                 <Form>
                   <Form.Group>
+                    <p>Upload bukti Pembayaran</p>
                     <ReactFilestack
                       apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
                       onSuccess={(res) => console.log(res)}
