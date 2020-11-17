@@ -61,17 +61,17 @@ console.log('values', values)
 };
 
 
-export const editBookingAction = (values, profiledetail, event) => {
+export const editBookingAction = (values, lastBooking, event) => {
   return async (dispatch) => {
     console.log('value', values)
     event.preventDefault();
     return Axios
     .put(
-      `http://localhost:8080/api/updateImg/${profiledetail._id}`, values
+      `http://localhost:8080/api/updateImg/${lastBooking._id}`, values
     )
     .then((response) => {
       console.log("response edit", response);
-      dispatch(editBooking(response.data));
+      dispatch(editBooking(response.data.booking));
     })
     .catch((error) => {
       console.log(` hasil eror edit ${error}`);
