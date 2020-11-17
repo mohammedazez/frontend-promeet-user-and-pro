@@ -148,7 +148,7 @@ export const loginAction = (values, event, history) => {
 };
 
 export const getUserInfoAction = () => async (dispatch) => {
-  const url = "http://localhost:8080/api/auth";
+  const url = "https://server-promeet.herokuapp.com/api/auth";
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -166,10 +166,7 @@ export const getEditProfessional = (values, detailProfile, event) => {
     event.preventDefault();
     console.log("isi status", values);
     return axios
-      .put(
-        `http://localhost:8080/api/edit-prof/${detailProfile._id}`,
-        values
-      )
+      .put(`http://localhost:8080/api/edit-prof/${detailProfile._id}`, values)
       .then((response) => {
         console.log("response edit", response.data);
         dispatch(editUser(response.data));
