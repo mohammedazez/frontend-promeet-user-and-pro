@@ -184,6 +184,6 @@ export const userLogout = (history) => {
   return (dispatch) => {
     localStorage.removeItem("token");
     dispatch(getlogout());
-    history.push("/login");
+    history.push("/");
   };
 };
