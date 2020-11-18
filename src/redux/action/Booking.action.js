@@ -59,7 +59,7 @@ export const editBookingAction = (values, lastBooking) => {
   return async (dispatch) => {
     // console.log("value", values);
     return Axios.put(
-      `http://server-promeet.herokuapp.com/api/updateImg/${lastBooking._id}`,
+      `https://server-promeet.herokuapp.com/api/updateImg/${lastBooking._id}`,
       values
     )
       .then((response) => {
