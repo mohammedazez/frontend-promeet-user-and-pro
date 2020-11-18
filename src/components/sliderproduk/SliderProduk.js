@@ -70,47 +70,47 @@ function SliderProduk() {
         </Col>
       </Row>
 
-//       {listprofile.length === 0 ? (
-//         <div className="spinner-border" role="status">
-//           <span className="sr-only">Loading...</span>
-//         </div>
-//       ) : (
-//         <Slider {...settings}>
-//           {listprofile.map((profile, index) => (
-//             <div className="out" key={index}>
-//               <div className="cardsliderproduk">
-//                 <img
-//                   alt={"users here"}
-//                   src={profile.imgUrl}
-//                   className="img-sliderproduk"
-//                 />
-//                 <div className="card-body">
-//                   <h5 style={{ fontSize: "15px", fontWeight: "900" }}>
-//                     {profile.userId.fullName}
-//                   </h5>
-//                   <p
-//                     style={{
-//                       fontSize: "12px",
-//                       fontWeight: "700",
-//                     }}
-//                   >
-//                     {profile.profesiId.nameProfesi} di{" "}
-//                     {profile.locationId.nameLocation}
-//                   </p>
-//                   <br />
-//                   <p>Rp {profile.price} /1 Jam</p>
-//                   <Button
-//                     className="btn btn-sm tombol-sliderproduk"
-//                     onClick={() => handleClick(profile._id)}
-//                   >
-//                     Kirim Pertemuan
-//                   </Button>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </Slider>
-//       )}
+      {listprofile.length === 0 ? (
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      ) : (
+        <Slider {...settings}>
+          {listprofile.map((profile, index) => (
+            <div className="out" key={index}>
+              <div className="cardsliderproduk">
+                <img
+                  alt={"users here"}
+                  src={profile.imgUrl}
+                  className="img-sliderproduk"
+                />
+                <div className="card-body">
+                  <h5 style={{ fontSize: "15px", fontWeight: "900" }}>
+                    {profile.userId.fullName}
+                  </h5>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {profile.profesiId.nameProfesi} di{" "}
+                    {profile.locationId.nameLocation}
+                  </p>
+                  <br />
+                  <p>Rp {profile.price} /1 Jam</p>
+                  <Button
+                    className="btn btn-sm tombol-sliderproduk"
+                    onClick={() => handleClick(profile._id)}
+                  >
+                    Kirim Pertemuan
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      )}
     </div>
   );
 }
