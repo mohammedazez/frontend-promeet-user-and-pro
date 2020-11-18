@@ -13,7 +13,7 @@ function Header() {
   const member = useSelector((state) => state.user.data);
 
   // const dataProfileId = member.profileId
-  console.log("ini data member dataProfileId", member);
+  // console.log("ini data member dataProfileId", member);
 
   useEffect(() => {
     dispatch(getUserInfoAction());
@@ -24,7 +24,7 @@ function Header() {
   const logoutSuccess = () => {
     dispatch(userLogout(history));
     localStorage.removeItem("token");
-    console.log("logout", logoutSuccess);
+    // console.log("logout", logoutSuccess);
     Swal.fire({
       position: "top-end",
       icon: "success",

@@ -18,7 +18,7 @@ function DetailProduk() {
   const [profesi, setProfesi] = useState("");
   const [service, setService] = useState("");
   const [datestart, setDatestart] = useState("");
-  const [dateend, setDateend] = useState("");
+  // const [dateend, setDateend] = useState("");
   // const [time, setTime] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
@@ -37,7 +37,7 @@ function DetailProduk() {
       setService(profiledetail.serviceId.nameService);
       setPrice(profiledetail.price);
       setDatestart(profiledetail.startDateAvailable);
-      setDateend(profiledetail.endDateAvailable);
+      // setDateend(profiledetail.endDateAvailable);
       // setTime(profiledetail.timeAvailable);
       setDeskripsi(profiledetail.description);
       setPicture(profiledetail.imgUrl);
@@ -49,17 +49,13 @@ function DetailProduk() {
     // eslint-disable-next-line
   }, [profiledetail, dispatch]);
 
-
-
   moment().format("MMM Do YY");
 
-
-
   const newDateStart = moment(datestart);
-  const newDateEnd = moment(dateend);
+  // const newDateEnd = moment(dateend);
 
-  console.log("tanggal", newDateStart.format("L"));
-  console.log("tanggal", newDateEnd.format("L"));
+  // console.log("tanggal", newDateStart.format("L"));
+  // console.log("tanggal", newDateEnd.format("L"));
 
   return (
     <Fragment>

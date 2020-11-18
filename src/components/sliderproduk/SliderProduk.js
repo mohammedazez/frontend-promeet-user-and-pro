@@ -15,7 +15,7 @@ function SliderProduk() {
 
   const history = useHistory();
   // const [name, setName] = useState("");
-console.log('profile', profilePro)
+  // console.log('profile', profilePro)
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
@@ -69,7 +69,7 @@ console.log('profile', profilePro)
           </Link>
         </Col>
       </Row>
-     
+
       {listprofile.length === 0 ? (
         <div className="spinner-border" role="status">
           <span className="sr-only">Loading...</span>

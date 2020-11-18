@@ -22,14 +22,14 @@ function BookingSayaUser() {
   // const profiledetail = useSelector((state) => state.professional.data);
   const listBooking = useSelector((state) => state.bookingReducers.data);
 
-  console.log("list booking", listBooking);
+  // console.log("list booking", listBooking);
 
   const newBooking = listBooking.filter(
     (item) => item.userId && item.userId._id === member._id
   );
 
   const lastBooking = newBooking[newBooking.length - 1];
-  console.log("lastBooking", lastBooking);
+  // console.log("lastBooking", lastBooking);
 
   // const dateBooking = moment(lastBooking.profileId.startDateAvailable);
 
@@ -46,24 +46,24 @@ function BookingSayaUser() {
     imgUrl: "",
   });
 
-  const handleChange = (e) => {
-    setImage({
-      ...image,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // const handleChange = (e) => {
+  //   setImage({
+  //     ...image,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(editBookingAction(image, lastBooking));
-    // Swal.fire({
-    //   position: "center",
-    //   icon: "success",
-    //   title: "Success Success Upload",
-    //   showConfirmButton: false,
-    //   timer: 1500,
-    // });
-    history.push('/')
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Success Success Upload",
+      showConfirmButton: false,
+      timer: 3000,
+    });
+    history.push("/");
   };
   console.log("image", image.imgUrl);
   return (
@@ -76,7 +76,7 @@ function BookingSayaUser() {
               <SidebarUser />
             </Col>
             <Col className="container-bookingsayauser">
-              <h1>pesanan Baru</h1>
+              <h1>Pesanan Baru</h1>
               <Card className="container-card-bookingsayauser">
                 <div style={{ overflow: "auto" }}>
                   <p>Detail</p>

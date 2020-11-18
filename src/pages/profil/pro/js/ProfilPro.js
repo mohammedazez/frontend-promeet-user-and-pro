@@ -22,7 +22,7 @@ function ProfilPro() {
   const dispatch = useDispatch();
   const history = useHistory();
   const detailProfile = useSelector((state) => state.user.data);
-  console.log("", detailProfile);
+  // console.log("", detailProfile);
   const [location, setLocation] = useState("");
   const [profesi, setProfesi] = useState("");
   const [userid, setUserid] = useState("");
@@ -34,7 +34,7 @@ function ProfilPro() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  console.log("detail", detailProfile);
+  // console.log("detail", detailProfile);
   const [profile, setProfile] = useState({
     fullName: "",
     email: "",

@@ -81,7 +81,10 @@ function Confirmation() {
                   className="btnconfirmation"
                   onClick={handleClick}
                 > */}
-                <Link to="/bookingsaya/user" style={{ textDecoration: "none" }}>
+                <Link
+                  to="/mybookingsaya/user"
+                  style={{ textDecoration: "none" }}
+                >
                   <Button>
                     <span>Cek Pesanan Saya</span>
                   </Button>
