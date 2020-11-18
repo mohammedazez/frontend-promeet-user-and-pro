@@ -88,7 +88,7 @@ function Allprofile() {
                   <img
                     alt={"users here"}
                     src={profile.imgUrl}
-                    height={144}
+                    height={200}
                     width={179}
                   />
                   <div className="card-body">
