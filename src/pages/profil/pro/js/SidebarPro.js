@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserInfoAction } from "../../../../redux/action/User.action";
 import "../css/SidebarPro.css";
 import { Link } from "react-router-dom";
 
 export default function Sidebarpro() {
+  const dispatch = useDispatch();
+  const detailProfile = useSelector((state) => state.user.data);
+  const [picture, setPicture] = useState("");
+
+  useEffect(() => {
+    if (detailProfile.length !== 0) {
+      dispatch(getUserInfoAction());
+      setPicture(detailProfile.profileId.imgUrl);
+    }
+  }, [detailProfile, dispatch]);
   return (
     <div>
       <div className="container-sidebar">
         <div className="sidebar-left">
-          <img
-            src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
-            alt="fotoprofil"
-            className="foto-sidebar"
-          />
+          <img src={picture} alt="fotoprofil" className="foto-sidebar" />
           <hr className="garispemisah-sectionfour" />
           {/* Profil Saya */}
           <div className="grid-sidebar bg-active">

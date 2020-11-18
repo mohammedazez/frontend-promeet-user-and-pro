@@ -30,6 +30,8 @@ function ProfilPro() {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
 
+  console.log(detailProfile);
+
   // for modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -81,7 +83,7 @@ function ProfilPro() {
       setLocation(detailProfile.profileId.locationId.nameLocation);
       setUserid(detailProfile.fullName);
       setProfesi(detailProfile.profileId.profesiId.nameProfesi);
-      setPicture(detailProfile.imgUrl);
+      setPicture(detailProfile.profileId.imgUrl);
       setEmail(detailProfile.email);
       setNumber(detailProfile.numberPhone);
     } else {
