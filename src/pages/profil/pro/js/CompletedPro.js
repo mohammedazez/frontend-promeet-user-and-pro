@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+// import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getBookingAction,
-} from "../../../../redux/action/Booking.action";
+import { getBookingAction } from "../../../../redux/action/Booking.action";
 import "../css/CompletedPro.css";
 import { Row, Col, Card, Table, Button, Modal } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
@@ -43,7 +40,6 @@ function MyVerticallyCenteredModal(props) {
 
 function CompletedPro() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const member = useSelector((state) => state.user.data);
   // const profiledetail = useSelector((state) => state.professional.data);
   const listBooking = useSelector((state) => state.bookingReducers.data);
@@ -53,9 +49,8 @@ function CompletedPro() {
     (item) => item.userId && item.userId._id === member._id
   );
   useEffect(() => {
-    
-      dispatch(getBookingAction());
-    
+    dispatch(getBookingAction());
+
     // eslint-disable-next-line
   }, [dispatch]);
 
@@ -86,25 +81,23 @@ function CompletedPro() {
                     </tr>
                   </thead>
                   {newBooking !== undefined && newBooking.length > 0 ? (
-                  newBooking.map((item, index) => (
-                    <tbody key={index}>
-                      <tr>
-                      <td></td>
-                      <td>Meeting with Angelia</td>
-                      <td>02-11-2020</td>
-                      <td>08:00 WIB</td>
-                      <td>Konsultasi</td>
-                      <td>Coworking Space</td>
-                      <td>2 Jam</td>
-                      <td>08586856858</td>
-                    </tr>
-                    </tbody>
-  
-                  ))
-                  ) : (<p>test</p>)}
-                 
-                   
-
+                    newBooking.map((item, index) => (
+                      <tbody key={index}>
+                        <tr>
+                          <td></td>
+                          <td>Meeting with Angelia</td>
+                          <td>02-11-2020</td>
+                          <td>08:00 WIB</td>
+                          <td>Konsultasi</td>
+                          <td>Coworking Space</td>
+                          <td>2 Jam</td>
+                          <td>08586856858</td>
+                        </tr>
+                      </tbody>
+                    ))
+                  ) : (
+                    <p>test</p>
+                  )}
                 </Table>
                 <h4>Note:</h4>
                 <p>*Mohon jangan menyebar luaskan kontak milik User. </p>
