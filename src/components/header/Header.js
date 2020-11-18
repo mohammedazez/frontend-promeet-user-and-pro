@@ -92,7 +92,7 @@ function Header() {
                 </Link>
               </NavItem>
             ) : (
-              <p></p>
+              ""
             )}
 
             {!localStorage.getItem("token") ? (

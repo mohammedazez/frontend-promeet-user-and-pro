@@ -12,7 +12,7 @@ export const getLocation = (data) => {
 export const getServiceAction = () => {
   return async (dispatch) => {
     const response = await axios.get(
-      "http://server-promeet.herokuapp.com/api/admin/data/service"
+      "https://server-promeet.herokuapp.com/api/admin/data/service"
     );
     dispatch(getLocation(response.data.service));
     // console.log('hasil ambil data lokasi', response.data.service);
