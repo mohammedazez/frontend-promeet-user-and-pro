@@ -34,7 +34,7 @@ function ProfilPro() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-console.log('detail', detailProfile)
+  console.log("detail", detailProfile);
   const [profile, setProfile] = useState({
     fullName: "",
     email: "",
@@ -78,9 +78,9 @@ console.log('detail', detailProfile)
   useEffect(() => {
     if (detailProfile.length !== 0) {
       dispatch(getUserInfoAction());
-      // setLocation(detailProfile.profileId.locationId.nameLocation);
+      setLocation(detailProfile.profileId.locationId.nameLocation);
       setUserid(detailProfile.fullName);
-      // setProfesi(detailProfile.profileId.profesiId.nameProfesi);
+      setProfesi(detailProfile.profileId.profesiId.nameProfesi);
       setPicture(detailProfile.imgUrl);
       setEmail(detailProfile.email);
       setNumber(detailProfile.numberPhone);
