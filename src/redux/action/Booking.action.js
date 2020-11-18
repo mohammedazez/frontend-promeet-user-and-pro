@@ -55,9 +55,7 @@ export const postBookingAction = (values, history) => (dispatch) => {
     });
 };
 
-
 export const editBookingAction = (values, lastBooking) => {
-
   return async (dispatch) => {
     // console.log("value", values);
     return Axios.put(
