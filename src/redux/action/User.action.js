@@ -45,7 +45,7 @@ export const editUser = (data) => {
   };
 };
 
-export const getlogout = (data) => {
+export const getlogout = () => {
   return {
     type: LOGOUT,
   };
@@ -96,7 +96,7 @@ export const proRegisterAction = (values, event, history) => (dispatch) => {
           icon: "success",
           timer: 3000,
         });
-        history.push("/forminput");
+        history.push("/login");
       } else {
         Swal.fire({
           title: "Gagal Mendaftar",
@@ -118,7 +118,7 @@ export const loginAction = (values, event, history) => {
     return axios
       .post("https://server-promeet.herokuapp.com/api/user/login", values)
       .then((response) => {
-        // console.log(response);
+        console.log('response login', response);
 
         if (response.data.token !== undefined) {
           localStorage.setItem("token", response.data.token);
@@ -148,7 +148,7 @@ export const loginAction = (values, event, history) => {
 };
 
 export const getUserInfoAction = () => async (dispatch) => {
-  const url = "https://server-promeet.herokuapp.com/api/auth";
+  const url = "http://server-promeet.herokuapp.com/api/auth";
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -158,7 +158,7 @@ export const getUserInfoAction = () => async (dispatch) => {
   const userInfo = await axios.get(url, config);
 
   dispatch(getUserInfo(userInfo.data.member));
-  console.log("user login", userInfo.data.member);
+  console.log("user login", userInfo);
 };
 
 export const getEditProfessional = (values, detailProfile, event) => {
@@ -166,7 +166,7 @@ export const getEditProfessional = (values, detailProfile, event) => {
     event.preventDefault();
     console.log("isi status", values);
     return axios
-      .put(`http://localhost:8080/api/edit-prof/${detailProfile._id}`, values)
+      .put(`http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`, values)
       .then((response) => {
         console.log("response edit", response.data);
         dispatch(editUser(response.data));

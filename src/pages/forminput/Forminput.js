@@ -57,17 +57,16 @@ function Forminput() {
     numberPhone: "",
     price: "",
     description: "",
-    // timeAvailable: "",
     startDateAvailable: "",
-    // endDateAvailable: "",
     locationId: "",
     profesiId: "",
     serviceId: "",
-    nameExperience: "",
-    yearExperience: "",
+    nameExperience: [""],
+    yearExperience: [""],
     imgUrl: "",
     imgKtp: "",
   });
+
 
   const handleChange = (e) => {
     setProfile({
@@ -79,7 +78,7 @@ function Forminput() {
     dispatch(getEditProfessional(profile, detailProfile, event));
     history.push("/");
   };
-  console.log("profile di componen", profile);
+  console.log("profile di componen", profile.imgUrl);
   return (
     <div>
       <Header />
@@ -113,6 +112,20 @@ function Forminput() {
               value={profile.email}
               onChange={handleChange}
               placeholder="Email"
+              size="lg"
+            />
+          </Form.Group>
+          <Form.Group
+            controlId="exampleForm.ControlInput1"
+            className="grupform"
+          >
+            <p className="judulform">Deskripsi :</p>
+            <Form.Control
+              type="textarea"
+              name="description"
+              value={profile.description}
+              onChange={handleChange}
+              placeholder="Deskripsi"
               size="lg"
             />
           </Form.Group>
@@ -171,6 +184,9 @@ function Forminput() {
             <p className="judulform">Tarif pertemuan /Hitungan perjam :</p>
             <Form.Control
               type="number"
+              name="price"
+              value={profile.price}
+              onChange={handleChange}
               placeholder="Tarif meeting dihitung berdasarkan per jam"
               size="lg"
             />
@@ -236,12 +252,14 @@ function Forminput() {
               type="text"
               name="nameExperience"
               value={profile.nameExperience}
+              onChange={handleChange}
               placeholder="Pengalaman anda selama bekerja"
               size="lg"
             />
             <Form.Control
               type="text"
               name="yearExperience"
+              onChange={handleChange}
               value={profile.yearExperience}
               placeholder="Tahun"
               size="lg"
@@ -271,8 +289,10 @@ function Forminput() {
               ewqa23d5td
               id="exampleFormControlFile1"
             />
+            <input type="text" name="imgUrl" value={profile.imgUrl} onChange={handleChange}/>
+
           </Form.Group>
-          <Button onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
+          <Button type="submit" onSubmit={handleSubmit}>Daftar Jadi Konsultan</Button>
         </Form>
       </div>
       <Footer />

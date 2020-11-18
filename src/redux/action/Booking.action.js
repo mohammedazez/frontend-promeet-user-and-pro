@@ -8,7 +8,7 @@ export const EDIT_BOOKING = "EDIT_BOOKING";
 export function getBooking (data) {
   return {
       type: GET_BOOKING,
-      playload: data,
+      payload: data,
   }
 }
 
@@ -61,13 +61,12 @@ console.log('values', values)
 };
 
 
-export const editBookingAction = (values, lastBooking, event) => {
+export const editBookingAction = (values, lastBooking) => {
   return async (dispatch) => {
     console.log('value', values)
-    event.preventDefault();
     return Axios
     .put(
-      `http://localhost:8080/api/updateImg/${lastBooking._id}`, values
+      `http://server-promeet.herokuapp.com/api/updateImg/${lastBooking._id}`, values
     )
     .then((response) => {
       console.log("response edit", response);
