@@ -45,7 +45,7 @@ export default function SidebarUser() {
             <div>
               <p style={{ marginTop: "4px" }}>
                 <strong>
-                  <Link to="/bookingsaya/user">Pesanan Baru</Link>
+                  <Link to="/mybookingsaya/user">Pesanan baru</Link>
                 </strong>
               </p>
             </div>

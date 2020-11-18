@@ -9,7 +9,7 @@ export default function bookingReducers(state = intialState, action) {
     case GET_BOOKING:
       return{
           ...state,
-          data: action.playload
+          data: action.payload
       }
     case POST_BOOKING:
       return {
