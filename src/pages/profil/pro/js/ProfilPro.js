@@ -23,8 +23,8 @@ function ProfilPro() {
   const history = useHistory();
   const detailProfile = useSelector((state) => state.user.data);
   console.log("", detailProfile);
-  // const [location, setLocation] = useState("");
-  // const [profesi, setProfesi] = useState("");
+  const [location, setLocation] = useState("");
+  const [profesi, setProfesi] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
   const [email, setEmail] = useState("");
@@ -111,8 +111,8 @@ function ProfilPro() {
               />
               <Card.Body>
                 <Card.Text>Nama : {userid}</Card.Text>
-                {/* <Card.Text>Pekerjaan : {profesi}</Card.Text>
-                <Card.Text>Lokasi : {location}</Card.Text> */}
+                <Card.Text>Pekerjaan : {profesi}</Card.Text>
+                <Card.Text>Lokasi : {location}</Card.Text>
                 <Card.Text>Email : {email}</Card.Text>
                 <Card.Text>No Hp : {number}</Card.Text>
                 <Button className="tombol-profilpro" onClick={handleShow}>
