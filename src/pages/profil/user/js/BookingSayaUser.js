@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/BookingSayaUser.css";
 import moment from "moment";
 import Swal from "sweetalert2";
-
+import { useHistory } from "react-router-dom";
 import { Row, Col, Card, Table, Form } from "react-bootstrap";
 import SidebarUser from "./SidebarUser";
 import Header from "../../../../components/header/Header";
@@ -17,7 +17,7 @@ import ReactFilestack from "filestack-react";
 
 function BookingSayaUser() {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const member = useSelector((state) => state.user.data);
   // const profiledetail = useSelector((state) => state.professional.data);
   const listBooking = useSelector((state) => state.bookingReducers.data);
@@ -42,29 +42,30 @@ function BookingSayaUser() {
     // eslint-disable-next-line
   }, [dispatch]);
 
-  const [imgTf, setImgTf] = useState({
-    imgUrl: "gambar.jpeg",
+  const [image, setImage] = useState({
+    imgUrl: "",
   });
 
-  // const handleUpdate = (e) => {
-  //   setImgTf({
-  //     ...imgTf,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+  const handleChange = (e) => {
+    setImage({
+      ...image,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (event) => {
-    dispatch(editBookingAction(imgTf, lastBooking, event));
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Success Success Upload",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    // history.push('/bookingsaya/user')
+    event.preventDefault();
+    dispatch(editBookingAction(image, lastBooking));
+    // Swal.fire({
+    //   position: "center",
+    //   icon: "success",
+    //   title: "Success Success Upload",
+    //   showConfirmButton: false,
+    //   timer: 1500,
+    // });
+    history.push('/')
   };
-  console.log("image", imgTf);
+  console.log("image", image.imgUrl);
   return (
     <div>
       <Header />
@@ -135,22 +136,25 @@ function BookingSayaUser() {
                     </tbody>
                   </Table>
 
-                  <Form>
+                  <Form onSubmit={handleSubmit}>
                     <Form.Group>
                       <p>Upload bukti Pembayaran</p>
                       <ReactFilestack
                         apikey={"ApW8Eq4TGSN69zPGRbKtMz"}
                         onSuccess={(res) => {
-                          setImgTf({
-                            ...imgTf,
+                          setImage({
+                            ...image,
                             imgUrl: res.filesUploaded[0].url,
                           });
                         }}
                       />
-                      <br /> <br />
-                      <Button type="submit" onSubmit={handleSubmit}>
-                        Upload Bukti Transfer
-                      </Button>
+                      {/* <input
+                        type="text"
+                        name="imgUrl"
+                        value={image.imgUrl}
+                        onChange={handleChange}
+                      /> */}
+                      <Button type="submit">Upload Bukti Transfer</Button>
                     </Form.Group>
                   </Form>
                 </div>
