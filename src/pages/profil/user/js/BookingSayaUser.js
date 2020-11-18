@@ -40,7 +40,7 @@ function BookingSayaUser() {
       dispatch(getBookingAction());
     }
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch, listBooking]);
 
   const [image, setImage] = useState({
     imgUrl: "",
@@ -65,11 +65,12 @@ function BookingSayaUser() {
     });
     history.push("/");
   };
+
   console.log("image", image.imgUrl);
   return (
     <div>
       <Header />
-      {lastBooking !== undefined ? (
+      {lastBooking !== undefined || listBooking.length > 0 || lastBooking !== undefined ? (
         <div>
           <Row className="container-row-bookingsayauser">
             <Col md="auto">
@@ -148,12 +149,7 @@ function BookingSayaUser() {
                           });
                         }}
                       />
-                      {/* <input
-                        type="text"
-                        name="imgUrl"
-                        value={image.imgUrl}
-                        onChange={handleChange}
-                      /> */}
+                     <br/> <br/>
                       <Button type="submit">Upload Bukti Transfer</Button>
                     </Form.Group>
                   </Form>

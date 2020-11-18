@@ -1,4 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import moment from "moment";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getBookingAction,
+} from "../../../../redux/action/Booking.action";
 import "../css/CompletedPro.css";
 import { Row, Col, Card, Table, Button, Modal } from "react-bootstrap";
 import SidebarPro from "./SidebarPro";
@@ -36,6 +42,25 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function CompletedPro() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const member = useSelector((state) => state.user.data);
+  // const profiledetail = useSelector((state) => state.professional.data);
+  const listBooking = useSelector((state) => state.bookingReducers.data);
+
+  console.log("list booking", listBooking);
+  const newBooking = listBooking.filter(
+    (item) => item.userId && item.userId._id === member._id
+  );
+  useEffect(() => {
+    
+      dispatch(getBookingAction());
+    
+    // eslint-disable-next-line
+  }, [dispatch]);
+
+  console.log("lastBooking", newBooking);
+
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -54,27 +79,17 @@ function CompletedPro() {
                 <Table striped bordered hover size="sm">
                   <thead>
                     <tr>
-                      <th>Photo</th>
-                      <th>Customer</th>
-                      <th>Nama</th>
+                      <th>Nama Customer</th>
                       <th>Tanggal Pertemuan</th>
-                      <th>Jam</th>
                       <th>Jenis</th>
-                      <th>Tempat</th>
                       <th>Durasi</th>
-                      <th>Telp User</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <img
-                          src="https://res.cloudinary.com/def4tydoe/image/upload/v1604551713/people/womentech_b7df5h.jpg"
-                          alt="fotopesanansaya"
-                          className="foto-completedpro"
-                        />
-                      </td>
-                      <td>The girl of snow</td>
+                  {newBooking !== undefined && newBooking.length > 0 ? (
+                  newBooking.map((item, index) => (
+                    <tbody key={index}>
+                      <tr>
+                      <td></td>
                       <td>Meeting with Angelia</td>
                       <td>02-11-2020</td>
                       <td>08:00 WIB</td>
@@ -83,7 +98,13 @@ function CompletedPro() {
                       <td>2 Jam</td>
                       <td>08586856858</td>
                     </tr>
-                  </tbody>
+                    </tbody>
+  
+                  ))
+                  ) : (<p>test</p>)}
+                 
+                   
+
                 </Table>
                 <h4>Note:</h4>
                 <p>*Mohon jangan menyebar luaskan kontak milik User. </p>
