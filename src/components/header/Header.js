@@ -12,6 +12,7 @@ function Header() {
   const history = useHistory();
   const member = useSelector((state) => state.user.data);
 
+
 // const dataProfileId = member.profileId
   console.log("ini data member dataProfileId", member);
 

@@ -22,8 +22,9 @@ function ProfilPro() {
   const dispatch = useDispatch();
   const history = useHistory();
   const detailProfile = useSelector((state) => state.user.data);
-  const [location, setLocation] = useState("");
-  const [profesi, setProfesi] = useState("");
+  console.log("", detailProfile);
+  // const [location, setLocation] = useState("");
+  // const [profesi, setProfesi] = useState("");
   const [userid, setUserid] = useState("");
   const [picture, setPicture] = useState("");
   const [email, setEmail] = useState("");
@@ -77,9 +78,9 @@ console.log('detail', detailProfile)
   useEffect(() => {
     if (detailProfile.length !== 0) {
       dispatch(getUserInfoAction());
-      setLocation(detailProfile.profileId.locationId.nameLocation);
+      // setLocation(detailProfile.profileId.locationId.nameLocation);
       setUserid(detailProfile.fullName);
-      setProfesi(detailProfile.profileId.profesiId.nameProfesi);
+      // setProfesi(detailProfile.profileId.profesiId.nameProfesi);
       setPicture(detailProfile.imgUrl);
       setEmail(detailProfile.email);
       setNumber(detailProfile.numberPhone);
@@ -110,8 +111,8 @@ console.log('detail', detailProfile)
               />
               <Card.Body>
                 <Card.Text>Nama : {userid}</Card.Text>
-                <Card.Text>Pekerjaan : {profesi}</Card.Text>
-                <Card.Text>Lokasi : {location}</Card.Text>
+                {/* <Card.Text>Pekerjaan : {profesi}</Card.Text>
+                <Card.Text>Lokasi : {location}</Card.Text> */}
                 <Card.Text>Email : {email}</Card.Text>
                 <Card.Text>No Hp : {number}</Card.Text>
                 <Button className="tombol-profilpro" onClick={handleShow}>
