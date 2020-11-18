@@ -12,15 +12,16 @@ function SliderProduk() {
   const dispatch = useDispatch();
   const profilePro = useSelector((state) => state.semuaprofile);
   const { listprofile } = profilePro;
+
   const history = useHistory();
   // const [name, setName] = useState("");
-console.log('profile', profilePro)
+  // console.log('profile', profilePro)
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
   };
 
   // useEffect(() => {
-  //   if (listprofile === undefined) {
+  //   if (listprofile.length === 0) {
   //     dispatch(getProfileAction());
   //   } else {
   //     setName(listprofile.userId.fullName);
@@ -68,7 +69,7 @@ console.log('profile', profilePro)
           </Link>
         </Col>
       </Row>
-     
+
       {listprofile.length === 0 ? (
         <div className="spinner-border" role="status">
           <span className="sr-only">Loading...</span>

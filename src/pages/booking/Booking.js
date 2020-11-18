@@ -82,8 +82,8 @@ const Booking = () => {
     dispatch(postBookingAction(userSetBooking, history));
   };
 
-  console.log("profiledetail", profiledetail._id);
-  console.log("booking", userSetBooking);
+  // console.log("profiledetail", profiledetail._id);
+  // console.log("booking", userSetBooking);
 
   return (
     <Fragment>

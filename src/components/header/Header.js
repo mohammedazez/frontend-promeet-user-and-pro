@@ -12,14 +12,11 @@ function Header() {
   const history = useHistory();
   const member = useSelector((state) => state.user.data);
 
-// const dataProfileId = member.profileId
-  console.log("ini data member dataProfileId", member);
-
+  // const dataProfileId = member.profileId
+  // console.log("ini data member dataProfileId", member);
 
   useEffect(() => {
-
     dispatch(getUserInfoAction());
-
 
     // eslint-disable-next-line
   }, [dispatch]);
@@ -27,8 +24,7 @@ function Header() {
   const logoutSuccess = () => {
     dispatch(userLogout(history));
     localStorage.removeItem("token");
-    console.log("logout", logoutSuccess);
-    alert('logout')
+    // console.log("logout", logoutSuccess);
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -81,9 +77,12 @@ function Header() {
                 Contact
               </Link>
             </NavItem>
-            {!localStorage.getItem("token") ? (<p></p>) : (
-               member !== undefined && member.profileId === undefined && member.role === "profesional" ? (
-                <NavItem>
+            {!localStorage.getItem("token") ? (
+              <p></p>
+            ) : member !== undefined &&
+              member.profileId === undefined &&
+              member.role === "profesional" ? (
+              <NavItem>
                 <Link
                   to="/forminput"
                   className="nav-link"
@@ -92,8 +91,8 @@ function Header() {
                   Formulir
                 </Link>
               </NavItem>
-              ) : (<p></p>)
-             
+            ) : (
+              <p></p>
             )}
 
             {!localStorage.getItem("token") ? (
@@ -104,7 +103,7 @@ function Header() {
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     Jadi Konsultan
-              </Link>
+                  </Link>
                 </Button>
                 <Button className="button-navbar">
                   <Link
@@ -112,7 +111,7 @@ function Header() {
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     Login
-             </Link>
+                  </Link>
                 </Button>
                 <Button className="button-navbar">
                   <Link
@@ -120,38 +119,33 @@ function Header() {
                     style={{ textDecoration: "none", color: "white" }}
                   >
                     Sign Up
-           </Link>
+                  </Link>
                 </Button>
               </div>
-            ) : (
-                 member !== undefined ? (
-                  
-                  <div className="kebawah" >
-                    <button className="kebawah-tombol">My Profile</button>
-                    <div className="kebawah-content">
-                      {member.role === "member" ? (
-                        <Link to="/profil/user">
-                          <p className="teks-kebawah">Profile User</p>
-                        </Link>
-                      ) : (
-                        
-                          <Link to="/profil/pro">
-                            <p className="teks-kebawah">Profile Pro</p>
-                          </Link>
-                        )}
-                      <div
-                        onClick={() => logoutSuccess()}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <p className="teks-kebawah">Logout</p>
-                      </div>
-                    </div>
+            ) : member !== undefined ? (
+              <div className="kebawah">
+                <button className="kebawah-tombol">My Profile</button>
+                <div className="kebawah-content">
+                  {member.role === "member" ? (
+                    <Link to="/profil/user">
+                      <p className="teks-kebawah">Profile User</p>
+                    </Link>
+                  ) : (
+                    <Link to="/profil/pro">
+                      <p className="teks-kebawah">Profile Pro</p>
+                    </Link>
+                  )}
+                  <div
+                    onClick={() => logoutSuccess()}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p className="teks-kebawah">Logout</p>
                   </div>
-                ) : (
-                    <p>loading</p>
-                  )
+                </div>
+              </div>
+            ) : (
+              <p>loading</p>
             )}
-
           </Nav>
         </Navbar.Collapse>
       </Navbar>

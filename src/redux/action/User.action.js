@@ -118,7 +118,7 @@ export const loginAction = (values, event, history) => {
     return axios
       .post("https://server-promeet.herokuapp.com/api/user/login", values)
       .then((response) => {
-        console.log('response login', response);
+        // console.log('response login', response);
 
         if (response.data.token !== undefined) {
           localStorage.setItem("token", response.data.token);
@@ -158,17 +158,20 @@ export const getUserInfoAction = () => async (dispatch) => {
   const userInfo = await axios.get(url, config);
 
   dispatch(getUserInfo(userInfo.data.member));
-  console.log("user login", userInfo);
+  // console.log("user login", userInfo);
 };
 
 export const getEditProfessional = (values, detailProfile, event) => {
   return async (dispatch) => {
     event.preventDefault();
-    console.log("isi status", values);
+    // console.log("isi status", values);
     return axios
-      .put(`http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`, values)
+      .put(
+        `http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
+        values
+      )
       .then((response) => {
-        console.log("response edit", response.data);
+        // console.log("response edit", response.data);
         dispatch(editUser(response.data));
       })
       .catch((error) => {

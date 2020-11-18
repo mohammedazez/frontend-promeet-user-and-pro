@@ -66,7 +66,7 @@ function App() {
           <Route path="/profil/user">
             <ProfilUser />
           </Route>
-          <Route path="/bookingsaya/user">
+          <Route path="/mybookingsaya/user">
             <BookingSayaUser />
           </Route>
           <Route path="/completed/user">
