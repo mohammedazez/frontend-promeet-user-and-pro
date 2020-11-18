@@ -134,6 +134,9 @@ function Header() {
                     <Link to="/profil/pro">
                       <p className="teks-kebawah">Profile Pro</p>
                     </Link>
+                      <Link to="/forminput">
+                      <p className="teks-kebawah">Profile Pro</p>
+                    </Link>
                   )}
                   <div
                     onClick={() => logoutSuccess()}
