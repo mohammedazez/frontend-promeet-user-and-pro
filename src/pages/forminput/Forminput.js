@@ -78,7 +78,7 @@ function Forminput() {
     dispatch(getEditProfessional(profile, detailProfile, event));
     history.push("/");
   };
-  console.log("profile di componen", profile.imgUrl);
+  console.log("profile di componen", profile);
   return (
     <div>
       <Header />
@@ -272,7 +272,7 @@ function Forminput() {
               onSuccess={(res) => {
                 setProfile({
                   ...profile,
-                  imgKtp: res.filesUploaded[0].url,
+                  imgUrl: res.filesUploaded[0].url,
                 });
               }}
               ewqa23d5td

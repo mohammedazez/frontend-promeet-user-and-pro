@@ -40,7 +40,7 @@ function BookingSayaUser() {
       dispatch(getBookingAction());
     }
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch, listBooking]);
 
   const [image, setImage] = useState({
     imgUrl: "",
@@ -55,21 +55,13 @@ function BookingSayaUser() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(editBookingAction(image, lastBooking));
-    // Swal.fire({
-    //   position: "center",
-    //   icon: "success",
-    //   title: "Success Success Upload",
-    //   showConfirmButton: false,
-    //   timer: 1500,
-    // });
-    history.push('/')
-  };
+    dispatch(editBookingAction(image, lastBooking, history));
+    };
   console.log("image", image.imgUrl);
   return (
     <div>
       <Header />
-      {lastBooking !== undefined ? (
+      {lastBooking !== undefined || listBooking.length > 0 || lastBooking !== undefined ? (
         <div>
           <Row className="container-row-bookingsayauser">
             <Col md="auto">
@@ -148,12 +140,7 @@ function BookingSayaUser() {
                           });
                         }}
                       />
-                      {/* <input
-                        type="text"
-                        name="imgUrl"
-                        value={image.imgUrl}
-                        onChange={handleChange}
-                      /> */}
+                     <br/> <br/>
                       <Button type="submit">Upload Bukti Transfer</Button>
                     </Form.Group>
                   </Form>

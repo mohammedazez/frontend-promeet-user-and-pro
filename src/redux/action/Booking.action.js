@@ -61,7 +61,7 @@ console.log('values', values)
 };
 
 
-export const editBookingAction = (values, lastBooking) => {
+export const editBookingAction = (values, lastBooking, history) => {
   return async (dispatch) => {
     console.log('value', values)
     return Axios
