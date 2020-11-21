@@ -92,7 +92,7 @@ function Header() {
                 </Link>
               </NavItem>
             ) : (
-              <p></p>
+              ""
             )}
 
             {!localStorage.getItem("token") ? (
@@ -133,7 +133,7 @@ function Header() {
                   ) : (
                     <Link to="/profil/pro">
                       <p className="teks-kebawah">Profile Pro</p>
-                    </Link>
+              </Link>
                   )}
                   <div
                     onClick={() => logoutSuccess()}

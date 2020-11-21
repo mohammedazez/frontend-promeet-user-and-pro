@@ -29,7 +29,7 @@ export const editBooking = (data) => {
 export const getBookingAction = () => {
   return async (dispatch) => {
     const response = await Axios.get(
-      "http://server-promeet.herokuapp.com/api/admin/data/booking"
+      "https://server-promeet.herokuapp.com/api/admin/data/booking"
     );
     dispatch(getBooking(response.data.booking));
     // console.log('hasil ambil data booking', response.data.booking);
@@ -39,7 +39,7 @@ export const getBookingAction = () => {
 export const postBookingAction = (values, history) => (dispatch) => {
   // console.log("values", values);
   return Axios.post(
-    "http://server-promeet.herokuapp.com/api/admin/add-booking",
+    "https://server-promeet.herokuapp.com/api/admin/add-booking",
     values
   )
 
@@ -55,13 +55,11 @@ export const postBookingAction = (values, history) => (dispatch) => {
     });
 };
 
-
 export const editBookingAction = (values, lastBooking) => {
-
   return async (dispatch) => {
     // console.log("value", values);
     return Axios.put(
-      `http://server-promeet.herokuapp.com/api/updateImg/${lastBooking._id}`,
+      `https://server-promeet.herokuapp.com/api/updateImg/${lastBooking._id}`,
       values
     )
       .then((response) => {

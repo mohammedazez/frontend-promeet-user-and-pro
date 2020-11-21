@@ -148,7 +148,7 @@ export const loginAction = (values, event, history) => {
 };
 
 export const getUserInfoAction = () => async (dispatch) => {
-  const url = "http://server-promeet.herokuapp.com/api/auth";
+  const url = "https://server-promeet.herokuapp.com/api/auth";
   const config = {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -167,7 +167,7 @@ export const getEditProfessional = (values, detailProfile, event) => {
     // console.log("isi status", values);
     return axios
       .put(
-        `http://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
+        `https://server-promeet.herokuapp.com/api/edit-prof/${detailProfile._id}`,
         values
       )
       .then((response) => {
@@ -184,6 +184,6 @@ export const userLogout = (history) => {
   return (dispatch) => {
     localStorage.removeItem("token");
     dispatch(getlogout());
-    history.push("/login");
+    history.push("/");
   };
 };
